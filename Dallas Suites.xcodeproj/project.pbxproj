@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		270E6C6319FAC685005994F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C6219FAC685005994F9 /* main.m */; };
+		270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C6519FAC685005994F9 /* AppDelegate.m */; };
+		270E6C6919FAC685005994F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C6819FAC685005994F9 /* ViewController.m */; };
+		270E6C6C19FAC685005994F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6A19FAC685005994F9 /* Main.storyboard */; };
+		270E6C6E19FAC685005994F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6D19FAC685005994F9 /* Images.xcassets */; };
+		270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6F19FAC685005994F9 /* LaunchScreen.xib */; };
+		270E6C7D19FAC685005994F9 /* Dallas_SuitesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		270E6C7719FAC685005994F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 270E6C5519FAC685005994F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 270E6C5C19FAC685005994F9;
+			remoteInfo = "Dallas Suites";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		270E6C5D19FAC685005994F9 /* Dallas Suites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dallas Suites.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		270E6C6119FAC685005994F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270E6C6219FAC685005994F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		270E6C6419FAC685005994F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		270E6C6519FAC685005994F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		270E6C6719FAC685005994F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		270E6C6819FAC685005994F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		270E6C6B19FAC685005994F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		270E6C6D19FAC685005994F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		270E6C7019FAC685005994F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		270E6C7619FAC685005994F9 /* Dallas SuitesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dallas SuitesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		270E6C7B19FAC685005994F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dallas_SuitesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		270E6C5A19FAC685005994F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270E6C7319FAC685005994F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		270E6C5419FAC685005994F9 = {
+			isa = PBXGroup;
+			children = (
+				270E6C5F19FAC685005994F9 /* Dallas Suites */,
+				270E6C7919FAC685005994F9 /* Dallas SuitesTests */,
+				270E6C5E19FAC685005994F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		270E6C5E19FAC685005994F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				270E6C5D19FAC685005994F9 /* Dallas Suites.app */,
+				270E6C7619FAC685005994F9 /* Dallas SuitesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
+			isa = PBXGroup;
+			children = (
+				270E6C6419FAC685005994F9 /* AppDelegate.h */,
+				270E6C6519FAC685005994F9 /* AppDelegate.m */,
+				270E6C6719FAC685005994F9 /* ViewController.h */,
+				270E6C6819FAC685005994F9 /* ViewController.m */,
+				270E6C6A19FAC685005994F9 /* Main.storyboard */,
+				270E6C6D19FAC685005994F9 /* Images.xcassets */,
+				270E6C6F19FAC685005994F9 /* LaunchScreen.xib */,
+				270E6C6019FAC685005994F9 /* Supporting Files */,
+			);
+			path = "Dallas Suites";
+			sourceTree = "<group>";
+		};
+		270E6C6019FAC685005994F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				270E6C6119FAC685005994F9 /* Info.plist */,
+				270E6C6219FAC685005994F9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		270E6C7919FAC685005994F9 /* Dallas SuitesTests */ = {
+			isa = PBXGroup;
+			children = (
+				270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */,
+				270E6C7A19FAC685005994F9 /* Supporting Files */,
+			);
+			path = "Dallas SuitesTests";
+			sourceTree = "<group>";
+		};
+		270E6C7A19FAC685005994F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				270E6C7B19FAC685005994F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		270E6C5C19FAC685005994F9 /* Dallas Suites */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270E6C8019FAC685005994F9 /* Build configuration list for PBXNativeTarget "Dallas Suites" */;
+			buildPhases = (
+				270E6C5919FAC685005994F9 /* Sources */,
+				270E6C5A19FAC685005994F9 /* Frameworks */,
+				270E6C5B19FAC685005994F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dallas Suites";
+			productName = "Dallas Suites";
+			productReference = 270E6C5D19FAC685005994F9 /* Dallas Suites.app */;
+			productType = "com.apple.product-type.application";
+		};
+		270E6C7519FAC685005994F9 /* Dallas SuitesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270E6C8319FAC685005994F9 /* Build configuration list for PBXNativeTarget "Dallas SuitesTests" */;
+			buildPhases = (
+				270E6C7219FAC685005994F9 /* Sources */,
+				270E6C7319FAC685005994F9 /* Frameworks */,
+				270E6C7419FAC685005994F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				270E6C7819FAC685005994F9 /* PBXTargetDependency */,
+			);
+			name = "Dallas SuitesTests";
+			productName = "Dallas SuitesTests";
+			productReference = 270E6C7619FAC685005994F9 /* Dallas SuitesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		270E6C5519FAC685005994F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "ICO Group";
+				TargetAttributes = {
+					270E6C5C19FAC685005994F9 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					270E6C7519FAC685005994F9 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 270E6C5C19FAC685005994F9;
+					};
+				};
+			};
+			buildConfigurationList = 270E6C5819FAC685005994F9 /* Build configuration list for PBXProject "Dallas Suites" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 270E6C5419FAC685005994F9;
+			productRefGroup = 270E6C5E19FAC685005994F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				270E6C5C19FAC685005994F9 /* Dallas Suites */,
+				270E6C7519FAC685005994F9 /* Dallas SuitesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		270E6C5B19FAC685005994F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E6C6C19FAC685005994F9 /* Main.storyboard in Resources */,
+				270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */,
+				270E6C6E19FAC685005994F9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270E6C7419FAC685005994F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		270E6C5919FAC685005994F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E6C6919FAC685005994F9 /* ViewController.m in Sources */,
+				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
+				270E6C6319FAC685005994F9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270E6C7219FAC685005994F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E6C7D19FAC685005994F9 /* Dallas_SuitesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		270E6C7819FAC685005994F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 270E6C5C19FAC685005994F9 /* Dallas Suites */;
+			targetProxy = 270E6C7719FAC685005994F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		270E6C6A19FAC685005994F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270E6C6B19FAC685005994F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		270E6C6F19FAC685005994F9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270E6C7019FAC685005994F9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		270E6C7E19FAC685005994F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		270E6C7F19FAC685005994F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		270E6C8119FAC685005994F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dallas Suites/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		270E6C8219FAC685005994F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dallas Suites/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		270E6C8419FAC685005994F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Dallas SuitesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dallas Suites.app/Dallas Suites";
+			};
+			name = Debug;
+		};
+		270E6C8519FAC685005994F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Dallas SuitesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dallas Suites.app/Dallas Suites";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		270E6C5819FAC685005994F9 /* Build configuration list for PBXProject "Dallas Suites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270E6C7E19FAC685005994F9 /* Debug */,
+				270E6C7F19FAC685005994F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		270E6C8019FAC685005994F9 /* Build configuration list for PBXNativeTarget "Dallas Suites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270E6C8119FAC685005994F9 /* Debug */,
+				270E6C8219FAC685005994F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		270E6C8319FAC685005994F9 /* Build configuration list for PBXNativeTarget "Dallas SuitesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270E6C8419FAC685005994F9 /* Debug */,
+				270E6C8519FAC685005994F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 270E6C5519FAC685005994F9 /* Project object */;
+}
