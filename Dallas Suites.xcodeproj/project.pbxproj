@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		270E6C6319FAC685005994F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C6219FAC685005994F9 /* main.m */; };
 		270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C6519FAC685005994F9 /* AppDelegate.m */; };
-		270E6C6919FAC685005994F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C6819FAC685005994F9 /* ViewController.m */; };
+		270E6C6919FAC685005994F9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C6819FAC685005994F9 /* HomeViewController.m */; };
 		270E6C6C19FAC685005994F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6A19FAC685005994F9 /* Main.storyboard */; };
 		270E6C6E19FAC685005994F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6D19FAC685005994F9 /* Images.xcassets */; };
 		270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6F19FAC685005994F9 /* LaunchScreen.xib */; };
 		270E6C7D19FAC685005994F9 /* Dallas_SuitesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */; };
+		270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C8619FAE677005994F9 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,15 @@
 		270E6C6219FAC685005994F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		270E6C6419FAC685005994F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		270E6C6519FAC685005994F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		270E6C6719FAC685005994F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		270E6C6819FAC685005994F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		270E6C6719FAC685005994F9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		270E6C6819FAC685005994F9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		270E6C6B19FAC685005994F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		270E6C6D19FAC685005994F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		270E6C7019FAC685005994F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		270E6C7619FAC685005994F9 /* Dallas SuitesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dallas SuitesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		270E6C7B19FAC685005994F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dallas_SuitesTests.m; sourceTree = "<group>"; };
+		270E6C8619FAE677005994F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		270E6C5419FAC685005994F9 = {
 			isa = PBXGroup;
 			children = (
+				270E6C8619FAE677005994F9 /* Default-568h@2x.png */,
 				270E6C5F19FAC685005994F9 /* Dallas Suites */,
 				270E6C7919FAC685005994F9 /* Dallas SuitesTests */,
 				270E6C5E19FAC685005994F9 /* Products */,
@@ -81,13 +84,11 @@
 		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
 			isa = PBXGroup;
 			children = (
-				270E6C6419FAC685005994F9 /* AppDelegate.h */,
-				270E6C6519FAC685005994F9 /* AppDelegate.m */,
-				270E6C6719FAC685005994F9 /* ViewController.h */,
-				270E6C6819FAC685005994F9 /* ViewController.m */,
+				270E6C8819FAF050005994F9 /* Delegate */,
+				270E6C8919FAF062005994F9 /* Home */,
 				270E6C6A19FAC685005994F9 /* Main.storyboard */,
-				270E6C6D19FAC685005994F9 /* Images.xcassets */,
 				270E6C6F19FAC685005994F9 /* LaunchScreen.xib */,
+				270E6C6D19FAC685005994F9 /* Images.xcassets */,
 				270E6C6019FAC685005994F9 /* Supporting Files */,
 			);
 			path = "Dallas Suites";
@@ -117,6 +118,24 @@
 				270E6C7B19FAC685005994F9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		270E6C8819FAF050005994F9 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				270E6C6419FAC685005994F9 /* AppDelegate.h */,
+				270E6C6519FAC685005994F9 /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		270E6C8919FAF062005994F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				270E6C6719FAC685005994F9 /* HomeViewController.h */,
+				270E6C6819FAC685005994F9 /* HomeViewController.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				270E6C6C19FAC685005994F9 /* Main.storyboard in Resources */,
+				270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */,
 				270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */,
 				270E6C6E19FAC685005994F9 /* Images.xcassets in Resources */,
 			);
@@ -220,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270E6C6919FAC685005994F9 /* ViewController.m in Sources */,
+				270E6C6919FAC685005994F9 /* HomeViewController.m in Sources */,
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
 			);
