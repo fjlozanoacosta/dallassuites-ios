@@ -342,7 +342,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="150" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-ke-kzx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="150" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-ke-kzx">
                                 <rect key="frame" x="0.0" y="60" width="600" height="540"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -394,6 +394,7 @@ consectetur adipiscing elit.</string>
                                             <outlet property="bgImage" destination="pqA-Vq-0Q5" id="nXP-UZ-Vmz"/>
                                             <outlet property="roomBriefDescription" destination="zRa-v4-Ldm" id="sfm-Tj-sgF"/>
                                             <outlet property="roomName" destination="lLT-Mk-wXc" id="Ljr-Lk-HaN"/>
+                                            <segue destination="cyP-HO-7BR" kind="presentation" id="ElY-zb-Cvm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -428,6 +429,63 @@ consectetur adipiscing elit.</string>
             </objects>
             <point key="canvasLocation" x="176" y="475"/>
         </scene>
+        <!--Room Detail View Controller-->
+        <scene sceneID="bOx-UI-QqZ">
+            <objects>
+                <viewController id="cyP-HO-7BR" customClass="RoomDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MFi-TO-jSW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wct-mn-FG5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w0y-WC-EPq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roomDetailDemoImage" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-pE-kZl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGE-hY-e6S">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="a2a-D2-tq8"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="ROOM NAME" id="uUZ-5B-Etd">
+                                        <barButtonItem key="leftBarButtonItem" image="navBarBackButton" id="7Z4-lg-TyI" userLabel="Back Btn">
+                                            <color key="tintColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="navBackButtonAction:" destination="cyP-HO-7BR" id="OgP-Zv-iCG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Sb-pE-kZl" firstAttribute="leading" secondItem="w0y-WC-EPq" secondAttribute="leading" id="1fE-fw-Lgc"/>
+                            <constraint firstItem="PGE-hY-e6S" firstAttribute="leading" secondItem="w0y-WC-EPq" secondAttribute="leading" id="8aH-Gp-f0c"/>
+                            <constraint firstItem="Wct-mn-FG5" firstAttribute="top" secondItem="6Sb-pE-kZl" secondAttribute="bottom" id="ZPq-Dg-QKu"/>
+                            <constraint firstAttribute="trailing" secondItem="PGE-hY-e6S" secondAttribute="trailing" id="f9v-zt-Qfl"/>
+                            <constraint firstItem="6Sb-pE-kZl" firstAttribute="top" secondItem="w0y-WC-EPq" secondAttribute="top" id="o4K-EH-1oJ"/>
+                            <constraint firstAttribute="trailing" secondItem="6Sb-pE-kZl" secondAttribute="trailing" id="tvM-tA-yCg"/>
+                            <constraint firstItem="PGE-hY-e6S" firstAttribute="top" secondItem="w0y-WC-EPq" secondAttribute="top" id="xDs-dg-LNa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBackBtn" destination="7Z4-lg-TyI" id="6QC-gr-KqR"/>
+                        <outlet property="navBar" destination="PGE-hY-e6S" id="VDN-Ff-cDN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYY-P0-0bS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="475"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btnBg" width="320" height="60"/>
@@ -439,6 +497,7 @@ consectetur adipiscing elit.</string>
         <image name="homePopUpLogInBtnBg" width="320" height="60"/>
         <image name="homePopUpLogInBtnBg_ON" width="320" height="60"/>
         <image name="navBarBackButton" width="12" height="21"/>
+        <image name="roomDetailDemoImage" width="320" height="568"/>
         <image name="roomListDemoImage" width="320" height="150"/>
     </resources>
 </document>
