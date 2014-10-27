@@ -8,7 +8,34 @@
 
 #import "HomeViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () {
+    
+    //Main View
+        //Buttons
+            //Room (Habitación)
+    __weak IBOutlet UIButton *roomsBtn;
+            //Service (Servicio)
+    __weak IBOutlet UIButton *servicesBtn;
+            //Register-Profile (Registrar-Perfil)
+    __weak IBOutlet UIButton *registerProfileBtn;
+    
+    
+    //PopUp (pU)
+        //Text Fields
+            //Username (Usuario)
+    __weak IBOutlet UITextField *pUUsernameTextField;
+            //Password (Contraseña)
+    __weak IBOutlet UITextField *pUPasswordTextField;    
+    
+        //Buttons
+            //LogIn Btn (Iniciar Sesión)
+    __weak IBOutlet UIButton *pULogInBtn;
+            //Forgot Password Btn (Recuperar Contraseña)
+    __weak IBOutlet UIButton *pUForgotPasswordBtn;
+            //Close PopUp Btn (Cerrar)
+    __weak IBOutlet UIButton *pUCloseBtn;
+    
+}
 
 @end
 
