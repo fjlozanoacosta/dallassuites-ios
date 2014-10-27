@@ -15,6 +15,8 @@
 		270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6F19FAC685005994F9 /* LaunchScreen.xib */; };
 		270E6C7D19FAC685005994F9 /* Dallas_SuitesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */; };
 		270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C8619FAE677005994F9 /* Default-568h@2x.png */; };
+		2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801519FEE9B3009C5968 /* RoomsViewController.m */; };
+		2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		270E6C7B19FAC685005994F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dallas_SuitesTests.m; sourceTree = "<group>"; };
 		270E6C8619FAE677005994F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2769801419FEE9B3009C5968 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
+		2769801519FEE9B3009C5968 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
+		2769801819FEEFD1009C5968 /* RoomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewCell.h; sourceTree = "<group>"; };
+		2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 			children = (
 				270E6C8819FAF050005994F9 /* Delegate */,
 				270E6C8919FAF062005994F9 /* Home */,
+				2769801319FEE997009C5968 /* Rooms */,
 				270E6C6A19FAC685005994F9 /* Main.storyboard */,
 				270E6C6F19FAC685005994F9 /* LaunchScreen.xib */,
 				270E6C6D19FAC685005994F9 /* Images.xcassets */,
@@ -136,6 +143,25 @@
 				270E6C6819FAC685005994F9 /* HomeViewController.m */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		2769801319FEE997009C5968 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				2769801719FEEFB7009C5968 /* RoomsTableViewCell */,
+				2769801419FEE9B3009C5968 /* RoomsViewController.h */,
+				2769801519FEE9B3009C5968 /* RoomsViewController.m */,
+			);
+			name = Rooms;
+			sourceTree = "<group>";
+		};
+		2769801719FEEFB7009C5968 /* RoomsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2769801819FEEFD1009C5968 /* RoomsTableViewCell.h */,
+				2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */,
+			);
+			name = RoomsTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */,
 				270E6C6919FAC685005994F9 /* HomeViewController.m in Sources */,
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
+				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +465,7 @@
 				270E6C8219FAC685005994F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		270E6C8319FAC685005994F9 /* Build configuration list for PBXNativeTarget "Dallas SuitesTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +474,7 @@
 				270E6C8519FAC685005994F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
