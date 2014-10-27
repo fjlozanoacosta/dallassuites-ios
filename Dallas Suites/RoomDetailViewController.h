@@ -10,4 +10,7 @@
 
 @interface RoomDetailViewController : UIViewController
 
+@property (nonatomic) NSString* navTitle;
+@property (nonatomic) UIImage* roomImage;
+
 @end

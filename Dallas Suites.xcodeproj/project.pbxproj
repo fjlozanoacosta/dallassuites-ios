@@ -18,6 +18,8 @@
 		2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801519FEE9B3009C5968 /* RoomsViewController.m */; };
 		2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */; };
 		2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801D19FF0510009C5968 /* RoomDetailViewController.m */; };
+		2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769802219FF0B1A009C5968 /* DropAnimationController.m */; };
+		2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769802419FF0B1A009C5968 /* ZoomAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsTableViewCell.m; sourceTree = "<group>"; };
 		2769801C19FF0510009C5968 /* RoomDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomDetailViewController.h; sourceTree = "<group>"; };
 		2769801D19FF0510009C5968 /* RoomDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomDetailViewController.m; sourceTree = "<group>"; };
+		2769802019FF0B1A009C5968 /* ADVAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADVAnimationController.h; sourceTree = "<group>"; };
+		2769802119FF0B1A009C5968 /* DropAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropAnimationController.h; sourceTree = "<group>"; };
+		2769802219FF0B1A009C5968 /* DropAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropAnimationController.m; sourceTree = "<group>"; };
+		2769802319FF0B1A009C5968 /* ZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomAnimationController.h; sourceTree = "<group>"; };
+		2769802419FF0B1A009C5968 /* ZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +100,7 @@
 		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
 			isa = PBXGroup;
 			children = (
+				2769801F19FF07A9009C5968 /* Custom Transitions Classes */,
 				270E6C8819FAF050005994F9 /* Delegate */,
 				270E6C8919FAF062005994F9 /* Home */,
 				2769801319FEE997009C5968 /* Rooms */,
@@ -175,6 +183,18 @@
 				2769801D19FF0510009C5968 /* RoomDetailViewController.m */,
 			);
 			name = RoomDetailView;
+			sourceTree = "<group>";
+		};
+		2769801F19FF07A9009C5968 /* Custom Transitions Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2769802019FF0B1A009C5968 /* ADVAnimationController.h */,
+				2769802119FF0B1A009C5968 /* DropAnimationController.h */,
+				2769802219FF0B1A009C5968 /* DropAnimationController.m */,
+				2769802319FF0B1A009C5968 /* ZoomAnimationController.h */,
+				2769802419FF0B1A009C5968 /* ZoomAnimationController.m */,
+			);
+			name = "Custom Transitions Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +304,9 @@
 				2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */,
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
+				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
+				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

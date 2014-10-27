@@ -10,9 +10,11 @@
 
 @interface RoomDetailViewController () {
     
+    __weak IBOutlet UIImageView *roomDetailImageView;
     //Navigation Bar (nav)
         //Bar Itself
     __weak IBOutlet UINavigationBar *navBar;
+    __weak IBOutlet UINavigationItem *navBarTitle;
     
     //Buttons
         //Back Btn
@@ -34,6 +36,16 @@
     [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     navBar.shadowImage = [UIImage new];
     navBar.translucent = YES;
+    
+    //NSLog(@"New Title : %@", _navTitle);
+    //NSLog(@"Old Title : %@", navBarTitle.title);
+    
+    //Change room Title    
+    [navBarTitle setTitle:_navTitle];
+    
+    //NSLog(@"Did the Title change? : %@", navBarTitle.title);
+    
+    [roomDetailImageView setImage:_roomImage];
     
 }
 

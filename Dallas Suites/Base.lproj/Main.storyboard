@@ -394,7 +394,6 @@ consectetur adipiscing elit.</string>
                                             <outlet property="bgImage" destination="pqA-Vq-0Q5" id="nXP-UZ-Vmz"/>
                                             <outlet property="roomBriefDescription" destination="zRa-v4-Ldm" id="sfm-Tj-sgF"/>
                                             <outlet property="roomName" destination="lLT-Mk-wXc" id="Ljr-Lk-HaN"/>
-                                            <segue destination="cyP-HO-7BR" kind="presentation" id="ElY-zb-Cvm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -432,7 +431,7 @@ consectetur adipiscing elit.</string>
         <!--Room Detail View Controller-->
         <scene sceneID="bOx-UI-QqZ">
             <objects>
-                <viewController id="cyP-HO-7BR" customClass="RoomDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="roomDetailViewController" id="cyP-HO-7BR" customClass="RoomDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MFi-TO-jSW"/>
                         <viewControllerLayoutGuide type="bottom" id="Wct-mn-FG5"/>
@@ -480,6 +479,8 @@ consectetur adipiscing elit.</string>
                     <connections>
                         <outlet property="navBackBtn" destination="7Z4-lg-TyI" id="6QC-gr-KqR"/>
                         <outlet property="navBar" destination="PGE-hY-e6S" id="VDN-Ff-cDN"/>
+                        <outlet property="navBarTitle" destination="uUZ-5B-Etd" id="OiJ-8b-pTo"/>
+                        <outlet property="roomDetailImageView" destination="6Sb-pE-kZl" id="duy-RU-0yq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYY-P0-0bS" userLabel="First Responder" sceneMemberID="firstResponder"/>
