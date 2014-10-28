@@ -20,6 +20,20 @@
 		2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801D19FF0510009C5968 /* RoomDetailViewController.m */; };
 		2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769802219FF0B1A009C5968 /* DropAnimationController.m */; };
 		2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769802419FF0B1A009C5968 /* ZoomAnimationController.m */; };
+		277307FE1A002623000FC4B1 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F21A002623000FC4B1 /* Brandon_bld.otf */; };
+		277307FF1A002623000FC4B1 /* Brandon_med_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F31A002623000FC4B1 /* Brandon_med_it.otf */; };
+		277308001A002623000FC4B1 /* Brandon_thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F41A002623000FC4B1 /* Brandon_thin.otf */; };
+		277308011A002623000FC4B1 /* Brandon_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F51A002623000FC4B1 /* Brandon_light.otf */; };
+		277308021A002623000FC4B1 /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F61A002623000FC4B1 /* Brandon_blk.otf */; };
+		277308031A002623000FC4B1 /* Brandon_light_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F71A002623000FC4B1 /* Brandon_light_it.otf */; };
+		277308041A002623000FC4B1 /* Brandon_med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F81A002623000FC4B1 /* Brandon_med.otf */; };
+		277308051A002623000FC4B1 /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F91A002623000FC4B1 /* Brandon_reg_it.otf */; };
+		277308061A002623000FC4B1 /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307FA1A002623000FC4B1 /* Brandon_reg.otf */; };
+		277308071A002623000FC4B1 /* Brandon_thin_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307FB1A002623000FC4B1 /* Brandon_thin_it.otf */; };
+		277308081A002623000FC4B1 /* Brandon_bld_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307FC1A002623000FC4B1 /* Brandon_bld_it.otf */; };
+		277308091A002623000FC4B1 /* Brandon_blk_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307FD1A002623000FC4B1 /* Brandon_blk_it.otf */; };
+		2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */; };
+		277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +72,22 @@
 		2769802219FF0B1A009C5968 /* DropAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropAnimationController.m; sourceTree = "<group>"; };
 		2769802319FF0B1A009C5968 /* ZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomAnimationController.h; sourceTree = "<group>"; };
 		2769802419FF0B1A009C5968 /* ZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomAnimationController.m; sourceTree = "<group>"; };
+		277307F21A002623000FC4B1 /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
+		277307F31A002623000FC4B1 /* Brandon_med_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med_it.otf; sourceTree = "<group>"; };
+		277307F41A002623000FC4B1 /* Brandon_thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_thin.otf; sourceTree = "<group>"; };
+		277307F51A002623000FC4B1 /* Brandon_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_light.otf; sourceTree = "<group>"; };
+		277307F61A002623000FC4B1 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
+		277307F71A002623000FC4B1 /* Brandon_light_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_light_it.otf; sourceTree = "<group>"; };
+		277307F81A002623000FC4B1 /* Brandon_med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med.otf; sourceTree = "<group>"; };
+		277307F91A002623000FC4B1 /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg_it.otf; sourceTree = "<group>"; };
+		277307FA1A002623000FC4B1 /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
+		277307FB1A002623000FC4B1 /* Brandon_thin_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_thin_it.otf; sourceTree = "<group>"; };
+		277307FC1A002623000FC4B1 /* Brandon_bld_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld_it.otf; sourceTree = "<group>"; };
+		277307FD1A002623000FC4B1 /* Brandon_blk_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk_it.otf; sourceTree = "<group>"; };
+		2773080B1A0029E9000FC4B1 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
+		2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
+		2773080F1A002F91000FC4B1 /* RestaurantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantTableViewCell.h; sourceTree = "<group>"; };
+		277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +134,7 @@
 				270E6C8819FAF050005994F9 /* Delegate */,
 				270E6C8919FAF062005994F9 /* Home/Service */,
 				2769801319FEE997009C5968 /* Rooms */,
+				2773080A1A0029D9000FC4B1 /* Restaurant */,
 				270E6C6A19FAC685005994F9 /* Main.storyboard */,
 				270E6C6F19FAC685005994F9 /* LaunchScreen.xib */,
 				270E6C6D19FAC685005994F9 /* Images.xcassets */,
@@ -115,6 +146,7 @@
 		270E6C6019FAC685005994F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				277307F11A00260D000FC4B1 /* Fonts */,
 				270E6C6119FAC685005994F9 /* Info.plist */,
 				270E6C6219FAC685005994F9 /* main.m */,
 			);
@@ -195,6 +227,44 @@
 				2769802419FF0B1A009C5968 /* ZoomAnimationController.m */,
 			);
 			name = "Custom Transitions Classes";
+			sourceTree = "<group>";
+		};
+		277307F11A00260D000FC4B1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				277307F21A002623000FC4B1 /* Brandon_bld.otf */,
+				277307F31A002623000FC4B1 /* Brandon_med_it.otf */,
+				277307F41A002623000FC4B1 /* Brandon_thin.otf */,
+				277307F51A002623000FC4B1 /* Brandon_light.otf */,
+				277307F61A002623000FC4B1 /* Brandon_blk.otf */,
+				277307F71A002623000FC4B1 /* Brandon_light_it.otf */,
+				277307F81A002623000FC4B1 /* Brandon_med.otf */,
+				277307F91A002623000FC4B1 /* Brandon_reg_it.otf */,
+				277307FA1A002623000FC4B1 /* Brandon_reg.otf */,
+				277307FB1A002623000FC4B1 /* Brandon_thin_it.otf */,
+				277307FC1A002623000FC4B1 /* Brandon_bld_it.otf */,
+				277307FD1A002623000FC4B1 /* Brandon_blk_it.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		2773080A1A0029D9000FC4B1 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				2773080E1A002F77000FC4B1 /* RestaurantTableViewCell */,
+				2773080B1A0029E9000FC4B1 /* RestaurantViewController.h */,
+				2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */,
+			);
+			name = Restaurant;
+			sourceTree = "<group>";
+		};
+		2773080E1A002F77000FC4B1 /* RestaurantTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2773080F1A002F91000FC4B1 /* RestaurantTableViewCell.h */,
+				277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */,
+			);
+			name = RestaurantTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +349,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				270E6C6C19FAC685005994F9 /* Main.storyboard in Resources */,
+				277308091A002623000FC4B1 /* Brandon_blk_it.otf in Resources */,
 				270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */,
+				277308051A002623000FC4B1 /* Brandon_reg_it.otf in Resources */,
+				277308021A002623000FC4B1 /* Brandon_blk.otf in Resources */,
+				277308001A002623000FC4B1 /* Brandon_thin.otf in Resources */,
+				277308061A002623000FC4B1 /* Brandon_reg.otf in Resources */,
+				277308071A002623000FC4B1 /* Brandon_thin_it.otf in Resources */,
+				277308011A002623000FC4B1 /* Brandon_light.otf in Resources */,
+				277307FE1A002623000FC4B1 /* Brandon_bld.otf in Resources */,
+				277308081A002623000FC4B1 /* Brandon_bld_it.otf in Resources */,
+				277308031A002623000FC4B1 /* Brandon_light_it.otf in Resources */,
 				270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */,
+				277307FF1A002623000FC4B1 /* Brandon_med_it.otf in Resources */,
+				277308041A002623000FC4B1 /* Brandon_med.otf in Resources */,
 				270E6C6E19FAC685005994F9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,10 +384,12 @@
 				2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */,
 				270E6C6919FAC685005994F9 /* HomeAndServiceViewController.m in Sources */,
 				2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */,
+				2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */,
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
+				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

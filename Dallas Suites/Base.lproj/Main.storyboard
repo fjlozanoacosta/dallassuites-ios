@@ -3,7 +3,31 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Brandon_reg.otf">
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Home And Service View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -42,7 +66,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="eub-WF-tMc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="INICIAR SESIÓN" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,7 +91,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="tou-GF-16v"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="HABITACIONES" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,7 +116,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="pmD-rg-Q6X"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="SERVICIOS" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +138,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="QpV-U4-ubR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="REGISTRO" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,7 +191,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="z6V-YA-Rbf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="RESTAURANTE" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -176,6 +200,9 @@
                                         <state key="selected" backgroundImage="btnBg_ON">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="TOb-Lk-8aN" kind="presentation" id="416-Vn-e7z"/>
+                                        </connections>
                                     </button>
                                     <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otY-ba-uI6" userLabel="Btn - Room Service - Upper Line">
                                         <rect key="frame" x="0.0" y="50" width="600" height="1"/>
@@ -189,7 +216,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="OXi-NA-zbM"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="ROOM SERVICE" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +241,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Yki-rE-RjH"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="PRIVACIDAD Y SEGURIDAD" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,7 +263,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="F6i-zx-OAu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="DOBLE RECEPCION" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -258,7 +285,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="004-RN-1O2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="CONFORT Y AMENIDADES" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,7 +369,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="vzu-Vw-LBF"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpO-0u-l4E" userLabel="User - Bottom Line">
@@ -358,7 +385,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="qf0-Pb-eQt"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74a-fC-JzK" userLabel="Password - Bottom Line">
@@ -374,7 +401,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="17R-Zx-cd0"/>
                                                     <constraint firstAttribute="width" constant="136" id="Xgw-Nv-Iz8"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="13"/>
                                                 <state key="normal" title="Recuperar Contraseña">
                                                     <color key="titleColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -385,6 +412,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="600" id="c9e-MM-RUd"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                                 <state key="normal" title="INICIAR SESIÓN" backgroundImage="homePopUpLogInBtnBg">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -498,7 +526,7 @@
                                                     <constraint firstAttribute="width" constant="219" id="pz3-Dj-H1B"/>
                                                     <constraint firstAttribute="height" constant="21" id="rFB-Ja-tNp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
                                                 <color key="textColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -507,6 +535,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Lcg-7j-wyF"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                                                 <state key="normal" title="OK" backgroundImage="homePopUpLogInBtnBg">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -522,8 +551,11 @@
                                                     <constraint firstAttribute="height" constant="70" id="SdA-rb-LKy"/>
                                                     <constraint firstAttribute="width" constant="310" id="wMF-c2-xFP"/>
                                                 </constraints>
-                                                <string key="text">Para complementar su estadía, le ofrecemos una granvariedad de platos y una extensa carta de bebidas paraque las disfrute tanto en nuestro Bar/Restaurant,como en la comodidad de su Suite.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <string key="text">Para complementar su estadía, le ofrecemos una gran
+variedad de platos y una extensa carta de bebidas para
+que las disfrute tanto en nuestro Bar/Restaurant,
+como en la comodidad de su Suite.</string>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="12"/>
                                                 <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -669,7 +701,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="GrS-RT-LzT"/>
                                                         <constraint firstAttribute="width" constant="273" id="frL-MP-H96"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -681,7 +713,7 @@
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit amet,
 consectetur adipiscing elit.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -732,6 +764,127 @@ consectetur adipiscing elit.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGq-eW-tja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="-370"/>
+        </scene>
+        <!--Restaurant View Controller-->
+        <scene sceneID="EMY-fZ-k27">
+            <objects>
+                <viewController id="TOb-Lk-8aN" customClass="RestaurantViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ycs-Gz-Gew"/>
+                        <viewControllerLayoutGuide type="bottom" id="MqC-pb-nBa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GJ6-9n-aFv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="serviceBg" translatesAutoresizingMaskIntoConstraints="NO" id="GPU-Pl-kDC" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LoT-fy-Gir">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" id="Wvh-gr-i55" customClass="RestaurantTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wvh-gr-i55" id="vt3-DA-krs">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="roomServiceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gGe-Dz-vjI" userLabel="Cell Icon">
+                                                    <rect key="frame" x="15" y="18" width="24" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="7V6-p4-AfW"/>
+                                                        <constraint firstAttribute="height" constant="23" id="gdO-TQ-iFO"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auh-9z-zqg" userLabel="Separator Line">
+                                                    <rect key="frame" x="0.0" y="59" width="600" height="1"/>
+                                                    <color key="backgroundColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTO DEL DÍA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-l2-hms" userLabel="Cell Label">
+                                                    <rect key="frame" x="53" y="19" width="126" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="0ed-2g-EGi"/>
+                                                        <constraint firstAttribute="width" constant="126" id="WKh-LW-oOm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="auh-9z-zqg" firstAttribute="top" secondItem="CbF-l2-hms" secondAttribute="bottom" constant="19" id="6XT-vR-7yi"/>
+                                                <constraint firstItem="auh-9z-zqg" firstAttribute="top" secondItem="gGe-Dz-vjI" secondAttribute="bottom" constant="18" id="A8r-kB-UFV"/>
+                                                <constraint firstItem="CbF-l2-hms" firstAttribute="leading" secondItem="gGe-Dz-vjI" secondAttribute="trailing" constant="14" id="IAF-fL-R3v"/>
+                                                <constraint firstAttribute="bottom" secondItem="auh-9z-zqg" secondAttribute="bottom" id="JoT-ww-5vH"/>
+                                                <constraint firstItem="CbF-l2-hms" firstAttribute="leading" secondItem="gGe-Dz-vjI" secondAttribute="trailing" constant="14" id="Klj-6e-KEe"/>
+                                                <constraint firstItem="CbF-l2-hms" firstAttribute="top" secondItem="vt3-DA-krs" secondAttribute="topMargin" constant="11" id="ZXc-u4-nql"/>
+                                                <constraint firstItem="auh-9z-zqg" firstAttribute="leading" secondItem="vt3-DA-krs" secondAttribute="leading" id="gXk-pV-PbR"/>
+                                                <constraint firstItem="gGe-Dz-vjI" firstAttribute="leading" secondItem="vt3-DA-krs" secondAttribute="leadingMargin" constant="7" id="rfW-Vc-ihg"/>
+                                                <constraint firstAttribute="trailing" secondItem="auh-9z-zqg" secondAttribute="trailing" id="sVx-Pk-tQZ"/>
+                                                <constraint firstItem="gGe-Dz-vjI" firstAttribute="top" secondItem="vt3-DA-krs" secondAttribute="topMargin" constant="10" id="y8M-NJ-99f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="iconImage" destination="gGe-Dz-vjI" id="Ucc-P9-nyp"/>
+                                            <outlet property="restaurantItemLabel" destination="CbF-l2-hms" id="yhQ-KZ-WvD"/>
+                                            <outlet property="separatorLineView" destination="auh-9z-zqg" id="pro-5r-8DE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TOb-Lk-8aN" id="A1h-18-WHZ"/>
+                                    <outlet property="delegate" destination="TOb-Lk-8aN" id="2Mp-Ny-CIq"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KII-hI-zZw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Jn8-SL-Ck1"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="RESTAURANTE" id="elZ-hj-J5L">
+                                        <barButtonItem key="leftBarButtonItem" image="navBarBackButton" id="Phd-NC-6cw" userLabel="Back Btn">
+                                            <color key="tintColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="navBackButtonAction:" destination="TOb-Lk-8aN" id="JHC-29-kej"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KII-hI-zZw" firstAttribute="top" secondItem="GJ6-9n-aFv" secondAttribute="top" id="1Cw-NI-NeM"/>
+                            <constraint firstItem="GPU-Pl-kDC" firstAttribute="top" secondItem="GJ6-9n-aFv" secondAttribute="top" id="8qJ-yV-LKa"/>
+                            <constraint firstAttribute="trailing" secondItem="KII-hI-zZw" secondAttribute="trailing" id="9oW-px-yDb"/>
+                            <constraint firstItem="LoT-fy-Gir" firstAttribute="top" secondItem="KII-hI-zZw" secondAttribute="bottom" id="Fv3-ee-aGL"/>
+                            <constraint firstItem="LoT-fy-Gir" firstAttribute="leading" secondItem="GJ6-9n-aFv" secondAttribute="leading" id="LAb-Lz-7kD"/>
+                            <constraint firstAttribute="trailing" secondItem="LoT-fy-Gir" secondAttribute="trailing" id="VzN-gT-fdD"/>
+                            <constraint firstItem="MqC-pb-nBa" firstAttribute="top" secondItem="LoT-fy-Gir" secondAttribute="bottom" id="dU3-5w-fSa"/>
+                            <constraint firstAttribute="trailing" secondItem="GPU-Pl-kDC" secondAttribute="trailing" id="fVc-P0-gC3"/>
+                            <constraint firstItem="MqC-pb-nBa" firstAttribute="top" secondItem="GPU-Pl-kDC" secondAttribute="bottom" id="iWx-qz-b0Z"/>
+                            <constraint firstItem="KII-hI-zZw" firstAttribute="leading" secondItem="GJ6-9n-aFv" secondAttribute="leading" id="iea-YJ-tIQ"/>
+                            <constraint firstItem="GPU-Pl-kDC" firstAttribute="leading" secondItem="GJ6-9n-aFv" secondAttribute="leading" id="ou9-U2-6gB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="KII-hI-zZw" id="9sq-8Z-l4G"/>
+                        <outlet property="tableView" destination="LoT-fy-Gir" id="HNg-Ui-kBj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P4h-w1-tQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="356"/>
         </scene>
         <!--Room Detail View Controller-->
         <scene sceneID="bOx-UI-QqZ">
@@ -810,5 +963,7 @@ consectetur adipiscing elit.</string>
         <image name="homePopUpLogInBtnBg_ON" width="320" height="60"/>
         <image name="navBarBackButton" width="12" height="21"/>
         <image name="roomListDemoImage" width="320" height="150"/>
+        <image name="roomServiceIcon" width="24" height="23"/>
+        <image name="serviceBg" width="320" height="568"/>
     </resources>
 </document>

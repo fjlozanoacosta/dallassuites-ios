@@ -76,4 +76,12 @@
 
 #pragma mark End -
 
+#pragma mark - Status Bar Style -
+#pragma mark - Change Color
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+    
+}
+#pragma mark End -
+
 @end
