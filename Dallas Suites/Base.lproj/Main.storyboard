@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home And Service View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="HomeAndServiceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bid-1r-2bk"/>
                         <viewControllerLayoutGuide type="bottom" id="sD7-JV-B4J"/>
@@ -20,101 +20,278 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBg" translatesAutoresizingMaskIntoConstraints="NO" id="k6c-Cu-0ES" userLabel="Background Image">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="homeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="j0W-nk-aHF" userLabel="Center Logo Img">
-                                <rect key="frame" x="140" y="82" width="320" height="186"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="homeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="j0W-nk-aHF" userLabel="Center Logo Img">
+                                <rect key="frame" x="0.0" y="82" width="600" height="186"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="buX-Vg-oie"/>
-                                    <constraint firstAttribute="width" constant="320" id="hIn-3c-DFi"/>
+                                    <constraint firstAttribute="width" constant="600" id="46b-v4-LPa"/>
+                                    <constraint firstAttribute="height" constant="186" id="Au7-g2-ECJ"/>
                                 </constraints>
                             </imageView>
-                            <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goG-YV-boZ" userLabel="Btn - Iniciar Sesion - Upper Line">
-                                <rect key="frame" x="0.0" y="360" width="600" height="1"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TM-hw-NiP" userLabel="Home Buttons Container">
+                                <rect key="frame" x="0.0" y="350" width="600" height="250"/>
+                                <subviews>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goG-YV-boZ" userLabel="Btn - Iniciar Sesion - Upper Line">
+                                        <rect key="frame" x="0.0" y="10" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="lZX-dd-cHd"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdc-OF-1JC" userLabel="Btn - Iniciar Sesion">
+                                        <rect key="frame" x="0.0" y="10" width="600" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="eub-WF-tMc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="INICIAR SESIÓN" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="displayLogInPopUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IkY-Mg-dCU"/>
+                                        </connections>
+                                    </button>
+                                    <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EW7-A4-bNe" userLabel="Btn - Habitaciones - Upper Line">
+                                        <rect key="frame" x="0.0" y="70" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="s9t-P4-qkG"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3Z-So-Pl6" userLabel="Btn - Habitaciones">
+                                        <rect key="frame" x="0.0" y="70" width="600" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="tou-GF-16v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="HABITACIONES" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fiO-u7-Wru" kind="presentation" id="K0f-8m-D4S"/>
+                                        </connections>
+                                    </button>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPc-fC-8hb" userLabel="Btn - Habitaciones - Bottom Line">
+                                        <rect key="frame" x="0.0" y="130" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="7SG-vz-LNA"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLn-bE-YPh" userLabel="Btn - Servicios">
+                                        <rect key="frame" x="0.0" y="130" width="600" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="pmD-rg-Q6X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="SERVICIOS" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON"/>
+                                        <connections>
+                                            <action selector="displayServicesOptionsMenuButtons:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h9t-bf-SMu"/>
+                                        </connections>
+                                    </button>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-Ri-OqI" userLabel="Btn - Servicios - Bottom Line">
+                                        <rect key="frame" x="0.0" y="190" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="PSZ-iO-yVJ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pk-HU-wrW" userLabel="Btn - Registro/Perfil">
+                                        <rect key="frame" x="0.0" y="190" width="600" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="QpV-U4-ubR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="REGISTRO" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="XSp-TP-JOP"/>
+                                    <constraint firstItem="A3Z-So-Pl6" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="2MO-5P-d8Y"/>
+                                    <constraint firstItem="6Pk-HU-wrW" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="6pa-si-NCR"/>
+                                    <constraint firstAttribute="height" constant="250" id="9HK-SD-0eU"/>
+                                    <constraint firstItem="tdc-OF-1JC" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="Bh7-of-quo"/>
+                                    <constraint firstAttribute="bottom" secondItem="e4S-Ri-OqI" secondAttribute="bottom" constant="59" id="O6P-lt-vK4"/>
+                                    <constraint firstAttribute="trailing" secondItem="tdc-OF-1JC" secondAttribute="trailing" id="OwU-vH-JWg"/>
+                                    <constraint firstItem="6Pk-HU-wrW" firstAttribute="top" secondItem="DPc-fC-8hb" secondAttribute="bottom" constant="59" id="Q7T-Ir-RlI"/>
+                                    <constraint firstAttribute="trailing" secondItem="e4S-Ri-OqI" secondAttribute="trailing" id="RLC-Z2-yxx"/>
+                                    <constraint firstAttribute="trailing" secondItem="DPc-fC-8hb" secondAttribute="trailing" id="ShC-ZS-zKN"/>
+                                    <constraint firstItem="e4S-Ri-OqI" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="TvI-Vr-3Kw"/>
+                                    <constraint firstItem="EW7-A4-bNe" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="Uzq-HT-9I8"/>
+                                    <constraint firstAttribute="trailing" secondItem="EW7-A4-bNe" secondAttribute="trailing" id="VL7-oC-QVK"/>
+                                    <constraint firstItem="goG-YV-boZ" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="ViJ-SO-z15"/>
+                                    <constraint firstItem="A3Z-So-Pl6" firstAttribute="top" secondItem="tdc-OF-1JC" secondAttribute="bottom" id="Wik-ak-VXt"/>
+                                    <constraint firstItem="A3Z-So-Pl6" firstAttribute="top" secondItem="goG-YV-boZ" secondAttribute="bottom" constant="59" id="aLb-c9-REa"/>
+                                    <constraint firstAttribute="trailing" secondItem="goG-YV-boZ" secondAttribute="trailing" id="aiB-LR-PTQ"/>
+                                    <constraint firstItem="wLn-bE-YPh" firstAttribute="top" secondItem="EW7-A4-bNe" secondAttribute="bottom" constant="59" id="bO5-Tk-1yn"/>
+                                    <constraint firstItem="wLn-bE-YPh" firstAttribute="top" secondItem="A3Z-So-Pl6" secondAttribute="bottom" id="f0w-TU-n33"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Pk-HU-wrW" secondAttribute="trailing" id="gBF-Wt-Xca"/>
+                                    <constraint firstItem="wLn-bE-YPh" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="k24-CL-DeA"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="lYU-o1-XSH"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Pk-HU-wrW" secondAttribute="bottom" id="lm6-8i-6wk"/>
+                                    <constraint firstAttribute="trailing" secondItem="A3Z-So-Pl6" secondAttribute="trailing" id="nXm-Xq-4AQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="wLn-bE-YPh" secondAttribute="trailing" id="qLW-W9-Ehn"/>
+                                    <constraint firstItem="DPc-fC-8hb" firstAttribute="leading" secondItem="2TM-hw-NiP" secondAttribute="leading" id="rta-vO-Qqu"/>
+                                    <constraint firstItem="6Pk-HU-wrW" firstAttribute="top" secondItem="wLn-bE-YPh" secondAttribute="bottom" id="yeE-TL-05W"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdc-OF-1JC" userLabel="Btn - Iniciar Sesion">
-                                <rect key="frame" x="0.0" y="360" width="600" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBj-a5-Nq7" userLabel="Service Buttons Container">
+                                <rect key="frame" x="0.0" y="600" width="600" height="250"/>
+                                <subviews>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drd-Y7-jdR" userLabel="Btn - Restaurante - Upper Line">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="rZm-W2-MIb"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohU-XJ-z0z" userLabel="Btn - Restaurante">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="z6V-YA-Rbf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="RESTAURANTE" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otY-ba-uI6" userLabel="Btn - Room Service - Upper Line">
+                                        <rect key="frame" x="0.0" y="50" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Kbj-Ad-bvK"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNC-zI-ARI" userLabel="Btn - Room Service">
+                                        <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="OXi-NA-zbM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="ROOM SERVICE" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaT-HC-EE8" userLabel="Btn - Privacidad y Seguridad - Upper Line">
+                                        <rect key="frame" x="0.0" y="100" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Cq7-ql-Pfg"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykI-qz-zGg" userLabel="Btn - Privacidad y Seguridad">
+                                        <rect key="frame" x="0.0" y="100" width="600" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Yki-rE-RjH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="PRIVACIDAD Y SEGURIDAD" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON"/>
+                                    </button>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN2-hP-jhg" userLabel="Btn - Doble Recepcion - Upper Line">
+                                        <rect key="frame" x="0.0" y="150" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="g27-PJ-SIo"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sV4-TB-TJF" userLabel="Btn - Doble Recepcion">
+                                        <rect key="frame" x="0.0" y="150" width="600" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="F6i-zx-OAu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="DOBLE RECEPCION" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON"/>
+                                    </button>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7E-9q-a5J" userLabel="Btn - Confort y Amenidades - Bottom Line">
+                                        <rect key="frame" x="0.0" y="200" width="600" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Gtf-pF-ADo"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKV-3a-jDv" userLabel="Btn - Confort y Amenidades">
+                                        <rect key="frame" x="0.0" y="200" width="600" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="004-RN-1O2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="CONFORT Y AMENIDADES" backgroundImage="btnBg">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="btnBg_ON"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="p8u-2h-BZ6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="INICIAR SESIÓN" backgroundImage="btnBg">
-                                    <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="btnBg_ON">
-                                    <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="displayLogInPopUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IkY-Mg-dCU"/>
-                                </connections>
-                            </button>
-                            <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EW7-A4-bNe" userLabel="Btn - Habitaciones - Upper Line">
-                                <rect key="frame" x="0.0" y="420" width="600" height="1"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="DMA-hP-M4b"/>
+                                    <constraint firstAttribute="trailing" secondItem="ohU-XJ-z0z" secondAttribute="trailing" id="1mU-M1-jQW"/>
+                                    <constraint firstItem="ykI-qz-zGg" firstAttribute="top" secondItem="otY-ba-uI6" secondAttribute="bottom" constant="49" id="252-Dc-ZyZ"/>
+                                    <constraint firstItem="sV4-TB-TJF" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="7Pj-9x-kV6"/>
+                                    <constraint firstItem="oNC-zI-ARI" firstAttribute="top" secondItem="ohU-XJ-z0z" secondAttribute="bottom" id="8iF-pK-40j"/>
+                                    <constraint firstItem="sV4-TB-TJF" firstAttribute="top" secondItem="JaT-HC-EE8" secondAttribute="bottom" constant="49" id="EBS-jd-xCI"/>
+                                    <constraint firstItem="Drd-Y7-jdR" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="Kov-I0-8Gg"/>
+                                    <constraint firstAttribute="height" constant="250" id="MUR-9r-Uav"/>
+                                    <constraint firstAttribute="trailing" secondItem="UN2-hP-jhg" secondAttribute="trailing" id="TZY-Lb-qK9"/>
+                                    <constraint firstAttribute="bottom" secondItem="f7E-9q-a5J" secondAttribute="bottom" constant="49" id="XYS-Jl-ksb"/>
+                                    <constraint firstAttribute="trailing" secondItem="oNC-zI-ARI" secondAttribute="trailing" id="a0O-8l-VFc"/>
+                                    <constraint firstAttribute="bottom" secondItem="pKV-3a-jDv" secondAttribute="bottom" id="amN-1o-axD"/>
+                                    <constraint firstItem="sV4-TB-TJF" firstAttribute="top" secondItem="ykI-qz-zGg" secondAttribute="bottom" id="bYQ-Yh-FOp"/>
+                                    <constraint firstAttribute="trailing" secondItem="sV4-TB-TJF" secondAttribute="trailing" id="bct-fU-ZGW"/>
+                                    <constraint firstAttribute="bottom" secondItem="UN2-hP-jhg" secondAttribute="bottom" constant="99" id="cpJ-Wa-In0"/>
+                                    <constraint firstItem="f7E-9q-a5J" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="dKd-4S-iCj"/>
+                                    <constraint firstAttribute="trailing" secondItem="JaT-HC-EE8" secondAttribute="trailing" id="ebL-OL-46J"/>
+                                    <constraint firstItem="ohU-XJ-z0z" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="emE-BX-Oq9"/>
+                                    <constraint firstItem="ykI-qz-zGg" firstAttribute="top" secondItem="oNC-zI-ARI" secondAttribute="bottom" id="fTa-ge-aL0"/>
+                                    <constraint firstItem="oNC-zI-ARI" firstAttribute="top" secondItem="Drd-Y7-jdR" secondAttribute="bottom" constant="49" id="hjj-IX-O5C"/>
+                                    <constraint firstAttribute="trailing" secondItem="f7E-9q-a5J" secondAttribute="trailing" id="hvR-Tw-bjV"/>
+                                    <constraint firstItem="JaT-HC-EE8" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="lIm-PV-8Y0"/>
+                                    <constraint firstAttribute="trailing" secondItem="pKV-3a-jDv" secondAttribute="trailing" id="oqb-Og-nRO"/>
+                                    <constraint firstItem="otY-ba-uI6" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="pDQ-dO-IyF"/>
+                                    <constraint firstItem="ykI-qz-zGg" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="pVH-2V-Vvh"/>
+                                    <constraint firstItem="UN2-hP-jhg" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="qqC-su-NuY"/>
+                                    <constraint firstAttribute="trailing" secondItem="ykI-qz-zGg" secondAttribute="trailing" id="tKC-o1-wfh"/>
+                                    <constraint firstAttribute="trailing" secondItem="otY-ba-uI6" secondAttribute="trailing" id="tpt-4l-L0z"/>
+                                    <constraint firstAttribute="trailing" secondItem="Drd-Y7-jdR" secondAttribute="trailing" id="vLj-IL-E8F"/>
+                                    <constraint firstItem="oNC-zI-ARI" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="vTu-C4-xTI"/>
+                                    <constraint firstAttribute="bottom" secondItem="sV4-TB-TJF" secondAttribute="bottom" constant="50" id="xUd-kf-aFY"/>
+                                    <constraint firstItem="pKV-3a-jDv" firstAttribute="leading" secondItem="OBj-a5-Nq7" secondAttribute="leading" id="zel-fg-kTf"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3Z-So-Pl6" userLabel="Btn - Habitaciones">
-                                <rect key="frame" x="0.0" y="420" width="600" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="vkv-pG-KyU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="HABITACIONES" backgroundImage="btnBg">
-                                    <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="btnBg_ON">
-                                    <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fiO-u7-Wru" kind="presentation" id="K0f-8m-D4S"/>
-                                </connections>
-                            </button>
-                            <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPc-fC-8hb" userLabel="Btn - Habitaciones - Bottom Line">
-                                <rect key="frame" x="0.0" y="480" width="600" height="1"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="SJH-KB-84i"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLn-bE-YPh" userLabel="Btn - Servicios">
-                                <rect key="frame" x="0.0" y="480" width="600" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="RZD-XE-IM1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="SERVICIOS" backgroundImage="btnBg">
-                                    <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="btnBg_ON"/>
-                            </button>
-                            <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-Ri-OqI" userLabel="Btn - Servicios - Bottom Line">
-                                <rect key="frame" x="0.0" y="540" width="600" height="1"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="Xv1-Iq-QJ5"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pk-HU-wrW" userLabel="Btn - Registro/Perfil">
-                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Ekm-gZ-TIS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="REGISTRO" backgroundImage="btnBg">
-                                    <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="btnBg_ON"/>
-                            </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKY-oT-pch" userLabel="PopUp">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
@@ -248,51 +425,61 @@
                                     <constraint firstAttribute="trailing" secondItem="C9A-cF-uxc" secondAttribute="trailing" id="l8p-he-ZWR"/>
                                 </constraints>
                             </view>
+                            <navigationBar alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-T3-G4b">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Zbd-vh-T3d"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="SERVICIOS" id="CCc-m1-sGE">
+                                        <barButtonItem key="leftBarButtonItem" image="navBarBackButton" id="IXm-J1-0iu" userLabel="Back Btn">
+                                            <color key="tintColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="serviceNavBarBackBtn:" destination="vXZ-lx-hvc" id="Tet-E5-7lB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A3Z-So-Pl6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0Ie-Uf-gyH"/>
-                            <constraint firstItem="wLn-bE-YPh" firstAttribute="top" secondItem="A3Z-So-Pl6" secondAttribute="bottom" id="0W8-Lx-pAa"/>
+                            <constraint firstItem="2TM-hw-NiP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0S7-JF-iAy"/>
                             <constraint firstItem="sD7-JV-B4J" firstAttribute="top" secondItem="DKY-oT-pch" secondAttribute="bottom" id="1Am-2w-HSh"/>
-                            <constraint firstItem="6Pk-HU-wrW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5CI-tw-6q7"/>
-                            <constraint firstItem="wLn-bE-YPh" firstAttribute="top" secondItem="EW7-A4-bNe" secondAttribute="bottom" constant="59" id="5fi-ic-nn0"/>
-                            <constraint firstAttribute="trailing" secondItem="6Pk-HU-wrW" secondAttribute="trailing" id="6Az-lx-v9C"/>
-                            <constraint firstAttribute="centerX" secondItem="j0W-nk-aHF" secondAttribute="centerX" id="6gL-Yc-Bis"/>
-                            <constraint firstItem="goG-YV-boZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7oP-Cp-eIJ"/>
+                            <constraint firstAttribute="centerY" secondItem="j0W-nk-aHF" secondAttribute="centerY" constant="125" id="36l-3d-xLF"/>
                             <constraint firstItem="k6c-Cu-0ES" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="8iN-rT-oEY"/>
-                            <constraint firstAttribute="trailing" secondItem="DPc-fC-8hb" secondAttribute="trailing" id="9ul-nb-dw5"/>
                             <constraint firstItem="DKY-oT-pch" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="AyU-U0-hGe"/>
-                            <constraint firstItem="DPc-fC-8hb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="G8H-ai-Lli"/>
-                            <constraint firstItem="tdc-OF-1JC" firstAttribute="top" secondItem="goG-YV-boZ" secondAttribute="bottom" constant="-1" id="Ha4-Ni-g5g"/>
                             <constraint firstItem="k6c-Cu-0ES" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Kfw-t4-rv5"/>
-                            <constraint firstAttribute="trailing" secondItem="e4S-Ri-OqI" secondAttribute="trailing" id="LGD-8N-BOt"/>
-                            <constraint firstItem="sD7-JV-B4J" firstAttribute="top" secondItem="e4S-Ri-OqI" secondAttribute="bottom" constant="59" id="Lmb-YO-iGb"/>
-                            <constraint firstItem="6Pk-HU-wrW" firstAttribute="top" secondItem="wLn-bE-YPh" secondAttribute="bottom" id="PAb-IU-YaV"/>
-                            <constraint firstAttribute="trailing" secondItem="A3Z-So-Pl6" secondAttribute="trailing" id="PyC-Za-XUm"/>
-                            <constraint firstAttribute="trailing" secondItem="goG-YV-boZ" secondAttribute="trailing" id="QkF-3U-ZaU"/>
+                            <constraint firstItem="sD7-JV-B4J" firstAttribute="top" secondItem="2TM-hw-NiP" secondAttribute="bottom" id="Mcf-YP-Rnb"/>
+                            <constraint firstItem="rAl-T3-G4b" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="NRe-zG-QH6"/>
                             <constraint firstAttribute="trailing" secondItem="k6c-Cu-0ES" secondAttribute="trailing" id="Rbt-a1-Jh8"/>
-                            <constraint firstItem="wLn-bE-YPh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TO3-Dt-d03"/>
-                            <constraint firstAttribute="centerY" secondItem="j0W-nk-aHF" secondAttribute="centerY" constant="125" id="TRy-7Z-Dyp"/>
-                            <constraint firstItem="tdc-OF-1JC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TY7-Xf-eog"/>
-                            <constraint firstItem="EW7-A4-bNe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TbM-6h-TCA"/>
-                            <constraint firstItem="sD7-JV-B4J" firstAttribute="top" secondItem="6Pk-HU-wrW" secondAttribute="bottom" id="Vi0-ou-77h"/>
-                            <constraint firstItem="EW7-A4-bNe" firstAttribute="top" secondItem="tdc-OF-1JC" secondAttribute="bottom" id="Ybh-Qo-6wE"/>
-                            <constraint firstItem="6Pk-HU-wrW" firstAttribute="top" secondItem="DPc-fC-8hb" secondAttribute="bottom" constant="59" id="b7u-i1-3Sl"/>
+                            <constraint firstItem="OBj-a5-Nq7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="SIL-vA-gJn"/>
+                            <constraint firstAttribute="trailing" secondItem="rAl-T3-G4b" secondAttribute="trailing" id="W7j-yj-gN9"/>
+                            <constraint firstAttribute="trailing" secondItem="2TM-hw-NiP" secondAttribute="trailing" id="cxw-2h-gaf"/>
+                            <constraint firstItem="rAl-T3-G4b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hCg-Yr-fsu"/>
                             <constraint firstAttribute="trailing" secondItem="DKY-oT-pch" secondAttribute="trailing" id="hha-IY-Zcl"/>
-                            <constraint firstAttribute="trailing" secondItem="tdc-OF-1JC" secondAttribute="trailing" id="khG-Xl-QR8"/>
-                            <constraint firstAttribute="trailing" secondItem="EW7-A4-bNe" secondAttribute="trailing" id="lnM-XI-0ql"/>
+                            <constraint firstItem="sD7-JV-B4J" firstAttribute="top" secondItem="OBj-a5-Nq7" secondAttribute="bottom" constant="-250" id="iBC-sm-KxH"/>
+                            <constraint firstAttribute="trailing" secondItem="OBj-a5-Nq7" secondAttribute="trailing" id="mIR-DY-Sr9"/>
+                            <constraint firstAttribute="centerX" secondItem="j0W-nk-aHF" secondAttribute="centerX" id="pi6-RP-j5W"/>
                             <constraint firstItem="DKY-oT-pch" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rhE-Nj-v1b"/>
-                            <constraint firstItem="e4S-Ri-OqI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="vDa-Rf-tfp"/>
                             <constraint firstItem="sD7-JV-B4J" firstAttribute="top" secondItem="k6c-Cu-0ES" secondAttribute="bottom" id="wBP-RE-DJQ"/>
-                            <constraint firstAttribute="trailing" secondItem="wLn-bE-YPh" secondAttribute="trailing" id="wPd-YG-7PS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HsA-19-Bto"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="bgImage" destination="k6c-Cu-0ES" id="cCx-Tu-RSF"/>
+                        <outlet property="homeButtonsContainerBottomSpaceConstraint" destination="Mcf-YP-Rnb" id="HIR-Ae-8Di"/>
                         <outlet property="logInBtn" destination="tdc-OF-1JC" id="V3l-Tb-bzx"/>
+                        <outlet property="logoImageHeightConstraint" destination="Au7-g2-ECJ" id="EbI-Pd-QPW"/>
+                        <outlet property="logoImageYPositionConstraint" destination="36l-3d-xLF" id="5ZO-fz-mT9"/>
                         <outlet property="pUCloseBtn" destination="VvM-s4-qzS" id="BSD-qX-dna"/>
                         <outlet property="pUForgotPasswordBtn" destination="Gwa-OC-RRP" id="nY4-ra-7rq"/>
                         <outlet property="pUFrameView" destination="C9A-cF-uxc" id="ojt-72-ymN"/>
@@ -302,13 +489,15 @@
                         <outlet property="pUViewContainer" destination="DKY-oT-pch" id="Int-HV-Q0n"/>
                         <outlet property="registerProfileBtn" destination="6Pk-HU-wrW" id="Rry-5L-bG6"/>
                         <outlet property="roomsBtn" destination="A3Z-So-Pl6" id="CBs-5j-gim"/>
+                        <outlet property="serviceButtonsContainerBottomSpaceConstraint" destination="iBC-sm-KxH" id="39r-aj-TBA"/>
                         <outlet property="servicesBtn" destination="wLn-bE-YPh" id="QxJ-Dh-ot2"/>
+                        <outlet property="servicesNavBar" destination="rAl-T3-G4b" id="AVy-Vs-hzh"/>
                         <outlet property="upperLogInBtnLine" destination="goG-YV-boZ" id="IwI-Jd-w5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655" y="475"/>
+            <point key="canvasLocation" x="-785" y="-370"/>
         </scene>
         <!--Rooms View Controller-->
         <scene sceneID="Dng-Qh-MHe">
@@ -398,9 +587,6 @@ consectetur adipiscing elit.</string>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="fiO-u7-Wru" id="bTb-ua-Oja"/>
                                     <outlet property="delegate" destination="fiO-u7-Wru" id="5Zj-ea-kmj"/>
@@ -426,7 +612,7 @@ consectetur adipiscing elit.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGq-eW-tja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176" y="475"/>
+            <point key="canvasLocation" x="46" y="-370"/>
         </scene>
         <!--Room Detail View Controller-->
         <scene sceneID="bOx-UI-QqZ">
@@ -485,7 +671,7 @@ consectetur adipiscing elit.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYY-P0-0bS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="475"/>
+            <point key="canvasLocation" x="745" y="-370"/>
         </scene>
     </scenes>
     <resources>
