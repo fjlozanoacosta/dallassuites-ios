@@ -8,6 +8,10 @@
 
 #import "HomeAndServiceViewController.h"
 
+#define servicePopUpTitles @[@"ROOM SERVICE", @"PRIVACIDAD Y SEGURIDAD", @"DOBLE RECEPCIÓN", @"CONFORT Y AMENIDADES"]
+#define servicePopUpDescriptions @[ @"Para complementar su estadía, le ofrecemos una gran variedad de platos y una extensa carta de bebidas paraque las disfrute tanto en nuestro Bar/Restaurant, como en la comodidad de su Suite.", @"No sólo la calidad de nuestros servicios nos distinguen, sino también la Privacidad y Seguridad de nuestras instalaciones.", @"Sólo en Dallas Suites Hotel tenemos una Doble Recepción que le garantiza fluidez a su llegada y el menor tiempo de espera posible.", @"Sauna, Vapor, Jacuzzi, Pole Dance, son algunas de las Amenidades que le esperan en nuestras Suites, para que su visita se Única en su Estilo."]
+#define servicePopUpIconImageName @[@"roomServiceIcon", @"privacyAndSecurityIcon", @"dobleReceptionIcon", @"comfortIcon"]
+
 @interface HomeAndServiceViewController () {
     
     //Main View
@@ -42,7 +46,7 @@
     __weak IBOutlet NSLayoutConstraint *logoImageYPositionConstraint;
     
     
-    //PopUp (pU)
+    // Log In PopUp (pU)
     __weak IBOutlet UIView *pUViewContainer;
     
         //Frame - Form
@@ -62,11 +66,24 @@
             //Close PopUp Btn (Cerrar)
     __weak IBOutlet UIButton *pUCloseBtn;
     
-    
+    // Log In PopUp (pU)
+    __weak IBOutlet UIView *sPUViewContainer;
+        //Frame
+    __weak IBOutlet UIView *sPUFrameView;
+        //Service Icon
+    __weak IBOutlet UIImageView *sPUServiceIconImage;
+        //Service Name
+    __weak IBOutlet UILabel *sPUServiceNameLabel;
+        //Service Description
+    __weak IBOutlet UILabel *sPUServicesDescriptionLabel;
+        //Close PopUp Btn (Cerrar)
+    __weak IBOutlet UIButton *sPUCloseBtn;
+        //Ok PopUp Button
+    __weak IBOutlet UIButton *sPUOkBtn;
     
     //Validation vars!
-    BOOL isPopUpDisplayed;
-    
+    BOOL isLogInPopUpDisplayed;
+    BOOL isServicePopUpDisplayed;
 }
 
 @end
@@ -81,6 +98,9 @@
     [servicesNavBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     servicesNavBar.shadowImage = [UIImage new];
     servicesNavBar.translucent = YES;
+    
+    //Service Pop Up Description Label Multiline
+    [sPUServicesDescriptionLabel setNumberOfLines:0];
     
 #warning TODO: Check For User
     //Here is where the code that checks if there's an user logged in and changes the register bttn acordingly!!
@@ -97,10 +117,10 @@
 
 - (IBAction)displayLogInPopUp:(UIButton *)sender {
 
-    if (isPopUpDisplayed) {
+    if (isLogInPopUpDisplayed) {
         return;
     }
-    isPopUpDisplayed = YES;
+    isLogInPopUpDisplayed = YES;
     
     CATransform3D transform = CATransform3DMakeRotation(90.0 / 180.0 * M_PI, 0, 0, 1);
     transform = CATransform3DScale(transform, .5f, .5f, 1.f);
@@ -211,7 +231,7 @@
 #pragma mark End -
 
 
-#pragma mark - Pop Up Methods -
+#pragma mark - Log In Pop Up Methods -
 #pragma mark - Buttons Actions
 
 
@@ -229,7 +249,70 @@
         
         pUUsernameTextField.text = pUPasswordTextField.text = @"";
         
-        isPopUpDisplayed = NO;
+        isLogInPopUpDisplayed = NO;
+        
+    }];
+    
+}
+
+
+#pragma mark End -
+
+#pragma mark - Service View Methods -
+#pragma mark - Buttons Actions
+
+
+- (IBAction)displayServicePopUp:(UIButton *)sender {
+    
+    if (isServicePopUpDisplayed) {
+        return;
+    }
+    isServicePopUpDisplayed = YES;
+    
+    /*
+     Set Service popUp Info Acrodingly
+    */
+    sPUServiceNameLabel.text = [servicePopUpTitles objectAtIndex:sender.tag];
+    sPUServicesDescriptionLabel.text = [servicePopUpDescriptions objectAtIndex:sender.tag];
+    [sPUServiceIconImage setImage:[UIImage imageNamed:[servicePopUpIconImageName objectAtIndex:sender.tag]]];
+    
+    CATransform3D transform = CATransform3DMakeRotation(90.0 / 180.0 * M_PI, 0, 0, 1);
+    transform = CATransform3DScale(transform, .5f, .5f, 1.f);
+    [sPUFrameView.layer setTransform:transform];
+    
+    CATransform3D revertTransform = CATransform3DMakeRotation(0, 0, 0, 1);
+    transform = CATransform3DScale(transform, 1.f, 1.f, 1.f);
+    
+    [UIView animateWithDuration:.5f animations:^{
+        
+        [sPUViewContainer setAlpha:1.f];
+        [sPUFrameView.layer setTransform:revertTransform];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+}
+
+#pragma mark End -
+
+#pragma mark - Service Pop Up Methods -
+#pragma mark - Buttons Actions
+
+
+- (IBAction)closeDisplayedServiePopUp:(UIButton *)sender {
+    
+    CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
+    transform = CATransform3DScale(transform, 1.5f, 1.5f, 1.f);
+    
+    [UIView animateWithDuration:.5f animations:^{
+        
+        [sPUViewContainer setAlpha:.0f];
+        [sPUFrameView.layer setTransform:transform];
+        
+    } completion:^(BOOL finished) {
+        
+        isServicePopUpDisplayed = NO;
         
     }];
     

@@ -8,9 +8,13 @@
 
 #import "RoomDetailViewController.h"
 
-@interface RoomDetailViewController () {
+@interface RoomDetailViewController () <UIWebViewDelegate>{
     
-    __weak IBOutlet UIImageView *roomDetailImageView;
+    //Main View
+        //360 Room WebView
+    __weak IBOutlet UIWebView *room360WebView;
+
+    
     //Navigation Bar (nav)
         //Bar Itself
     __weak IBOutlet UINavigationBar *navBar;
@@ -19,6 +23,7 @@
     //Buttons
         //Back Btn
     __weak IBOutlet UIBarButtonItem *navBackBtn;
+    
     
 }
 
@@ -45,7 +50,11 @@
     
     //NSLog(@"Did the Title change? : %@", navBarTitle.title);
     
-    [roomDetailImageView setImage:_roomImage];
+    
+    NSString *urlAddress = _roomWebAddress;
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [room360WebView loadRequest:requestObj];
     
 }
 

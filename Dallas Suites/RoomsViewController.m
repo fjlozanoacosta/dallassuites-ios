@@ -100,7 +100,7 @@
     
     //Ex:
     controller.navTitle = @"UN CUARTO";
-    controller.roomImage = [UIImage imageNamed:@"homeBg"];
+    controller.roomWebAddress = @"http://drg06alc81wak.cloudfront.net/360/suite32.html";
     
 //    self.animationController = [[ZoomAnimationController alloc] init];
     self.animationController = [[DropAnimationController alloc] init];
