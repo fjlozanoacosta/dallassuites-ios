@@ -34,6 +34,7 @@
 		277308091A002623000FC4B1 /* Brandon_blk_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307FD1A002623000FC4B1 /* Brandon_blk_it.otf */; };
 		2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */; };
 		277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */; };
+		277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308141A00425F000FC4B1 /* MenuTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
 		2773080F1A002F91000FC4B1 /* RestaurantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantTableViewCell.h; sourceTree = "<group>"; };
 		277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTableViewCell.m; sourceTree = "<group>"; };
+		277308131A00425F000FC4B1 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		277308141A00425F000FC4B1 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +137,7 @@
 				270E6C8819FAF050005994F9 /* Delegate */,
 				270E6C8919FAF062005994F9 /* Home/Service */,
 				2769801319FEE997009C5968 /* Rooms */,
-				2773080A1A0029D9000FC4B1 /* Restaurant */,
+				2773080A1A0029D9000FC4B1 /* Restaurant/Menu */,
 				270E6C6A19FAC685005994F9 /* Main.storyboard */,
 				270E6C6F19FAC685005994F9 /* LaunchScreen.xib */,
 				270E6C6D19FAC685005994F9 /* Images.xcassets */,
@@ -248,14 +251,15 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		2773080A1A0029D9000FC4B1 /* Restaurant */ = {
+		2773080A1A0029D9000FC4B1 /* Restaurant/Menu */ = {
 			isa = PBXGroup;
 			children = (
+				277308121A004251000FC4B1 /* MenuTableViewCell */,
 				2773080E1A002F77000FC4B1 /* RestaurantTableViewCell */,
 				2773080B1A0029E9000FC4B1 /* RestaurantViewController.h */,
 				2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */,
 			);
-			name = Restaurant;
+			name = Restaurant/Menu;
 			sourceTree = "<group>";
 		};
 		2773080E1A002F77000FC4B1 /* RestaurantTableViewCell */ = {
@@ -265,6 +269,15 @@
 				277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */,
 			);
 			name = RestaurantTableViewCell;
+			sourceTree = "<group>";
+		};
+		277308121A004251000FC4B1 /* MenuTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				277308131A00425F000FC4B1 /* MenuTableViewCell.h */,
+				277308141A00425F000FC4B1 /* MenuTableViewCell.m */,
+			);
+			name = MenuTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +401,7 @@
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
+				277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,

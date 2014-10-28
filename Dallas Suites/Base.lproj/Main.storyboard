@@ -26,6 +26,8 @@
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -797,7 +799,7 @@ consectetur adipiscing elit.</string>
                                                         <constraint firstAttribute="height" constant="23" id="gdO-TQ-iFO"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auh-9z-zqg" userLabel="Separator Line">
+                                                <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auh-9z-zqg" userLabel="Separator Line">
                                                     <rect key="frame" x="0.0" y="59" width="600" height="1"/>
                                                     <color key="backgroundColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
@@ -831,6 +833,60 @@ consectetur adipiscing elit.</string>
                                             <outlet property="iconImage" destination="gGe-Dz-vjI" id="Ucc-P9-nyp"/>
                                             <outlet property="restaurantItemLabel" destination="CbF-l2-hms" id="yhQ-KZ-WvD"/>
                                             <outlet property="separatorLineView" destination="auh-9z-zqg" id="pro-5r-8DE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="95" id="kL8-xS-n24" customClass="MenuTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kL8-xS-n24" id="jpC-Iv-Iwa">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f78-9i-PwP" userLabel="Separator Line">
+                                                    <rect key="frame" x="0.0" y="94" width="600" height="1"/>
+                                                    <color key="backgroundColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="ykh-y5-65u"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abrebocas venezolanos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBf-PU-gki">
+                                                    <rect key="frame" x="25" y="15" width="212" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="1TO-ys-JPb"/>
+                                                        <constraint firstAttribute="width" constant="212" id="xW3-aH-dOq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
+                                                    <color key="textColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb0-Sh-AU3">
+                                                    <rect key="frame" x="25" y="41" width="270" height="39"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="270" id="MF1-Er-r2o"/>
+                                                        <constraint firstAttribute="height" constant="39" id="xxa-pt-kwT"/>
+                                                    </constraints>
+                                                    <string key="text">Tortillas de maíz, servidas con sour cream, pico de gallo,guacamole y caraotas.</string>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="f78-9i-PwP" firstAttribute="leading" secondItem="jpC-Iv-Iwa" secondAttribute="leading" id="0mj-Xv-whM"/>
+                                                <constraint firstItem="iBf-PU-gki" firstAttribute="leading" secondItem="jpC-Iv-Iwa" secondAttribute="leading" constant="25" id="FbU-bA-9Zf"/>
+                                                <constraint firstAttribute="bottom" secondItem="f78-9i-PwP" secondAttribute="bottom" id="INz-xx-y6Y"/>
+                                                <constraint firstAttribute="trailing" secondItem="f78-9i-PwP" secondAttribute="trailing" id="XRh-fm-8zU"/>
+                                                <constraint firstItem="f78-9i-PwP" firstAttribute="top" secondItem="Lb0-Sh-AU3" secondAttribute="bottom" constant="14" id="b7b-Gu-AxM"/>
+                                                <constraint firstItem="Lb0-Sh-AU3" firstAttribute="top" secondItem="iBf-PU-gki" secondAttribute="bottom" constant="5" id="bgC-vY-nmr"/>
+                                                <constraint firstItem="iBf-PU-gki" firstAttribute="top" secondItem="jpC-Iv-Iwa" secondAttribute="top" constant="15" id="cfv-Rl-bNp"/>
+                                                <constraint firstItem="Lb0-Sh-AU3" firstAttribute="leading" secondItem="jpC-Iv-Iwa" secondAttribute="leading" constant="25" id="nyd-O5-vXX"/>
+                                                <constraint firstItem="Lb0-Sh-AU3" firstAttribute="top" secondItem="iBf-PU-gki" secondAttribute="bottom" constant="5" id="yb6-xF-8X8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="menuItemDescriptionLabel" destination="Lb0-Sh-AU3" id="aVQ-hX-S4L"/>
+                                            <outlet property="menuItemLabel" destination="iBf-PU-gki" id="FuH-pn-MaA"/>
+                                            <outlet property="separatorLineView" destination="f78-9i-PwP" id="Noh-mO-pc2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -878,13 +934,15 @@ consectetur adipiscing elit.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImage" destination="GPU-Pl-kDC" id="ey8-95-DcD"/>
                         <outlet property="navBar" destination="KII-hI-zZw" id="9sq-8Z-l4G"/>
+                        <outlet property="navBarTitle" destination="elZ-hj-J5L" id="EIp-4W-x9A"/>
                         <outlet property="tableView" destination="LoT-fy-Gir" id="HNg-Ui-kBj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4h-w1-tQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="356"/>
+            <point key="canvasLocation" x="46" y="351"/>
         </scene>
         <!--Room Detail View Controller-->
         <scene sceneID="bOx-UI-QqZ">
