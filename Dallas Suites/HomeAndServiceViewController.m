@@ -99,6 +99,8 @@
     servicesNavBar.shadowImage = [UIImage new];
     servicesNavBar.translucent = YES;
     
+    [self.navigationController.navigationBar setHidden:YES];
+    
     //Service Pop Up Description Label Multiline
     [sPUServicesDescriptionLabel setNumberOfLines:0];
     

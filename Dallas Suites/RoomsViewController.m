@@ -116,10 +116,8 @@
 
 - (IBAction)navBackButtonAction:(id)sender {
 
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-
+//    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark End -

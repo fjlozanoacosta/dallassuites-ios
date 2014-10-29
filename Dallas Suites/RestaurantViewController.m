@@ -186,10 +186,8 @@ typedef enum {
         return;
     }
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-    
+//    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark End -

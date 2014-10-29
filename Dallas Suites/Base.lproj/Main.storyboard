@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qpm-2y-imx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -31,6 +31,22 @@
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="np4-8B-3Ep">
+            <objects>
+                <navigationController id="qpm-2y-imx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KPS-5L-i7o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="W84-aZ-IDB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5sZ-fs-OtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1538" y="-370"/>
+        </scene>
         <!--Home And Service View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -103,7 +119,7 @@
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="fiO-u7-Wru" kind="presentation" id="K0f-8m-D4S"/>
+                                            <segue destination="fiO-u7-Wru" kind="show" id="K0f-8m-D4S"/>
                                         </connections>
                                     </button>
                                     <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPc-fC-8hb" userLabel="Btn - Habitaciones - Bottom Line">
@@ -203,7 +219,7 @@
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="TOb-Lk-8aN" kind="presentation" id="416-Vn-e7z"/>
+                                            <segue destination="TOb-Lk-8aN" kind="show" id="416-Vn-e7z"/>
                                         </connections>
                                     </button>
                                     <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otY-ba-uI6" userLabel="Btn - Room Service - Upper Line">
@@ -617,6 +633,7 @@ como en la comodidad de su Suite.</string>
                             <constraint firstItem="sD7-JV-B4J" firstAttribute="top" secondItem="k6c-Cu-0ES" secondAttribute="bottom" id="wBP-RE-DJQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jZr-RL-nK3"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -757,6 +774,7 @@ consectetur adipiscing elit.</string>
                             <constraint firstItem="Aeh-h9-0ec" firstAttribute="leading" secondItem="SVX-3J-h3y" secondAttribute="leading" id="zDf-hz-D3q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gJE-6w-JXN"/>
                     <connections>
                         <outlet property="_tableView" destination="Ayq-ke-kzx" id="FoO-RC-IQj"/>
                         <outlet property="navBackBtn" destination="pIf-hi-MwV" id="OzX-fY-U9e"/>
@@ -864,7 +882,8 @@ consectetur adipiscing elit.</string>
                                                         <constraint firstAttribute="width" constant="270" id="MF1-Er-r2o"/>
                                                         <constraint firstAttribute="height" constant="39" id="xxa-pt-kwT"/>
                                                     </constraints>
-                                                    <string key="text">Tortillas de maíz, servidas con sour cream, pico de gallo,guacamole y caraotas.</string>
+                                                    <string key="text">Tortillas de maíz, servidas con sour cream, pico de gallo,
+guacamole y caraotas.</string>
                                                     <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
