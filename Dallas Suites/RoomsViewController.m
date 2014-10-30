@@ -109,6 +109,12 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(RoomsTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [cell tablleViewWillDisplayCellAnimationWithAnimationNumber:(indexPath.row % 2)];
+    
+}
+
 #pragma mark End -
 
 #pragma mark - Nav Bar Methods -

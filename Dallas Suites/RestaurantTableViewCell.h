@@ -19,4 +19,7 @@
 -(void)hideSeparatorLine;
 -(void)showSeparatorLine;
 
+
+-(void)tablleViewWillDisplayCellAnimationWithAnimationNumber:(NSInteger)animationNumber;
+
 @end

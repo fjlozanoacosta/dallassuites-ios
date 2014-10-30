@@ -748,7 +748,7 @@ consectetur adipiscing elit.</string>
                                                 <constraint firstItem="lLT-Mk-wXc" firstAttribute="leading" secondItem="L4j-aT-PaR" secondAttribute="leading" constant="27" id="qw5-uJ-fHD"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="bgImage" destination="pqA-Vq-0Q5" id="nXP-UZ-Vmz"/>
                                             <outlet property="roomBriefDescription" destination="zRa-v4-Ldm" id="sfm-Tj-sgF"/>
@@ -877,14 +877,14 @@ consectetur adipiscing elit.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb0-Sh-AU3">
-                                                    <rect key="frame" x="25" y="41" width="270" height="39"/>
+                                                    <rect key="frame" x="25" y="41" width="275" height="39"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="270" id="MF1-Er-r2o"/>
+                                                        <constraint firstAttribute="width" constant="275" id="MF1-Er-r2o"/>
                                                         <constraint firstAttribute="height" constant="39" id="xxa-pt-kwT"/>
                                                     </constraints>
                                                     <string key="text">Tortillas de maíz, servidas con sour cream, pico de gallo,
 guacamole y caraotas.</string>
-                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="12.5"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

@@ -29,7 +29,6 @@ typedef enum {
     __weak IBOutlet UINavigationItem *navBarTitle;
     
     
-    
     //Control Variables
     NSInteger tableViewElementControl;
 }
@@ -141,6 +140,9 @@ typedef enum {
         
         tableViewElementControl = kMenu; //This now sets the tableview to display menu items
         [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft]; //This forces a table reload to put in the new info
+        
+        [_tableView setContentOffset:CGPointMake(.0f, .0f)];
+        
         return; //So the method does not keep excecuting
         
         //All this should be done async and an activity indicator should be added
@@ -151,6 +153,19 @@ typedef enum {
         
     }
     
+    
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (tableViewElementControl == kRestaurant) {
+        [(RestaurantTableViewCell*)cell tablleViewWillDisplayCellAnimationWithAnimationNumber:0];
+
+        
+        
+    }
+    
+
     
 }
 
@@ -182,6 +197,7 @@ typedef enum {
            [bgImage.layer setTransform:unZoom];
         }];
         
+        [_tableView setContentOffset:CGPointMake(.0f, .0f)];
         
         return;
     }

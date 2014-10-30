@@ -28,4 +28,22 @@
     [_separatorLineView setAlpha:1.0f];
 }
 
+
+-(void)tablleViewWillDisplayCellAnimationWithAnimationNumber:(NSInteger)animationNumber{
+    //[cell.bgImage setAlpha:.0f];
+    [self.iconImage.layer setTransform:CATransform3DMakeRotation( 180.f / 180.f * M_PI, .0f, .0f, 1.0f)];
+    
+    int animationControl = 1;
+    if (animationNumber % 2 == 0) {
+        animationControl = -1;
+    }
+    
+    
+    CATransform3D transform = CATransform3DMakeRotation(M_PI, .0f, .0f, .0f);
+    
+    [UIView animateWithDuration:.5f animations:^{
+        self.iconImage.layer.transform = transform;
+    }];
+}
+
 @end

@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *roomName;
 @property (weak, nonatomic) IBOutlet UILabel *roomBriefDescription;
 
-
+-(void)tablleViewWillDisplayCellAnimationWithAnimationNumber:(NSInteger)animationNumber;
 
 @end
