@@ -6,18 +6,22 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Brandon_light.otf">
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+        </mutableArray>
+        <mutableArray key="Brandon_med.otf">
+            <string>BrandonGrotesque-Medium</string>
+        </mutableArray>
         <mutableArray key="Brandon_reg.otf">
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
-            <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
@@ -104,7 +108,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="tou-GF-16v"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="HABITACIONES" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,7 +133,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="pmD-rg-Q6X"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="SERVICIOS" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,7 +155,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="QpV-U4-ubR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="REGISTRO" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,7 +202,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="z6V-YA-Rbf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="RESTAURANTE" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,7 +227,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="OXi-NA-zbM"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="ROOM SERVICE" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,7 +252,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Yki-rE-RjH"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="PRIVACIDAD Y SEGURIDAD" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -270,7 +274,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="F6i-zx-OAu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="DOBLE RECEPCION" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -292,7 +296,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="004-RN-1O2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                         <state key="normal" title="CONFORT Y AMENIDADES" backgroundImage="btnBg">
                                             <color key="titleColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -408,7 +412,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="17R-Zx-cd0"/>
                                                     <constraint firstAttribute="width" constant="136" id="Xgw-Nv-Iz8"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="13"/>
                                                 <state key="normal" title="Recuperar Contraseña">
                                                     <color key="titleColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -419,7 +423,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="600" id="c9e-MM-RUd"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                                 <state key="normal" title="INICIAR SESIÓN" backgroundImage="homePopUpLogInBtnBg">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -480,6 +484,7 @@
                                 </constraints>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="0.0"/>
                                     <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -526,7 +531,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Lcg-7j-wyF"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
                                                 <state key="normal" title="OK" backgroundImage="homePopUpLogInBtnBg">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -660,6 +665,7 @@ como en la comodidad de su Suite.</string>
                                 </constraints>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="0.0"/>
                                     <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
@@ -963,6 +969,7 @@ guacamole y caraotas.</string>
                                 </constraints>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="0.0"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
