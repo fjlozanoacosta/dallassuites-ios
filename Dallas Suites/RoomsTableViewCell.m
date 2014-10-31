@@ -29,10 +29,10 @@
     
     int animationControl = 1;
     if (animationNumber % 2 == 0) {
-        animationControl = -1;
+        //animationControl = -1;
     }
     
-    [self.roomName.layer setTransform:CATransform3DMakeTranslation( -320.f * animationControl, .0f, .0f)];
+    [self.roomName.layer setTransform:CATransform3DMakeTranslation( 320.f * animationControl, .0f, .0f)];
     [self.roomBriefDescription.layer setTransform:CATransform3DMakeTranslation( 320.f * animationControl, .0f, .0f)];
     
     CATransform3D transform = CATransform3DMakeTranslation(.0f, .0f, .0f);

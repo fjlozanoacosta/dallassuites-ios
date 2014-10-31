@@ -19,6 +19,8 @@
 //Constants
 #define RoomCell @"roomCell"
 #define RoomDetailVC @"roomDetailViewController"
+#define RoomNames @[ @"SUITE PLUS", @"SUIT PLUS CON JACUZZI", @"SUITE DUPLEX", @"SUITE DELUXE", @"SUITE PRESIDENCIAL" ]
+#define Room360URL @[ @"http://drg06alc81wak.cloudfront.net/360/plus.html", @"http://drg06alc81wak.cloudfront.net/360/plusj.html", @"http://drg06alc81wak.cloudfront.net/360/duplex.html", @"http://drg06alc81wak.cloudfront.net/360/deluxe.html", @"http://drg06alc81wak.cloudfront.net/360/pre.html" ]
 
 @interface RoomsViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate>{
     
@@ -67,7 +69,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 10;
+    return 5;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -79,6 +81,9 @@
     RoomsTableViewCell* cell = [__tableView dequeueReusableCellWithIdentifier:RoomCell];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
+    
+    [cell.roomName setText:[RoomNames objectAtIndex:indexPath.row]];
+    [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2i" , ( indexPath.row + 1 )]]];
     
     return cell;
 }
@@ -99,8 +104,8 @@
     */
     
     //Ex:
-    controller.navTitle = @"UN CUARTO";
-    controller.roomWebAddress = @"http://drg06alc81wak.cloudfront.net/360/suite32.html";
+    controller.navTitle = [RoomNames objectAtIndex:indexPath.row];
+    controller.roomWebAddress = [Room360URL objectAtIndex:indexPath.row];
     
 //    self.animationController = [[ZoomAnimationController alloc] init];
     self.animationController = [[DropAnimationController alloc] init];

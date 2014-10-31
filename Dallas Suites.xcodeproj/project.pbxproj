@@ -35,6 +35,7 @@
 		2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */; };
 		277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */; };
 		277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308141A00425F000FC4B1 /* MenuTableViewCell.m */; };
+		27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73CD1A0419ED009746CF /* NavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTableViewCell.m; sourceTree = "<group>"; };
 		277308131A00425F000FC4B1 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		277308141A00425F000FC4B1 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		27AE73CC1A0419ED009746CF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		27AE73CD1A0419ED009746CF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				2769801F19FF07A9009C5968 /* Custom Transitions Classes */,
-				270E6C8819FAF050005994F9 /* Delegate */,
 				270E6C8919FAF062005994F9 /* Home/Service */,
 				2769801319FEE997009C5968 /* Rooms */,
 				2773080A1A0029D9000FC4B1 /* Restaurant/Menu */,
@@ -142,6 +144,8 @@
 				270E6C6F19FAC685005994F9 /* LaunchScreen.xib */,
 				270E6C6D19FAC685005994F9 /* Images.xcassets */,
 				270E6C6019FAC685005994F9 /* Supporting Files */,
+				27AE73CF1A041A3D009746CF /* NavigationController */,
+				270E6C8819FAF050005994F9 /* Delegate */,
 			);
 			path = "Dallas Suites";
 			sourceTree = "<group>";
@@ -280,6 +284,15 @@
 			name = MenuTableViewCell;
 			sourceTree = "<group>";
 		};
+		27AE73CF1A041A3D009746CF /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				27AE73CC1A0419ED009746CF /* NavigationViewController.h */,
+				27AE73CD1A0419ED009746CF /* NavigationViewController.m */,
+			);
+			name = NavigationController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +415,7 @@
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
 				277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */,
+				27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,

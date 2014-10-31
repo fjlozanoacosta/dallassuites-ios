@@ -20,12 +20,11 @@
     
     __weak IBOutlet UIImageView* bgImage;
     
-        //Button Lines Dividers
-            //Upper LogIn Btn Divider
-    __weak IBOutlet UIView *upperLogInBtnLine;
         //Buttons
             //LogIn (Iniciar Sesion)
-    __weak IBOutlet UIButton *logInBtn; //TEMPORARY!!
+    __weak IBOutlet UIButton *logInBtn;
+            //LogIn Btn Right Margin Constraint
+    __weak IBOutlet NSLayoutConstraint *logInBtnRightMarginConstraint;
             //Room (Habitación)
     __weak IBOutlet UIButton *roomsBtn;
             //Service (Servicio)
@@ -76,8 +75,6 @@
     __weak IBOutlet UILabel *sPUServiceNameLabel;
         //Service Description
     __weak IBOutlet UILabel *sPUServicesDescriptionLabel;
-        //Close PopUp Btn (Cerrar)
-    __weak IBOutlet UIButton *sPUCloseBtn;
         //Ok PopUp Button
     __weak IBOutlet UIButton *sPUOkBtn;
     
@@ -109,7 +106,6 @@
     if(false){
         [registerProfileBtn setTitle:@"PERFIL" forState:UIControlStateNormal];
         [registerProfileBtn setTag:1];
-        upperLogInBtnLine.hidden = logInBtn.hidden = YES;
     }
     
 }
@@ -146,6 +142,7 @@
     
     
     [homeButtonsContainerBottomSpaceConstraint setConstant:-250.f];
+    [logInBtnRightMarginConstraint setConstant: -40.f];
     
     if ([UIScreen mainScreen].bounds.size.height == 480) {
         [logoImageHeightConstraint setConstant:165.f];
@@ -201,6 +198,7 @@
     } completion:^(BOOL finished) {
         
         [homeButtonsContainerBottomSpaceConstraint setConstant:.0f];
+        [logInBtnRightMarginConstraint setConstant: 10.f];
         
         if ([UIScreen mainScreen].bounds.size.height == 480) {
             [logoImageHeightConstraint setConstant:186.f];
@@ -277,7 +275,7 @@
     sPUServiceNameLabel.text = [servicePopUpTitles objectAtIndex:sender.tag];
     sPUServicesDescriptionLabel.text = [servicePopUpDescriptions objectAtIndex:sender.tag];
     [sPUServiceIconImage setImage:[UIImage imageNamed:[servicePopUpIconImageName objectAtIndex:sender.tag]]];
-    
+        
     CATransform3D transform = CATransform3DMakeRotation(90.0 / 180.0 * M_PI, 0, 0, 1);
     transform = CATransform3DScale(transform, .5f, .5f, 1.f);
     [sPUFrameView.layer setTransform:transform];

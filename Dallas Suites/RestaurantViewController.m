@@ -132,11 +132,11 @@ typedef enum {
            }];
         }];
         
-        CATransform3D zoom = CATransform3DMakeScale(1.25f, 1.25f, 1.25f);
-        zoom = CATransform3DTranslate(zoom, -20.f, -40.f, .0f);
-        [UIView animateWithDuration:.5f animations:^{
-            [bgImage.layer setTransform:zoom];
-        }];
+//        CATransform3D zoom = CATransform3DMakeScale(1.25f, 1.25f, 1.25f);
+//        zoom = CATransform3DTranslate(zoom, -20.f, -40.f, .0f);
+//        [UIView animateWithDuration:.5f animations:^{
+//            [bgImage.layer setTransform:zoom];
+//        }];
         
         tableViewElementControl = kMenu; //This now sets the tableview to display menu items
         [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft]; //This forces a table reload to put in the new info
@@ -192,10 +192,10 @@ typedef enum {
             }];
         }];
         
-        CATransform3D unZoom = CATransform3DMakeScale(1.f, 1.f, 1.f);
-        [UIView animateWithDuration:.5f animations:^{
-           [bgImage.layer setTransform:unZoom];
-        }];
+//        CATransform3D unZoom = CATransform3DMakeScale(1.f, 1.f, 1.f);
+//        [UIView animateWithDuration:.5f animations:^{
+//           [bgImage.layer setTransform:unZoom];
+//        }];
         
         [_tableView setContentOffset:CGPointMake(.0f, .0f)];
         
