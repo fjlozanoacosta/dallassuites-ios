@@ -13,6 +13,9 @@
 #define RestaurantCell @"restaurantCell"
 #define MenuCell @"menuCell"
 
+#define restaurantElementsTitles @[ @"DESAYUNO", @"ENSALADAS", @"DE PICAR", @"SANDWICHES", @"PIZZAS" , @"POSTRES", @"RESTO DEL DÍA", @"BEBIDAS" ]
+#define restaurantIconsImageName @[ @"restaurantBreakfastIcon", @"restaurantSalatIcon", @"restaurantSnackIcon", @"restaurantSandwichIcon", @"restaurantPizzaIcon", @"restaurantDessertIcon", @"restaurantLunchIcon", @"restaurantDrinkIcon" ]
+
 typedef enum {
     kRestaurant,
     kMenu
@@ -64,11 +67,11 @@ typedef enum {
     
     if (tableViewElementControl == kMenu) {
         //Here you return number of elements in selected restaurant item
-        return 5;
+        return 10;
     }
     
     //Here you return number of element in restaurant View
-    return 10;
+    return 8;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -105,7 +108,8 @@ typedef enum {
     RestaurantTableViewCell* rCell = (RestaurantTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:RestaurantCell];
     [rCell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    
+    [[rCell restaurantItemLabel] setText:[restaurantElementsTitles objectAtIndex:indexPath.row]];
+    [[rCell iconImage] setImage:[UIImage imageNamed:[restaurantIconsImageName objectAtIndex:indexPath.row]]];
     
     //If is the last cell remove the separator line
     if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1) {
@@ -126,7 +130,7 @@ typedef enum {
         [UIView animateWithDuration:.25f animations:^{
             [navBar setAlpha:.0f];
         } completion:^(BOOL finished) {
-           navBarTitle.title = @"AQUI TITULO ITEM"; // Here's where you get the selected items name and change nav bar name accordingly
+           navBarTitle.title = [restaurantElementsTitles objectAtIndex:indexPath.row]; // Here's where you get the selected items name and change nav bar name accordingly
            [UIView animateWithDuration:.25f animations:^{
                [navBar setAlpha:1.0f];
            }];
