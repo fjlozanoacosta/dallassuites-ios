@@ -38,6 +38,8 @@
 		27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73CD1A0419ED009746CF /* NavigationViewController.m */; };
 		27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D21A044CF5009746CF /* ProfileViewController.m */; };
 		27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */; };
+		27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */; };
+		27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,10 @@
 		27AE73D21A044CF5009746CF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		27AE73D41A050FF4009746CF /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
 		27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
+		27AE73D91A0535BD009746CF /* RegisterEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEditProfileViewController.h; sourceTree = "<group>"; };
+		27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditProfileViewController.m; sourceTree = "<group>"; };
+		27AE73DC1A053BF9009746CF /* RegisterOrEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterOrEditTableViewCell.h; sourceTree = "<group>"; };
+		27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterOrEditTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
 			isa = PBXGroup;
 			children = (
+				27AE73D81A0535A4009746CF /* Register/Edit Profile */,
 				2769801F19FF07A9009C5968 /* Custom Transitions Classes */,
 				270E6C8919FAF062005994F9 /* Home/Service */,
 				2769801319FEE997009C5968 /* Rooms */,
@@ -319,6 +326,25 @@
 			name = ProfileTableViewCell;
 			sourceTree = "<group>";
 		};
+		27AE73D81A0535A4009746CF /* Register/Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCell */,
+				27AE73D91A0535BD009746CF /* RegisterEditProfileViewController.h */,
+				27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */,
+			);
+			name = "Register/Edit Profile";
+			sourceTree = "<group>";
+		};
+		27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				27AE73DC1A053BF9009746CF /* RegisterOrEditTableViewCell.h */,
+				27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */,
+			);
+			name = RegisterOrEditTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,9 +466,11 @@
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
+				27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */,
 				277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */,
 				27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */,
 				27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */,
+				27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */,
 				27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
@@ -570,7 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -582,7 +610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

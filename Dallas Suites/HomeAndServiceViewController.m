@@ -109,7 +109,7 @@
     
 #warning TODO: Check For User
     //Here is where the code that checks if there's an user logged in and changes the register bttn acordingly!!
-    if(true){
+    if(false){
         [registerProfileBtn setTitle:@"PERFIL" forState:UIControlStateNormal];
         [registerProfileBtn setTag:1];
     }
@@ -188,7 +188,7 @@
 
 - (IBAction)goToRegisterOrProfileView:(UIButton*)sender {
     
-    [self performSegueWithIdentifier:[allSegues objectAtIndex:sender.tag] sender:nil];
+    [self performSegueWithIdentifier:[allSegues objectAtIndex:sender.tag] sender:sender];
     
 }
 
@@ -310,7 +310,6 @@
 #pragma mark - Service Pop Up Methods -
 #pragma mark - Buttons Actions
 
-
 - (IBAction)closeDisplayedServiePopUp:(UIButton *)sender {
     
     CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
@@ -330,6 +329,7 @@
 
 
 #pragma mark End -
+
 
 #pragma mark - Status Bar Style -
 #pragma mark - Change Color

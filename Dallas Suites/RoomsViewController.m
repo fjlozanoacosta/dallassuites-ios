@@ -83,7 +83,7 @@
     
     
     [cell.roomName setText:[RoomNames objectAtIndex:indexPath.row]];
-    [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2i" , ( indexPath.row + 1 )]]];
+    [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2li" , ( indexPath.row + 1 )]]];
     
     return cell;
 }

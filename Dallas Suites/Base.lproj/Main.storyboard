@@ -18,12 +18,14 @@
             <string>BrandonGrotesque-Light</string>
             <string>BrandonGrotesque-Light</string>
             <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
         </mutableArray>
         <mutableArray key="Brandon_med.otf">
             <string>BrandonGrotesque-Medium</string>
             <string>BrandonGrotesque-Medium</string>
         </mutableArray>
         <mutableArray key="Brandon_reg.otf">
+            <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
@@ -652,6 +654,7 @@ como en la comodidad de su Suite.</string>
                         <outlet property="servicesBtn" destination="wLn-bE-YPh" id="QxJ-Dh-ot2"/>
                         <outlet property="servicesNavBar" destination="rAl-T3-G4b" id="AVy-Vs-hzh"/>
                         <segue destination="hrj-5n-jMu" kind="show" identifier="toProfileView" id="aEo-Pr-Ulm"/>
+                        <segue destination="zv1-Rd-sOz" kind="show" identifier="toRegisterView" id="gIl-Dc-JpJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -952,6 +955,145 @@ guacamole y caraotas.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4h-w1-tQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="351"/>
+        </scene>
+        <!--Register Edit Profile View Controller-->
+        <scene sceneID="dGM-co-hM3">
+            <objects>
+                <viewController id="zv1-Rd-sOz" customClass="RegisterEditProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8lR-ki-qsP"/>
+                        <viewControllerLayoutGuide type="bottom" id="B5S-c9-oxx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qhY-iy-7l1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeBg" translatesAutoresizingMaskIntoConstraints="NO" id="EIC-6C-Dzq" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MaK-ON-H6z">
+                                <rect key="frame" x="0.0" y="60" width="600" height="480"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="registerEditCell" id="VNL-xk-hg3" customClass="RegisterOrEditTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VNL-xk-hg3" id="rKi-bI-E4a">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="roomServiceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="z83-nH-BZa" userLabel="Cell Icon">
+                                                    <rect key="frame" x="15" y="13" width="24" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="7GI-lj-XKv"/>
+                                                        <constraint firstAttribute="height" constant="23" id="fEs-ny-Nnz"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw4-WI-lwU" userLabel="Separator Line">
+                                                    <rect key="frame" x="0.0" y="49" width="600" height="1"/>
+                                                    <color key="backgroundColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="6sh-na-Xan"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NOMBRE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-0t-fYq">
+                                                    <rect key="frame" x="47" y="10" width="200" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="h3F-lT-eDh"/>
+                                                        <constraint firstAttribute="width" constant="200" id="nRe-NI-BtP"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="6Gx-0t-fYq" firstAttribute="leading" secondItem="z83-nH-BZa" secondAttribute="trailing" constant="8" id="4Xy-Nc-FYm"/>
+                                                <constraint firstItem="Hw4-WI-lwU" firstAttribute="leading" secondItem="rKi-bI-E4a" secondAttribute="leading" id="5dF-rm-c2e"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hw4-WI-lwU" secondAttribute="trailing" id="GUP-lk-dO3"/>
+                                                <constraint firstItem="6Gx-0t-fYq" firstAttribute="top" secondItem="rKi-bI-E4a" secondAttribute="top" constant="10" id="Hkd-HV-Myw"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hw4-WI-lwU" secondAttribute="bottom" id="Qcq-dE-6wx"/>
+                                                <constraint firstItem="z83-nH-BZa" firstAttribute="leading" secondItem="rKi-bI-E4a" secondAttribute="leading" constant="15" id="fIi-Uc-sxd"/>
+                                                <constraint firstItem="z83-nH-BZa" firstAttribute="top" secondItem="rKi-bI-E4a" secondAttribute="top" constant="13" id="iLW-wg-4SB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="iconImage" destination="z83-nH-BZa" id="ge7-jZ-Zxt"/>
+                                            <outlet property="separatorLine" destination="Hw4-WI-lwU" id="ar0-YX-9c7"/>
+                                            <outlet property="textEditField" destination="6Gx-0t-fYq" id="eBo-1Z-7a9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zv1-Rd-sOz" id="QLh-mr-YNc"/>
+                                    <outlet property="delegate" destination="zv1-Rd-sOz" id="JdK-UC-S82"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6B-TD-H9P" userLabel="Btn - Registrar / Guardar">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cZE-3q-K7I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="18"/>
+                                <state key="normal" title="REGISTRAR" backgroundImage="btnBg">
+                                    <color key="titleColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="btnBg_ON"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stI-Vh-8b2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fka-nQ-XDo"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="REGISTRAR" id="YJW-gc-iHY">
+                                        <barButtonItem key="leftBarButtonItem" image="navBarBackButton" id="2rz-rQ-2PY" userLabel="Back Btn">
+                                            <color key="tintColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="navBackButtonAction:" destination="zv1-Rd-sOz" id="bgH-7J-jTk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MaK-ON-H6z" firstAttribute="top" secondItem="stI-Vh-8b2" secondAttribute="bottom" id="8ET-vb-s58"/>
+                            <constraint firstItem="g6B-TD-H9P" firstAttribute="top" secondItem="MaK-ON-H6z" secondAttribute="bottom" id="8FU-4y-gpa"/>
+                            <constraint firstAttribute="trailing" secondItem="MaK-ON-H6z" secondAttribute="trailing" id="DPV-fH-Dc3"/>
+                            <constraint firstItem="stI-Vh-8b2" firstAttribute="leading" secondItem="qhY-iy-7l1" secondAttribute="leading" id="EN2-6L-yJM"/>
+                            <constraint firstItem="MaK-ON-H6z" firstAttribute="leading" secondItem="qhY-iy-7l1" secondAttribute="leading" id="Q7e-DW-Ior"/>
+                            <constraint firstItem="g6B-TD-H9P" firstAttribute="leading" secondItem="qhY-iy-7l1" secondAttribute="leading" id="XE1-LF-aUz"/>
+                            <constraint firstItem="B5S-c9-oxx" firstAttribute="top" secondItem="g6B-TD-H9P" secondAttribute="bottom" id="cPF-m3-xdz"/>
+                            <constraint firstAttribute="trailing" secondItem="g6B-TD-H9P" secondAttribute="trailing" id="gg3-z4-VQG"/>
+                            <constraint firstItem="stI-Vh-8b2" firstAttribute="top" secondItem="qhY-iy-7l1" secondAttribute="top" id="plR-qY-b5E"/>
+                            <constraint firstAttribute="trailing" secondItem="stI-Vh-8b2" secondAttribute="trailing" id="rH2-5U-S2X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="stI-Vh-8b2" id="fLD-nr-e80"/>
+                        <outlet property="navBarTitle" destination="YJW-gc-iHY" id="aHJ-Le-2Yo"/>
+                        <outlet property="registerOrEditBtnBottomConstraint" destination="cPF-m3-xdz" id="HOm-9o-1f5"/>
+                        <outlet property="registerOrSaveEditBtn" destination="g6B-TD-H9P" id="hhJ-P2-UwW"/>
+                        <outlet property="tableView" destination="MaK-ON-H6z" id="Rks-TR-pgV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTD-WR-1Xl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="1040"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="gWm-ir-NqR">
