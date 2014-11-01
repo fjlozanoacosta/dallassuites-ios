@@ -36,6 +36,8 @@
 		277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */; };
 		277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308141A00425F000FC4B1 /* MenuTableViewCell.m */; };
 		27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73CD1A0419ED009746CF /* NavigationViewController.m */; };
+		27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D21A044CF5009746CF /* ProfileViewController.m */; };
+		27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,10 @@
 		277308141A00425F000FC4B1 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
 		27AE73CC1A0419ED009746CF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		27AE73CD1A0419ED009746CF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		27AE73D11A044CF5009746CF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		27AE73D21A044CF5009746CF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		27AE73D41A050FF4009746CF /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 				270E6C8919FAF062005994F9 /* Home/Service */,
 				2769801319FEE997009C5968 /* Rooms */,
 				2773080A1A0029D9000FC4B1 /* Restaurant/Menu */,
+				27AE73D01A044C52009746CF /* Profile */,
 				270E6C6A19FAC685005994F9 /* Main.storyboard */,
 				270E6C6F19FAC685005994F9 /* LaunchScreen.xib */,
 				270E6C6D19FAC685005994F9 /* Images.xcassets */,
@@ -293,6 +300,25 @@
 			name = NavigationController;
 			sourceTree = "<group>";
 		};
+		27AE73D01A044C52009746CF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				27AE73D71A050FF9009746CF /* ProfileTableViewCell */,
+				27AE73D11A044CF5009746CF /* ProfileViewController.h */,
+				27AE73D21A044CF5009746CF /* ProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		27AE73D71A050FF9009746CF /* ProfileTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				27AE73D41A050FF4009746CF /* ProfileTableViewCell.h */,
+				27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */,
+			);
+			name = ProfileTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -416,6 +442,8 @@
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
 				277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */,
 				27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */,
+				27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */,
+				27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,

@@ -19,7 +19,7 @@
 //Constants
 #define RoomCell @"roomCell"
 #define RoomDetailVC @"roomDetailViewController"
-#define RoomNames @[ @"SUITE PLUS", @"SUIT PLUS CON JACUZZI", @"SUITE DUPLEX", @"SUITE DELUXE", @"SUITE PRESIDENCIAL" ]
+#define RoomNames @[ @"SUITE PLUS", @"SUIT PLUS CON JACUZZI", @"SUITE DÚPLEX", @"SUITE DELUXE", @"SUITE PRESIDENCIAL" ]
 #define Room360URL @[ @"http://drg06alc81wak.cloudfront.net/360/plus.html", @"http://drg06alc81wak.cloudfront.net/360/plusj.html", @"http://drg06alc81wak.cloudfront.net/360/duplex.html", @"http://drg06alc81wak.cloudfront.net/360/deluxe.html", @"http://drg06alc81wak.cloudfront.net/360/pre.html" ]
 
 @interface RoomsViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate>{
