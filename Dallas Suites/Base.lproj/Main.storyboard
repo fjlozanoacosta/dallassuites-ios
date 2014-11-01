@@ -170,7 +170,7 @@
                                         </state>
                                         <state key="selected" backgroundImage="btnBg_ON"/>
                                         <connections>
-                                            <segue destination="hrj-5n-jMu" kind="show" id="Mc8-e1-0DZ"/>
+                                            <action selector="goToRegisterOrProfileView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h0D-JI-FXu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -651,6 +651,7 @@ como en la comodidad de su Suite.</string>
                         <outlet property="serviceButtonsContainerBottomSpaceConstraint" destination="iBC-sm-KxH" id="39r-aj-TBA"/>
                         <outlet property="servicesBtn" destination="wLn-bE-YPh" id="QxJ-Dh-ot2"/>
                         <outlet property="servicesNavBar" destination="rAl-T3-G4b" id="AVy-Vs-hzh"/>
+                        <segue destination="hrj-5n-jMu" kind="show" identifier="toProfileView" id="aEo-Pr-Ulm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

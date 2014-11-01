@@ -40,6 +40,48 @@
     [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     navBar.shadowImage = [UIImage new];
     navBar.translucent = YES;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSString* user = @"Mike Pesate"; //User's Full Name Goes Here
+    CGFloat points = 9750.f; //User's Points Go Here
+    
+    //Animation presets
+    [userNameLabel setText:@""];
+    [pointsLabel setText:@"0 PTS"];
+    
+    //Points animation block
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        for (int i=0; i<=points; i++)
+        {
+            dispatch_async(dispatch_get_main_queue(),
+                           ^{
+                               [pointsLabel setText:[NSString stringWithFormat:@"%i PTS",i]];
+                           });
+            
+            [NSThread sleepForTimeInterval:.3f/points];
+        }
+        
+    });
+    
+    //User's full name animation block
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
+        for (int i=0; i<user.length; i++)
+        {
+            dispatch_async(dispatch_get_main_queue(),
+                           ^{
+                               [userNameLabel setText:[NSString stringWithFormat:@"%@%C", userNameLabel.text, [user characterAtIndex:i]]];
+                           });
+            
+            [NSThread sleepForTimeInterval:1.f/user.length];
+        }
+        
+    });
+    
 }
 
 #pragma mark - TableView Methods -
@@ -50,7 +92,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 5;
+    return 15;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
