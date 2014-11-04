@@ -18,7 +18,7 @@
 #define servicePopUpDescriptions @[ @"Para complementar su estadía, le ofrecemos una gran variedad de platos y una extensa carta de bebidas paraque las disfrute tanto en nuestro Bar/Restaurant, como en la comodidad de su Suite.", @"No sólo la calidad de nuestros servicios nos distinguen, sino también la Privacidad y Seguridad de nuestras instalaciones.", @"Sólo en Dallas Suites Hotel tenemos una Doble Recepción que le garantiza fluidez a su llegada y el menor tiempo de espera posible.", @"Sauna, Vapor, Jacuzzi, Pole Dance, son algunas de las Amenidades que le esperan en nuestras Suites, para que su visita se Única en su Estilo."]
 #define servicePopUpIconImageName @[@"roomServiceIcon", @"privacyAndSecurityIcon", @"dobleReceptionIcon", @"comfortIcon"]
 
-@interface HomeAndServiceViewController () {
+@interface HomeAndServiceViewController () <UITextFieldDelegate> {
     
     //Main View
         //Services Nav Bar
@@ -109,11 +109,16 @@
     
 #warning TODO: Check For User
     //Here is where the code that checks if there's an user logged in and changes the register bttn acordingly!!
-    if(true){
+    if(false){
+        [logInBtn setHidden:YES];
         [registerProfileBtn setTitle:@"PERFIL" forState:UIControlStateNormal];
         [registerProfileBtn setTag:1];
     }
     
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self allTextFieldResignFirstResponder];
 }
 
 #pragma mark - Main View Methods -
@@ -248,6 +253,8 @@
 
 - (IBAction)closeDisplayedLogInPopUp:(UIButton *)sender {
     
+    [self allTextFieldResignFirstResponder];
+    
     CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
     transform = CATransform3DScale(transform, 1.8f, 1.8f, 1.f);
     
@@ -330,6 +337,19 @@
 
 #pragma mark End -
 
+#pragma mark - TextField Methods -
+#pragma mark - Utility Methods
+-(void)allTextFieldResignFirstResponder{
+    [pUUsernameTextField resignFirstResponder];
+    [pUPasswordTextField resignFirstResponder];
+}
+#pragma mark End -
+#pragma mark - Delegate Methods
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+#pragma mark End -
 
 #pragma mark - Status Bar Style -
 #pragma mark - Change Color
