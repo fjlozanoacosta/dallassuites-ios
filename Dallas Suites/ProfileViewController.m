@@ -8,8 +8,11 @@
 
 #import "ProfileViewController.h"
 #import "ProfileTableViewCell.h"
+#import "RegisterEditProfileViewController.h"
 
 #define ProfileCell @"profileCell"
+
+#define EditProfileSegue @"toEditProfile"
 
 @interface ProfileViewController () <UITableViewDataSource, UITableViewDelegate>{
     
@@ -21,6 +24,7 @@
         //Points Label
     __weak IBOutlet UILabel *pointsLabel;
     
+
     
 }
 //History Tableview
@@ -145,6 +149,14 @@
     return UIStatusBarStyleLightContent;
     
 }
+#pragma mark End -
+
+#pragma mark - Navigation Methods -
+#pragma mark - Segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [(RegisterEditProfileViewController*)[segue destinationViewController] setIsForEdit:YES];
+}
+
 #pragma mark End -
 
 @end

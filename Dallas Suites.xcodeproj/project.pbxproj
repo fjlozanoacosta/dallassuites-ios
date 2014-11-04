@@ -15,11 +15,13 @@
 		270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6F19FAC685005994F9 /* LaunchScreen.xib */; };
 		270E6C7D19FAC685005994F9 /* Dallas_SuitesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */; };
 		270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C8619FAE677005994F9 /* Default-568h@2x.png */; };
+		2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */; };
 		2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801519FEE9B3009C5968 /* RoomsViewController.m */; };
 		2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */; };
 		2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801D19FF0510009C5968 /* RoomDetailViewController.m */; };
 		2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769802219FF0B1A009C5968 /* DropAnimationController.m */; };
 		2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769802419FF0B1A009C5968 /* ZoomAnimationController.m */; };
+		276E7A5D1A08301B00B72273 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 276E7A5C1A08301B00B72273 /* DatePicker.m */; };
 		277307FE1A002623000FC4B1 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F21A002623000FC4B1 /* Brandon_bld.otf */; };
 		277307FF1A002623000FC4B1 /* Brandon_med_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F31A002623000FC4B1 /* Brandon_med_it.otf */; };
 		277308001A002623000FC4B1 /* Brandon_thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 277307F41A002623000FC4B1 /* Brandon_thin.otf */; };
@@ -67,6 +69,8 @@
 		270E6C7B19FAC685005994F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dallas_SuitesTests.m; sourceTree = "<group>"; };
 		270E6C8619FAE677005994F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2735BFF11A07D65C001BFB8A /* RegisterEditActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEditActionTableViewCell.h; sourceTree = "<group>"; };
+		2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditActionTableViewCell.m; sourceTree = "<group>"; };
 		2769801419FEE9B3009C5968 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
 		2769801519FEE9B3009C5968 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
 		2769801819FEEFD1009C5968 /* RoomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewCell.h; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		2769802219FF0B1A009C5968 /* DropAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropAnimationController.m; sourceTree = "<group>"; };
 		2769802319FF0B1A009C5968 /* ZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomAnimationController.h; sourceTree = "<group>"; };
 		2769802419FF0B1A009C5968 /* ZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomAnimationController.m; sourceTree = "<group>"; };
+		276E7A5B1A08301B00B72273 /* DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePicker.h; sourceTree = "<group>"; };
+		276E7A5C1A08301B00B72273 /* DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePicker.m; sourceTree = "<group>"; };
 		277307F21A002623000FC4B1 /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
 		277307F31A002623000FC4B1 /* Brandon_med_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med_it.otf; sourceTree = "<group>"; };
 		277307F41A002623000FC4B1 /* Brandon_thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_thin.otf; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
 			isa = PBXGroup;
 			children = (
+				276E7A5A1A08300E00B72273 /* DatePicker */,
 				27AE73D81A0535A4009746CF /* Register/Edit Profile */,
 				2769801F19FF07A9009C5968 /* Custom Transitions Classes */,
 				270E6C8919FAF062005994F9 /* Home/Service */,
@@ -250,6 +257,15 @@
 			name = "Custom Transitions Classes";
 			sourceTree = "<group>";
 		};
+		276E7A5A1A08300E00B72273 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				276E7A5B1A08301B00B72273 /* DatePicker.h */,
+				276E7A5C1A08301B00B72273 /* DatePicker.m */,
+			);
+			name = DatePicker;
+			sourceTree = "<group>";
+		};
 		277307F11A00260D000FC4B1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,20 +345,22 @@
 		27AE73D81A0535A4009746CF /* Register/Edit Profile */ = {
 			isa = PBXGroup;
 			children = (
-				27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCell */,
+				27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCells */,
 				27AE73D91A0535BD009746CF /* RegisterEditProfileViewController.h */,
 				27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */,
 			);
 			name = "Register/Edit Profile";
 			sourceTree = "<group>";
 		};
-		27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCell */ = {
+		27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				27AE73DC1A053BF9009746CF /* RegisterOrEditTableViewCell.h */,
 				27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */,
+				2735BFF11A07D65C001BFB8A /* RegisterEditActionTableViewCell.h */,
+				2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */,
 			);
-			name = RegisterOrEditTableViewCell;
+			name = RegisterOrEditTableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +480,7 @@
 				2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */,
 				270E6C6919FAC685005994F9 /* HomeAndServiceViewController.m in Sources */,
 				2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */,
+				276E7A5D1A08301B00B72273 /* DatePicker.m in Sources */,
 				2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */,
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
@@ -473,6 +492,7 @@
 				27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */,
 				27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
+				2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,
 			);

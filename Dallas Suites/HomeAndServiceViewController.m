@@ -109,7 +109,7 @@
     
 #warning TODO: Check For User
     //Here is where the code that checks if there's an user logged in and changes the register bttn acordingly!!
-    if(false){
+    if(true){
         [registerProfileBtn setTitle:@"PERFIL" forState:UIControlStateNormal];
         [registerProfileBtn setTag:1];
     }
