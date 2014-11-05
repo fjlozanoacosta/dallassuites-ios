@@ -16,6 +16,7 @@
 		270E6C7D19FAC685005994F9 /* Dallas_SuitesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */; };
 		270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C8619FAE677005994F9 /* Default-568h@2x.png */; };
 		2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */; };
+		274ABE101A0ADA910079475B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274ABE0F1A0ADA910079475B /* Crashlytics.framework */; };
 		2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801519FEE9B3009C5968 /* RoomsViewController.m */; };
 		2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */; };
 		2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801D19FF0510009C5968 /* RoomDetailViewController.m */; };
@@ -71,6 +72,7 @@
 		270E6C8619FAE677005994F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2735BFF11A07D65C001BFB8A /* RegisterEditActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEditActionTableViewCell.h; sourceTree = "<group>"; };
 		2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditActionTableViewCell.m; sourceTree = "<group>"; };
+		274ABE0F1A0ADA910079475B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2769801419FEE9B3009C5968 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
 		2769801519FEE9B3009C5968 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
 		2769801819FEEFD1009C5968 /* RoomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewCell.h; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274ABE101A0ADA910079475B /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +177,7 @@
 		270E6C6019FAC685005994F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				274ABE0E1A0ADA840079475B /* Chrashlytics */,
 				277307F11A00260D000FC4B1 /* Fonts */,
 				270E6C6119FAC685005994F9 /* Info.plist */,
 				270E6C6219FAC685005994F9 /* main.m */,
@@ -214,6 +218,14 @@
 				270E6C6819FAC685005994F9 /* HomeAndServiceViewController.m */,
 			);
 			name = Home/Service;
+			sourceTree = "<group>";
+		};
+		274ABE0E1A0ADA840079475B /* Chrashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				274ABE0F1A0ADA910079475B /* Crashlytics.framework */,
+			);
+			name = Chrashlytics;
 			sourceTree = "<group>";
 		};
 		2769801319FEE997009C5968 /* Rooms */ = {
@@ -373,6 +385,7 @@
 				270E6C5919FAC685005994F9 /* Sources */,
 				270E6C5A19FAC685005994F9 /* Frameworks */,
 				270E6C5B19FAC685005994F9 /* Resources */,
+				274ABE0D1A0ADA5A0079475B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -471,6 +484,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		274ABE0D1A0ADA5A0079475B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 066ba67f08cc916150aa7135b5b6768c160228c3 dd2e67a64876ad23608b46df9dda6d1ace5fa10f82442150ebdb743b6df4ca6b";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		270E6C5919FAC685005994F9 /* Sources */ = {
@@ -617,6 +646,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dallas",
+					Suites,
+				);
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -629,6 +663,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dallas",
+					Suites,
+				);
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

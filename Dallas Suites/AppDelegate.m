@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+//Crashlytics
+#import <Crashlytics/Crashlytics.h>
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Chrashlytics
+    [Crashlytics startWithAPIKey:@"066ba67f08cc916150aa7135b5b6768c160228c3"];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
