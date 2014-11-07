@@ -10,6 +10,10 @@
 #import "RoomsTableViewCell.h"
 #import "RoomDetailViewController.h"
 
+#import "RoomModel.h"
+#import "AFNetworking.h"
+
+
 //Custom Transition Controller Class & Animation Classes
 #import "ADVAnimationController.h"
 #import "DropAnimationController.h"
@@ -26,6 +30,8 @@
     
     
     //Main View
+        //activityIndicator
+    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
     
     
     //Navigation Bar (nav)
@@ -36,8 +42,9 @@
             //Back Btn
     __weak IBOutlet UIBarButtonItem *navBackBtn;
     
-
     
+
+    NSMutableArray* roomList;
     
 }
 //Main View
@@ -59,6 +66,46 @@
     
     //Nav Bar Styling 
     [navBar setBackgroundImage:[UIImage imageNamed:@"navBarBg"] forBarMetrics:UIBarMetricsDefault];
+    
+    [__tableView setAlpha:.0f];
+    [activityIndicator startAnimating];
+    [self getRoomsFromServer];
+
+    
+    
+}
+
+-(void)getRoomsFromServer{
+    RoomModel* room = [RoomModel new];    
+    void (^block)(NSMutableArray*, NSError*) = ^(NSMutableArray* roomArrayList, NSError* error) {
+        
+        if (error) {
+            [activityIndicator stopAnimating];
+            [activityIndicator setAlpha:.0f];
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Opps!" message:@"Error en la conexión! Asegurese de estar conectado a internet" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction
+                                           actionWithTitle:@"Ok"
+                                           style:UIAlertActionStyleCancel
+                                           handler:^(UIAlertAction *action) {
+                                               [self.navigationController popViewControllerAnimated:YES];
+                                           }];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        
+        roomList = roomArrayList;
+        [activityIndicator stopAnimating];
+        [__tableView reloadData];
+        
+        [UIView animateWithDuration:.5f animations:^{
+            [activityIndicator setAlpha:.0f];
+            [__tableView setAlpha:1.f];
+        }];
+    };
+    
+    [room getRoomsForListDisplayWithComplitionHandler:block];
+    
 }
 
 #pragma mark - TableView Methods -
@@ -69,7 +116,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 5;
+    return roomList.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -81,9 +128,15 @@
     RoomsTableViewCell* cell = [__tableView dequeueReusableCellWithIdentifier:RoomCell];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
+    [cell.roomName setText:[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_category]];
+    [cell.roomBriefDescription setText:[NSString stringWithFormat:@"Puntos: %i",[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_full_reward].intValue]];
     
-    [cell.roomName setText:[RoomNames objectAtIndex:indexPath.row]];
-    [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2li" , ( indexPath.row + 1 )]]];
+    if (indexPath.row < 5) {
+        [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2i" , (int)( indexPath.row + 1 )]]];
+    }
+    
+//    [cell.roomName setText:[RoomNames objectAtIndex:indexPath.row]];
+//    [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2i" , (int)( indexPath.row + 1 )]]];
     
     return cell;
 }
@@ -151,6 +204,11 @@
     
     return self.animationController;
 }
+
+#pragma mark End -
+
+#pragma mark - RoomModel Delegate Methods -
+#pragma mark - Donde request
 
 #pragma mark End -
 

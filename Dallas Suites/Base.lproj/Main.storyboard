@@ -759,12 +759,21 @@ consectetur adipiscing elit.</string>
                                     <outlet property="delegate" destination="fiO-u7-Wru" id="5Zj-ea-kmj"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="u87-9C-1JG">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Ryk-sB-6u8"/>
+                                    <constraint firstAttribute="height" constant="37" id="XWo-Zc-Vyf"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.14509803921568629" green="0.094117647058823528" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ayq-ke-kzx" firstAttribute="top" secondItem="Aeh-h9-0ec" secondAttribute="bottom" id="9xz-bg-aFd"/>
                             <constraint firstAttribute="trailing" secondItem="Aeh-h9-0ec" secondAttribute="trailing" id="Bgn-Vw-4v8"/>
+                            <constraint firstAttribute="centerX" secondItem="u87-9C-1JG" secondAttribute="centerX" id="HAI-Js-XKs"/>
                             <constraint firstItem="Aeh-h9-0ec" firstAttribute="top" secondItem="SVX-3J-h3y" secondAttribute="top" id="kYw-Cv-dz8"/>
+                            <constraint firstAttribute="centerY" secondItem="u87-9C-1JG" secondAttribute="centerY" id="o1s-1H-8PI"/>
                             <constraint firstAttribute="trailing" secondItem="Ayq-ke-kzx" secondAttribute="trailing" id="tDH-hi-Ff8"/>
                             <constraint firstItem="AQt-2m-fiU" firstAttribute="top" secondItem="Ayq-ke-kzx" secondAttribute="bottom" id="tem-LN-BUq"/>
                             <constraint firstItem="Ayq-ke-kzx" firstAttribute="leading" secondItem="SVX-3J-h3y" secondAttribute="leading" id="xrh-L3-rf1"/>
@@ -774,6 +783,7 @@ consectetur adipiscing elit.</string>
                     <navigationItem key="navigationItem" id="gJE-6w-JXN"/>
                     <connections>
                         <outlet property="_tableView" destination="Ayq-ke-kzx" id="FoO-RC-IQj"/>
+                        <outlet property="activityIndicator" destination="u87-9C-1JG" id="u17-2O-ixM"/>
                         <outlet property="navBackBtn" destination="pIf-hi-MwV" id="OzX-fY-U9e"/>
                         <outlet property="navBar" destination="Aeh-h9-0ec" id="GpW-Sa-x30"/>
                     </connections>
