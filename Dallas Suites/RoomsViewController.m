@@ -110,8 +110,6 @@
 
 #pragma mark - TableView Methods -
 #pragma mark - Delegates & DataSource
-#warning TODO: Room TableView Methods Population
-//TODO: Populate table with data!
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -128,15 +126,14 @@
     RoomsTableViewCell* cell = [__tableView dequeueReusableCellWithIdentifier:RoomCell];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    [cell.roomName setText:[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_category]];
+    [cell.roomName setText:[(NSString*)[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_category] uppercaseString]];
     [cell.roomBriefDescription setText:[NSString stringWithFormat:@"Puntos: %i",[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_full_reward].intValue]];
     
+#warning Mising images for rooms 5 - 14
     if (indexPath.row < 5) {
         [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2i" , (int)( indexPath.row + 1 )]]];
     }
     
-//    [cell.roomName setText:[RoomNames objectAtIndex:indexPath.row]];
-//    [cell.bgImage setImage:[UIImage imageNamed:[NSString stringWithFormat: @"roomThumbImage_%.2i" , (int)( indexPath.row + 1 )]]];
     
     return cell;
 }
@@ -157,8 +154,8 @@
     */
     
     //Ex:
-    controller.navTitle = [RoomNames objectAtIndex:indexPath.row];
-    controller.roomWebAddress = [Room360URL objectAtIndex:indexPath.row];
+    controller.navTitle = [(NSString*)[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_category] uppercaseString];
+    controller.roomWebAddress = (NSString*)[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_360];
     
 //    self.animationController = [[ZoomAnimationController alloc] init];
     self.animationController = [[DropAnimationController alloc] init];
