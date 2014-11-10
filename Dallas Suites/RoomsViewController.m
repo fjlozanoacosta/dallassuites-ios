@@ -23,8 +23,6 @@
 //Constants
 #define RoomCell @"roomCell"
 #define RoomDetailVC @"roomDetailViewController"
-#define RoomNames @[ @"SUITE PLUS", @"SUIT PLUS CON JACUZZI", @"SUITE DÚPLEX", @"SUITE DELUXE", @"SUITE PRESIDENCIAL" ]
-#define Room360URL @[ @"http://drg06alc81wak.cloudfront.net/360/plus.html", @"http://drg06alc81wak.cloudfront.net/360/plusj.html", @"http://drg06alc81wak.cloudfront.net/360/duplex.html", @"http://drg06alc81wak.cloudfront.net/360/deluxe.html", @"http://drg06alc81wak.cloudfront.net/360/pre.html" ]
 
 @interface RoomsViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate>{
     
@@ -75,20 +73,23 @@
     
 }
 
--(void)getRoomsFromServer{
+-(void)getRoomsFromServer {
     RoomModel* room = [RoomModel new];    
     void (^block)(NSMutableArray*, NSError*) = ^(NSMutableArray* roomArrayList, NSError* error) {
         
         if (error) {
             [activityIndicator stopAnimating];
             [activityIndicator setAlpha:.0f];
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Opps!" message:@"Error en la conexión! Asegurese de estar conectado a internet" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancelAction = [UIAlertAction
-                                           actionWithTitle:@"Ok"
-                                           style:UIAlertActionStyleCancel
-                                           handler:^(UIAlertAction *action) {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Opps!"
+                                                                           message:@"Error en la conexión! Asegurese de estar conectado a internet"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Ok"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction *action)
+                                           {
                                                [self.navigationController popViewControllerAnimated:YES];
                                            }];
+            
             [alert addAction:cancelAction];
             [self presentViewController:alert animated:YES completion:nil];
             return;

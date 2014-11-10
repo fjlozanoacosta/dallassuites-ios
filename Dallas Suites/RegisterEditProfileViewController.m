@@ -13,6 +13,8 @@
 #import "RegisterEditActionTableViewCell.h"
 #import "DatePicker.h"
 
+#import "UserModel.h"
+
 #import <sys/utsname.h>
 
 #define RegisterEditCell @"registerEditCell"
@@ -173,20 +175,56 @@ typedef struct {
     //If registering User Actions go here
     __block BOOL completeRegister = YES;
     [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
-        if ([obj isEqualToString:@""]) {
+        if ([obj isEqualToString:@""] && (idx == 2 || idx == 3 || idx == 5 || idx == 6 || idx == 7 )) {
+            NSLog(@"%i",(int)idx);
             completeRegister = NO;
             *stop = YES;
+            [self displayErrorMsgAlertViewWithMessage:[self errorMessageForIndex:idx] withTitle:@"Opps"];
             return;
         }
     }];
     if (completeRegister) {
         if(!validEmail){
+            [self displayErrorMsgAlertViewWithMessage:@"El email no es válido." withTitle:@"Opps"];
             return;
         }
-        [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
-            NSLog(@"%@ = %@", [RegisterTextFieldsPlaceholders objectAtIndex:idx], obj);
-        }];
+//        [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
+//            NSLog(@"%@ = %@", [RegisterTextFieldsPlaceholders objectAtIndex:idx], obj);
+//        }];
+        
+        
+        UserModel* registeringUser = [UserModel new];
+        registeringUser.name = [textFields objectAtIndex:0];
+        registeringUser.lastname = [textFields objectAtIndex:1];
+        registeringUser.email = [textFields objectAtIndex:2];
+        registeringUser.birthDay = [textFields objectAtIndex:3];
+        registeringUser.cedula = @([[[(NSString*)[textFields objectAtIndex:4] stringByReplacingOccurrencesOfString:@"V" withString:@""] stringByReplacingOccurrencesOfString:@"E" withString:@""] stringByReplacingOccurrencesOfString:@"-" withString:@""].integerValue);
+        registeringUser.username = [textFields objectAtIndex:5];
+        registeringUser.password = [textFields objectAtIndex:6];
+        
+        
+        void (^block)(BOOL, NSString*, NSError*) = ^(BOOL wasUserCreated, NSString* errorMsg, NSError* error) {
+        
+            if (error || !wasUserCreated) {
+                [self displayErrorMsgAlertViewWithMessage:@"Problemas registrando el usuario. Verifique su conexión a internet." withTitle:@"Opps"];
+                return;
+            }
+            if (errorMsg && !wasUserCreated) {
+                [self displayErrorMsgAlertViewWithMessage:errorMsg withTitle:@"Opps"];
+                return;
+            }
+
+            [self displayErrorMsgAlertViewWithMessage:errorMsg withTitle:@"Yay!"];
+            
+        };
+
+        
+        [registeringUser registerUserWithUser:registeringUser copletitionHandler:block];
+        
     }
+
+    
+    
 }
 
 #pragma mark End -
@@ -346,10 +384,10 @@ typedef struct {
     if (textField.tag == 2) {
 //        NSLog(@"%@", ([self validateEmailWithString:[textField text]])?@"YES":@"NO");
         if ([self validateEmailWithString:[textField text]]) {
-            [textField setTextColor:[UIColor greenColor]];
+//            [textField setTextColor:[UIColor greenColor]];
             validEmail = YES;
         } else {
-            [textField setTextColor:[UIColor redColor]];
+//            [textField setTextColor:[UIColor redColor]];
             validEmail = NO;
         }
     }
@@ -787,6 +825,55 @@ NSString* machineName()
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     
+}
+
+#pragma mark End -
+
+#pragma mark - AlertView -
+#pragma mark - Display Alert View
+
+- (void)displayErrorMsgAlertViewWithMessage:(NSString*)message withTitle:(NSString*)title{
+    
+    if (!title) {
+        title = @"Opps!";
+    }
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Continuar"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction *action)
+                                   {
+                                       if ([alert.title isEqualToString:@"Yay!"]) {
+                                           [self.navigationController popViewControllerAnimated:YES];
+                                       }
+                                   }];
+    
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
+
+-(NSString*)errorMessageForIndex:(NSInteger)index{
+    NSString* msg;
+    switch (index) {
+        case 2:
+            msg = @"Campo de Email es obligatorio.";
+            break;
+        case 3:
+            msg = @"Fecha de nacimiento es obligatoria.";
+            break;
+        case 5:
+            msg = @"Nombre de usuario es obligatorio.";
+            break;
+        case 6:
+        case 7:
+            msg = @"Contraseña es obligatoria.";
+            break;
+    }
+    
+    return msg;
 }
 
 #pragma mark End -
