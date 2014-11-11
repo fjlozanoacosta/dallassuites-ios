@@ -11,6 +11,7 @@
 #import "RegisterEditProfileViewController.h"
 #import "RegisterOrEditTableViewCell.h"
 #import "RegisterEditActionTableViewCell.h"
+#import "ProfileViewController.h"
 #import "DatePicker.h"
 
 
@@ -23,6 +24,8 @@
 #define RegisterIcons @[ @"registerEditIcon_1", @"registerEditIcon_1", @"registerEditIcon_2", @"registerEditIcon_3", @"registerEditIcon_4", @"registerEditIcon_1", @"registerEditIcon_5", @"registerEditIcon_5" ]
 
 #define EditTextFieldsPlaceholders @[ @"NOMBRE", @"APELLIDO", @"CORREO ELECTRÓNICO", @"FECHA DE NACIMIENTO", @"C.I.", @"NOMBRE DE USUARIO", @"CONTRASEÑA", @"AGREGAR CONTRASEÑA"]
+
+#define monthArray @[@"ENE", @"FEB", @"MAR", @"ABR", @"MAY", @"JUN", @"JUL", @"AGO", @"SEP", @"OCT", @"NOV", @"DIC"]
 
 //Testing without service conection to server
 typedef struct {
@@ -82,7 +85,8 @@ typedef struct {
     bool isKeyboardShown,
          isSmallKeyboardFlapShown,
          isPopUpContainerShown,
-         validEmail;
+         validEmail,
+         userInfoGotEdited;
     
     NSMutableArray* textFields;
     NSMutableArray* addedTextFields;
@@ -94,6 +98,23 @@ typedef struct {
 
 @implementation RegisterEditProfileViewController
 @synthesize tableView = _tableView;
+
+
+
+-(NSString*)prettyDateStringFromStringDate:(NSString*)dateString{
+    NSArray* date = [(NSString*)dateString componentsSeparatedByString:@"-"];
+    NSString* prettyDateString = [NSString stringWithFormat:@"%@ - %@ - %@", [date objectAtIndex:2], [monthArray objectAtIndex:[(NSString*)[date objectAtIndex:1] intValue] - 1], [date objectAtIndex:0]];
+    return prettyDateString;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if(_isForEdit && userInfoGotEdited){
+
+        [(ProfileViewController*)[[self.navigationController viewControllers] objectAtIndex:(self.navigationController.viewControllers.count - 1)] setUser:_user];
+    }
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -160,6 +181,16 @@ typedef struct {
             [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
                 NSLog(@"%@ = %@", [RegisterTextFieldsPlaceholders objectAtIndex:idx], obj);
             }];
+            [_user updateUserInfoWithUser:_user copletitionHandler:^(BOOL wasUserUpdated, NSString * msg, NSError * error) {
+                
+                if (error || !wasUserUpdated) {
+                    [self displayErrorMsgAlertViewWithMessage:@"Problemas registrando el usuario. Verifique su conexión a internet." withTitle:@"Opps"];
+                    return;
+                }
+                userInfoGotEdited = YES;
+                [self displayErrorMsgAlertViewWithMessage:msg withTitle:@"Yay!"];
+                
+            }];
         }
         [self.view setUserInteractionEnabled:YES];
         return;
@@ -187,6 +218,10 @@ typedef struct {
 //            NSLog(@"%@ = %@", [RegisterTextFieldsPlaceholders objectAtIndex:idx], obj);
 //        }];
         
+        if (![[textFields lastObject] isEqualToString:[textFields objectAtIndex:6]]) {
+            [self displayErrorMsgAlertViewWithMessage:@"Las contraseñas no son iguales" withTitle:@"Opps"];
+            return;
+        }
         
         UserModel* registeringUser = [UserModel new];
         registeringUser.name = [textFields objectAtIndex:0];
@@ -338,9 +373,11 @@ typedef struct {
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:3 inSection:0];
     
-    [[(RegisterEditActionTableViewCell*)[_tableView cellForRowAtIndexPath:indexPath] cellLabel] setText:[editSelectBirthDayPopUpDatePicker getDateAsString]];
+    [[(RegisterEditActionTableViewCell*)[_tableView cellForRowAtIndexPath:indexPath] cellLabel] setText:[self prettyDateStringFromStringDate:[editSelectBirthDayPopUpDatePicker getDateAsString]]];
 
     [textFields replaceObjectAtIndex:3 withObject:[editSelectBirthDayPopUpDatePicker getDateAsString]];
+    
+    [self replaceUserinfo:[editSelectBirthDayPopUpDatePicker getDateAsString] andTag:3];
     
     [self closeEditSelectBirthDayPopUp:sender];
 }
@@ -387,7 +424,12 @@ typedef struct {
         }
     }
     if (textFields.count - 1 >= textField.tag) {
-        [textFields replaceObjectAtIndex:textField.tag withObject:textField.text];
+        NSString* textString = textField.text;
+        if (textField.tag == 4) {
+            textString = [textString stringByReplacingOccurrencesOfString:@"V-" withString:@""];
+            textString = [textString stringByReplacingOccurrencesOfString:@"E-" withString:@""];
+        }
+        [textFields replaceObjectAtIndex:textField.tag withObject:textString];
     }
     
 }
@@ -453,6 +495,8 @@ typedef struct {
             _user.birthDay = s;
             break;
         case 4:
+            s = [s stringByReplacingOccurrencesOfString:@"V-" withString:@""];
+            s = [s stringByReplacingOccurrencesOfString:@"E-" withString:@""];
             _user.cedula = @(s.integerValue);
             break;
         case 5:
@@ -674,7 +718,7 @@ NSString* machineName()
             if ((textFields.count - 1) >= indexPath.row && textFields.count != 0 && ![(NSString*)[textFields objectAtIndex:indexPath.row] isEqualToString:@""]) {
                 aCell.cellLabel.text = (NSString*)[textFields objectAtIndex:indexPath.row];
             } else {
-                aCell.cellLabel.text = [self userinfo:indexPath.row];
+                aCell.cellLabel.text = [self prettyDateStringFromStringDate:[self userinfo:indexPath.row]];
             }
             
             __block BOOL hasBeenAdded = NO;
@@ -848,6 +892,7 @@ NSString* machineName()
                                    {
                                        if ([alert.title isEqualToString:@"Yay!"]) {
                                            [self.navigationController popViewControllerAnimated:YES];
+                                           
                                        }
                                    }];
     
@@ -888,6 +933,14 @@ NSString* machineName()
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
 #pragma mark End -
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+
+    
+}
 
 @end

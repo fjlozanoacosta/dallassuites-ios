@@ -26,4 +26,6 @@
 
 -(void)performUserLogInWithEmail:(NSString*)email withPassword:(NSString*)password withComplitionHandler:(void (^)(UserModel*, NSError*))block;
 
+-(void)updateUserInfoWithUser:(UserModel *)user copletitionHandler:(void (^)(BOOL, NSString*, NSError*))block;
+
 @end

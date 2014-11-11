@@ -152,7 +152,7 @@ typedef enum{
         user.username = [userAsJSON objectForKey:@"user_username"];
         user.email = [userAsJSON objectForKey:@"user_email"];
         user.birthDay = [userAsJSON objectForKey:@"user_dob"];
-        user.cedula = [userAsJSON objectForKey:@"user_ci"];
+        user.cedula = @([(NSString*)[userAsJSON objectForKey:@"user_ci"] integerValue]);
         user.password = password;
         
         [self getUserPoints:user withComplitionHandler:^(UserModel * user, NSError * error) {
@@ -215,6 +215,48 @@ typedef enum{
     
     [manager GET:BaseURL parameters:parameters success:success failure:failure];
     
+
+}
+
+-(void)updateUserInfoWithUser:(UserModel *)user copletitionHandler:(void (^)(BOOL, NSString*, NSError*))block{
+    NSDictionary* parameters = @{
+                                 //@"o" : @"addUser",
+                                 @"user_name" : user.name,
+                                 @"user_lastname" : user.lastname,
+                                 @"user_username" : user.username,
+//                                 @"user_email" : user.email,
+                                 @"user_dob" : user.birthDay,
+                                 @"user_ci" : user.cedula
+                                 };
+    
+    id success = ^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+        
+        NSLog(@"%@", responseObject);
+        
+        NSString* error = [responseObject objectForKey:@"error"];
+        
+        if (error) {
+            block(NO,nil,nil);
+            return;
+        }
+        
+        block (YES, [responseObject objectForKey:@"msg"], nil);
+        
+        
+        
+        
+    };
+    
+    id failure =^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@", error.localizedDescription);
+        
+        block(nil,nil,error);
+    };
+    
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager POST:[BaseURL stringByAppendingString:@"?o=updateUserInfo"] parameters:parameters success:success failure:failure];
 
 }
 

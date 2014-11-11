@@ -270,7 +270,7 @@
 
 -(NSString*)getDateAsString {
     
-    NSString* dateAsString = [NSString stringWithFormat:@"%i - %@ - %i", day, [monthArray objectAtIndex:(month-1)], year];
+    NSString* dateAsString = [NSString stringWithFormat:@"%i-%i-%i", year, month, day];
     
     return dateAsString;
     
