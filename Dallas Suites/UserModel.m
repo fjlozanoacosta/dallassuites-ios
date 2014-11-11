@@ -35,7 +35,7 @@ typedef enum{
     id success = ^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
         
         NSString* error = [responseObject objectForKey:@"error"];
-        NSString* msg = [responseObject objectForKey:@"msg"];
+//        NSString* msg = [responseObject objectForKey:@"msg"];
         
         if (error) {
             if ([error isEqualToString:[NSString stringWithFormat:@"El nombre de usuario '%@' ya est\u00e1 registrado", userUsername]]) {
@@ -126,6 +126,96 @@ typedef enum{
     
     [manager POST:[BaseURL stringByAppendingString:@"?o=addPassword"] parameters:parameters success:success failure:failure];
     
+}
+
+-(void)performUserLogInWithEmail:(NSString*)email withPassword:(NSString*)password withComplitionHandler:(void (^)(UserModel*, NSError*))block{
+    
+    NSDictionary* parameters = @{ @"user_login" : email,
+                                  @"user_password" : password
+                                  };
+    
+    
+    id success = ^(AFHTTPRequestOperation *operation, NSArray* responseObject) {
+        
+        if (responseObject.count == 0) {
+            block(nil, nil);
+            return;
+        }
+        
+        NSLog(@"%@", [responseObject objectAtIndex:0]);
+        
+        NSDictionary* userAsJSON = [responseObject objectAtIndex:0];
+        UserModel* user = [UserModel new];
+        user.idUser = [userAsJSON objectForKey:@"user_id"];
+        user.name = [userAsJSON objectForKey:@"user_name"];
+        user.lastname = [userAsJSON objectForKey:@"user_lastname"];
+        user.username = [userAsJSON objectForKey:@"user_username"];
+        user.email = [userAsJSON objectForKey:@"user_email"];
+        user.birthDay = [userAsJSON objectForKey:@"user_dob"];
+        user.cedula = [userAsJSON objectForKey:@"user_ci"];
+        user.password = password;
+        
+        [self getUserPoints:user withComplitionHandler:^(UserModel * user, NSError * error) {
+            
+            if (error) {
+                block(nil, error);
+                return;
+            }
+            
+            block(user, nil);
+            
+        }];
+    };
+    
+    id failure =^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@", error.localizedDescription);
+        
+        block(nil, error);
+    };
+    
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager POST:[BaseURL stringByAppendingString:@"?o=userLogin"] parameters:parameters success:success failure:failure];
+    
+}
+
+-(void)getUserPoints:(UserModel*)user withComplitionHandler:(void (^)(UserModel*, NSError*))block{
+    
+    NSDictionary* parameters = @{ @"o" : @"getUserWithPoints",
+                                  @"user_id" : user.idUser,
+                                  @"user_password" : user.password
+                                  };
+    
+    
+    id success = ^(AFHTTPRequestOperation *operation, NSArray* responseObject) {
+        
+        if (responseObject.count == 0) {
+            block(nil, nil);
+            return;
+        }
+        
+        NSLog(@"%@", [responseObject objectAtIndex:0]);
+        
+        NSDictionary* userAsJSON = [responseObject objectAtIndex:0];
+        user.points = [userAsJSON objectForKey:@"points_available"];
+    
+        
+        block(user, nil);
+    };
+    
+    id failure =^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@", error.localizedDescription);
+        
+        block(nil, error);
+    };
+    
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager GET:BaseURL parameters:parameters success:success failure:failure];
+    
+
 }
 
 @end

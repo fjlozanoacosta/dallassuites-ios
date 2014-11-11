@@ -26,6 +26,8 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+//    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ChachedUser"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
     
     return YES;
 }

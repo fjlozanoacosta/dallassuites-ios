@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "ProfileTableViewCell.h"
 #import "RegisterEditProfileViewController.h"
+#import "UserHistoryModel.h"
 
 #define ProfileCell @"profileCell"
 
@@ -23,9 +24,11 @@
     __weak IBOutlet UILabel *userNameLabel;
         //Points Label
     __weak IBOutlet UILabel *pointsLabel;
+        //Activity Indicator
+    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
     
 
-    
+    NSMutableArray* userHistory;
 }
 //History Tableview
 @property (weak, nonatomic) IBOutlet UITableView *historyTableView;
@@ -40,6 +43,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    userHistory = [NSMutableArray new];
+    
+    [self loadUserHistory];
+    
     //Nav Bar Styling!!!
     [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     navBar.shadowImage = [UIImage new];
@@ -50,8 +57,8 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSString* user = @"Mike Pesate"; //User's Full Name Goes Here
-    CGFloat points = 9750.f; //User's Points Go Here
+    NSString* user = _user.username; //User's Full Name Goes Here
+    CGFloat points = _user.points.floatValue; //User's Points Go Here
     
     //Animation presets
     [userNameLabel setText:@""];
@@ -88,6 +95,32 @@
     
 }
 
+-(void)loadUserHistory{
+    
+    [activityIndicator startAnimating];
+    UserHistoryModel* userHistoryModel = [UserHistoryModel new];
+    
+    
+    [userHistoryModel getUserHistoryForListDisplayWithUser:_user WithComplitionHandler:^(NSMutableArray * responseArray, NSError * error) {
+        [activityIndicator stopAnimating];
+        [UIView animateWithDuration:.5f animations:^{
+            [activityIndicator setAlpha:.0f];
+        }];
+        if (error) {
+            return;
+        }
+        
+        if (responseArray.count == 0) {
+            [UIView animateWithDuration:.5f animations:^{
+                [historyTableView setAlpha:.0f];
+            }];
+        }
+        
+        userHistory = responseArray;
+        [historyTableView reloadData];
+    }];
+}
+
 #pragma mark - TableView Methods -
 #pragma mark - Delegates & DataSource
 #warning TODO: Profile TableView Methods Population
@@ -96,7 +129,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 15;
+    return userHistory.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -108,11 +141,20 @@
     ProfileTableViewCell* cell = [historyTableView dequeueReusableCellWithIdentifier:ProfileCell];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    if (indexPath.row % 2 == 0) {
-        [cell setUpCellInfoWithSuiteName:@"Suit Name" withAction:@"Points Added" withDate:@"14 - Nov - 2014"];
-    } else {
-        [cell setUpCellInfoWithSuiteName:@"" withAction:@"Points Withdrawed" withDate:@"16 - Dic - 2014"];
+    UserHistoryModel* userHistoryModel = [userHistory objectAtIndex:indexPath.row];
+    switch (userHistoryModel.actionType) {
+        case UserRoomHistoryTypeMinus:
+            [cell setUpCellInfoWithSuiteName:userHistoryModel.room_category
+                                  withAction:[NSString stringWithFormat:@"%@ pts", userHistoryModel.used_points]
+                                    withDate:userHistoryModel.visit_timestamp];
+            break;
+        case UserRoomHistoryTypePlus:
+            [cell setUpCellInfoWithSuiteName:@""
+                                  withAction:[NSString stringWithFormat:@"%@ pts", userHistoryModel.earned_points]
+                                    withDate:userHistoryModel.visit_timestamp];
+            break;
     }
+
     
     
     return cell;
@@ -155,6 +197,7 @@
 #pragma mark - Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [(RegisterEditProfileViewController*)[segue destinationViewController] setIsForEdit:YES];
+    [(RegisterEditProfileViewController*)[segue destinationViewController] setUser:_user];
 }
 
 #pragma mark End -

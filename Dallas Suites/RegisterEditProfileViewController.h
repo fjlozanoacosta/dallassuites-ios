@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserModel.h"
 
 @interface RegisterEditProfileViewController : UIViewController
 
 @property bool isForEdit;
+@property (strong, nonatomic) UserModel* user;
 
 @end

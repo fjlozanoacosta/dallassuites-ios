@@ -13,7 +13,6 @@
 #import "RegisterEditActionTableViewCell.h"
 #import "DatePicker.h"
 
-#import "UserModel.h"
 
 #import <sys/utsname.h>
 
@@ -88,8 +87,6 @@ typedef struct {
     NSMutableArray* textFields;
     NSMutableArray* addedTextFields;
     
-    User user;
-    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -101,15 +98,6 @@ typedef struct {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //Testing wothout server connection - Should load user info from server
-    user.nombre = @"Uno";
-    user.apellido = @"Dos";
-    user.email = @"email@email.com";
-    user.fechaDeNacimiento = @"14 - NOV - 1996";
-    user.cedula = @"V-123456";
-    user.usuario = @"UnUsuario";
-    user.clave = @"123456";
     
     //Nav Bar Styling!!!
     [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -148,19 +136,24 @@ typedef struct {
 -(IBAction)registerOrSaveEdit:(UIButton*)sender{
     [self allTextFieldResignFirstResponder];
     
+    [self.view setUserInteractionEnabled:NO];
+    
     //From here the code only works locally, should be adapted to work with services!!!
     
     if (_isForEdit) {
         //If editing profile, do actions here
-        __block BOOL completeRegister = YES;
+        __block BOOL completeUpdate = YES;
         [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
-            if ([obj isEqualToString:@""]) {
-                completeRegister = NO;
+            if ([obj isEqualToString:@""] && (idx == 3)) {
+                completeUpdate = NO;
                 *stop = YES;
+                [self.view setUserInteractionEnabled:YES];
+                [self displayErrorMsgAlertViewWithMessage:[self errorMessageForIndex:idx] withTitle:@"Opps"];
                 return;
             }
         }];
-        if (completeRegister) {
+        if (completeUpdate) {
+            [self.view setUserInteractionEnabled:YES];
             if(!validEmail){
                 return;
             }
@@ -168,7 +161,7 @@ typedef struct {
                 NSLog(@"%@ = %@", [RegisterTextFieldsPlaceholders objectAtIndex:idx], obj);
             }];
         }
-
+        [self.view setUserInteractionEnabled:YES];
         return;
     }
     
@@ -179,11 +172,13 @@ typedef struct {
             NSLog(@"%i",(int)idx);
             completeRegister = NO;
             *stop = YES;
+            [self.view setUserInteractionEnabled:YES];
             [self displayErrorMsgAlertViewWithMessage:[self errorMessageForIndex:idx] withTitle:@"Opps"];
             return;
         }
     }];
     if (completeRegister) {
+        [self.view setUserInteractionEnabled:YES];
         if(!validEmail){
             [self displayErrorMsgAlertViewWithMessage:@"El email no es válido." withTitle:@"Opps"];
             return;
@@ -223,7 +218,7 @@ typedef struct {
         
     }
 
-    
+    [self.view setUserInteractionEnabled:YES];
     
 }
 
@@ -446,25 +441,25 @@ typedef struct {
 
     switch (idx) {
         case 0:
-            user.nombre = s;
+            _user.name = s;
             break;
         case 1:
-            user.apellido = s;
+            _user.lastname = s;
             break;
         case 2:
-            user.email = s;
+            _user.email = s;
             break;
         case 3:
-            user.fechaDeNacimiento = s;
+            _user.birthDay = s;
             break;
         case 4:
-            user.cedula = s;
+            _user.cedula = @(s.integerValue);
             break;
         case 5:
-            user.usuario = s;
+            _user.username = s;
             break;
         case 6:
-            user.clave = s;
+            _user.password = s;
             break;
     }
 }
@@ -736,6 +731,12 @@ NSString* machineName()
         [rCell.textEditField setKeyboardType:UIKeyboardTypeAlphabet];
     }
     
+    if (indexPath.row == 5 || indexPath.row == 2 || indexPath.row == 6) {
+        [rCell.textEditField setUserInteractionEnabled:NO];
+    } else {
+        [rCell.textEditField setUserInteractionEnabled:YES];
+    }
+    
     __block BOOL hasBeenAdded = NO;
     [addedTextFields enumerateObjectsUsingBlock:^(NSNumber* obj, NSUInteger idx, BOOL *stop) {
         if (obj.integerValue == indexPath.row) {
@@ -758,25 +759,25 @@ NSString* machineName()
     NSString* s;
     switch (idx) {
         case 0:
-            s = user.nombre;
+            s = _user.name;
             break;
         case 1:
-            s = user.apellido;
+            s = _user.lastname;
             break;
         case 2:
-            s = user.email;
+            s = _user.email;
             break;
         case 3:
-            s = user.fechaDeNacimiento;
+            s = _user.birthDay;
             break;
         case 4:
-            s = user.cedula;
+            s = [NSString stringWithFormat:@"%i", _user.cedula.intValue];
             break;
         case 5:
-            s = user.usuario;
+            s = _user.username;
             break;
         case 6:
-            s = user.clave;
+            s = _user.password;
             break;
     }
     return s;

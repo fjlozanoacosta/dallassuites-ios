@@ -42,6 +42,7 @@
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
             <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
         </mutableArray>
         <mutableArray key="Brandon_reg_it.otf">
             <string>BrandonGrotesque-RegularItalic</string>
@@ -446,6 +447,9 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="homePopUpLogInBtnBg_ON"/>
+                                                <connections>
+                                                    <action selector="performLogInAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nzN-Er-aui"/>
+                                                </connections>
                                             </button>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="homeLogInPasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Yfk-A6-Fwh">
                                                 <rect key="frame" x="20" y="95" width="15" height="18"/>
@@ -1417,6 +1421,36 @@ guacamole y caraotas.</string>
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kR-Gv-K6q" userLabel="No History">
+                                <rect key="frame" x="0.0" y="351" width="600" height="249"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="profileNoHistoryCenterImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ggf-ZG-mWe">
+                                        <rect key="frame" x="257" y="61" width="85" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="fWe-4B-oIt"/>
+                                            <constraint firstAttribute="height" constant="45" id="gJz-AL-tQi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Hay HIstorial. Deberias Visitarnos." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N2-jV-xDt">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="EYV-WW-7ag"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="13"/>
+                                        <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="8N2-jV-xDt" secondAttribute="centerX" id="K5O-Ga-fhR"/>
+                                    <constraint firstAttribute="centerY" secondItem="Ggf-ZG-mWe" secondAttribute="centerY" constant="41" id="ZzI-CE-jOb"/>
+                                    <constraint firstAttribute="centerY" secondItem="8N2-jV-xDt" secondAttribute="centerY" id="dkV-qs-BPm"/>
+                                    <constraint firstAttribute="trailing" secondItem="8N2-jV-xDt" secondAttribute="trailing" id="yUy-En-rjS"/>
+                                    <constraint firstAttribute="centerX" secondItem="Ggf-ZG-mWe" secondAttribute="centerX" id="zQ3-zb-tsL"/>
+                                    <constraint firstItem="8N2-jV-xDt" firstAttribute="leading" secondItem="3kR-Gv-K6q" secondAttribute="leading" id="za7-xv-qrT"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-kz-kmV" userLabel="History Tableview">
                                 <rect key="frame" x="0.0" y="351" width="600" height="249"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1508,6 +1542,13 @@ guacamole y caraotas.</string>
                                     <outlet property="delegate" destination="hrj-5n-jMu" id="HMx-lo-ZiO"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="g9F-Jw-VV2">
+                                <rect key="frame" x="290" y="465" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="4rX-DP-eSq"/>
+                                    <constraint firstAttribute="height" constant="20" id="uhT-83-1Og"/>
+                                </constraints>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQy-pg-0LC" userLabel="History Label Container">
                                 <rect key="frame" x="0.0" y="291" width="600" height="60"/>
                                 <subviews>
@@ -1573,22 +1614,28 @@ guacamole y caraotas.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="V9F-cP-ybS" firstAttribute="leading" secondItem="0dQ-7r-N7s" secondAttribute="leading" id="2Ee-2x-XnC"/>
+                            <constraint firstItem="Dko-zB-Ry3" firstAttribute="top" secondItem="3kR-Gv-K6q" secondAttribute="bottom" id="2pl-z4-4rB"/>
                             <constraint firstItem="woD-0c-CAl" firstAttribute="leading" secondItem="0dQ-7r-N7s" secondAttribute="leading" id="90D-aE-eko"/>
                             <constraint firstItem="Dko-zB-Ry3" firstAttribute="top" secondItem="V9F-cP-ybS" secondAttribute="bottom" id="9Yn-1X-iKv"/>
                             <constraint firstItem="Qdg-kz-kmV" firstAttribute="top" secondItem="xQy-pg-0LC" secondAttribute="bottom" id="CzP-WH-igH"/>
                             <constraint firstItem="Dko-zB-Ry3" firstAttribute="top" secondItem="Qdg-kz-kmV" secondAttribute="bottom" id="GmL-M8-5Mk"/>
                             <constraint firstAttribute="trailing" secondItem="woD-0c-CAl" secondAttribute="trailing" id="I8A-QJ-PN5"/>
+                            <constraint firstAttribute="centerY" secondItem="g9F-Jw-VV2" secondAttribute="centerY" constant="-175" id="L7Y-wc-DGr"/>
                             <constraint firstAttribute="trailing" secondItem="xQy-pg-0LC" secondAttribute="trailing" id="OJ4-Pn-dlf"/>
+                            <constraint firstAttribute="centerX" secondItem="g9F-Jw-VV2" secondAttribute="centerX" id="QSn-4R-Ri5"/>
                             <constraint firstItem="Iic-yb-dms" firstAttribute="top" secondItem="BnF-Tm-iIe" secondAttribute="bottom" constant="15" id="RwA-Sk-ysi"/>
                             <constraint firstItem="V9F-cP-ybS" firstAttribute="top" secondItem="0dQ-7r-N7s" secondAttribute="top" id="Rxs-w2-qlE"/>
                             <constraint firstItem="Qdg-kz-kmV" firstAttribute="leading" secondItem="0dQ-7r-N7s" secondAttribute="leading" id="SCm-NK-CnX"/>
                             <constraint firstItem="xQy-pg-0LC" firstAttribute="leading" secondItem="0dQ-7r-N7s" secondAttribute="leading" id="SSg-zF-7Pm"/>
+                            <constraint firstItem="3kR-Gv-K6q" firstAttribute="top" secondItem="xQy-pg-0LC" secondAttribute="bottom" id="Xd9-QP-ePd"/>
+                            <constraint firstAttribute="trailing" secondItem="3kR-Gv-K6q" secondAttribute="trailing" id="Y5u-0z-Gl1"/>
                             <constraint firstItem="BnF-Tm-iIe" firstAttribute="top" secondItem="ZRE-Kp-0Is" secondAttribute="bottom" constant="32" id="ZBw-vc-YzH"/>
                             <constraint firstAttribute="centerX" secondItem="Iic-yb-dms" secondAttribute="centerX" id="cBb-FD-hoW"/>
                             <constraint firstAttribute="trailing" secondItem="ZRE-Kp-0Is" secondAttribute="trailing" id="fNo-N5-MNO"/>
                             <constraint firstAttribute="centerX" secondItem="BnF-Tm-iIe" secondAttribute="centerX" id="gcF-A5-cE8"/>
                             <constraint firstItem="ZRE-Kp-0Is" firstAttribute="top" secondItem="0dQ-7r-N7s" secondAttribute="top" id="hz8-q8-4P1"/>
                             <constraint firstItem="woD-0c-CAl" firstAttribute="top" secondItem="Iic-yb-dms" secondAttribute="bottom" constant="36" id="kvK-7x-2Fb"/>
+                            <constraint firstItem="3kR-Gv-K6q" firstAttribute="leading" secondItem="0dQ-7r-N7s" secondAttribute="leading" id="lzf-GW-0bs"/>
                             <constraint firstAttribute="trailing" secondItem="V9F-cP-ybS" secondAttribute="trailing" id="me2-nS-Yf1"/>
                             <constraint firstItem="xQy-pg-0LC" firstAttribute="top" secondItem="woD-0c-CAl" secondAttribute="bottom" constant="1" id="o12-eL-9oR"/>
                             <constraint firstItem="ZRE-Kp-0Is" firstAttribute="leading" secondItem="0dQ-7r-N7s" secondAttribute="leading" id="p1A-eR-BdQ"/>
@@ -1597,6 +1644,7 @@ guacamole y caraotas.</string>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="g9F-Jw-VV2" id="fHa-RB-3Ss"/>
                         <outlet property="historyTableView" destination="Qdg-kz-kmV" id="n3q-Et-S27"/>
                         <outlet property="navBar" destination="ZRE-Kp-0Is" id="okn-eJ-Zip"/>
                         <outlet property="pointsLabel" destination="qHS-QY-LTV" id="tIz-br-UJz"/>
@@ -1691,6 +1739,7 @@ guacamole y caraotas.</string>
         <image name="profileEditBtn" width="41" height="41"/>
         <image name="profileEditBtn_ON" width="21" height="21"/>
         <image name="profileHistoryPlusSign" width="18" height="18"/>
+        <image name="profileNoHistoryCenterImage" width="85" height="45"/>
         <image name="roomListDemoImage" width="320" height="150"/>
         <image name="roomServiceIcon" width="24" height="23"/>
         <image name="serviceBg" width="320" height="568"/>

@@ -54,6 +54,7 @@
 		27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */; };
 		27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */; };
 		27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */; };
+		27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */; };
 		27FE6A741A0C4ABD00F320DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3721A0C4A78008FA875 /* Foundation.framework */; };
 		27FE6A751A0C4ABD00F320DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3701A0C4A72008FA875 /* UIKit.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +154,8 @@
 		27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditProfileViewController.m; sourceTree = "<group>"; };
 		27AE73DC1A053BF9009746CF /* RegisterOrEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterOrEditTableViewCell.h; sourceTree = "<group>"; };
 		27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterOrEditTableViewCell.m; sourceTree = "<group>"; };
+		27F6CB691A11886400A93B9A /* UserHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistoryModel.h; sourceTree = "<group>"; };
+		27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistoryModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,8 @@
 				27201D4A1A0BF97500900E62 /* UserModel.m */,
 				27AD8D161A0CFD17001A17E3 /* RoomModel.h */,
 				27AD8D171A0CFD17001A17E3 /* RoomModel.m */,
+				27F6CB691A11886400A93B9A /* UserHistoryModel.h */,
+				27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				27AD8D301A0D14A5001A17E3 /* AFNetworkReachabilityManager.m in Sources */,
 				27AD8D341A0D14A5001A17E3 /* AFURLResponseSerialization.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,
+				27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

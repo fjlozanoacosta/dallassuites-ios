@@ -7,6 +7,8 @@
 //
 
 #import "HomeAndServiceViewController.h"
+#import "UserModel.h"
+#import "ProfileViewController.h"
 
 
 //Segues
@@ -87,6 +89,9 @@
     //Validation vars!
     BOOL isLogInPopUpDisplayed;
     BOOL isServicePopUpDisplayed;
+    
+    //User
+    UserModel* _user;
 }
 
 @end
@@ -107,12 +112,15 @@
     //Service Pop Up Description Label Multiline
     [sPUServicesDescriptionLabel setNumberOfLines:0];
     
+    
+    pUUsernameTextField.placeholder = @"EMAIL";
+    
 #warning TODO: Check For User
     //Here is where the code that checks if there's an user logged in and changes the register bttn acordingly!!
-    if(false){
-        [logInBtn setHidden:YES];
-        [registerProfileBtn setTitle:@"PERFIL" forState:UIControlStateNormal];
-        [registerProfileBtn setTag:1];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ChachedUser"]){
+        _user = [UserModel new];
+        _user.email = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserEmailKey"];
+        [self setUserIsPreLoggedIn];
     }
     
 }
@@ -130,6 +138,10 @@
         return;
     }
     isLogInPopUpDisplayed = YES;
+    
+    if (sender.tag == 1) {
+        pUUsernameTextField.text = _user.email;
+    }
     
     CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
     transform = CATransform3DScale(transform, .2f, .2f, 1.f);
@@ -193,9 +205,23 @@
 
 - (IBAction)goToRegisterOrProfileView:(UIButton*)sender {
     
+    if (sender.tag == 1) {
+        [self displayLogInPopUp:sender];
+        return;
+    }
     [self performSegueWithIdentifier:[allSegues objectAtIndex:sender.tag] sender:sender];
     
 }
+
+#pragma mark End -
+#pragma mark - Methods
+
+-(void)setUserIsPreLoggedIn{
+    [logInBtn setHidden:YES];
+    [registerProfileBtn setTitle:@"PERFIL" forState:UIControlStateNormal];
+    [registerProfileBtn setTag:1];
+}
+
 
 #pragma mark End -
 
@@ -272,6 +298,52 @@
     }];
     
 }
+
+- (IBAction)performLogInAction:(UIButton *)sender {
+    
+    UserModel* user = [UserModel new];
+    
+    [self.view setUserInteractionEnabled:NO];
+    
+    void (^block)(UserModel*, NSError*) = ^(UserModel* user, NSError* error){
+        [self.view setUserInteractionEnabled:YES];
+        if (error) {
+            [self displayErrorMsgAlertViewWithMessage:@"Ocurrio un error al hacer log in. Revise su conexión a internet." withTitle:@"Oops"];
+            return;
+        }
+        
+        if (!user) {
+            [self displayErrorMsgAlertViewWithMessage:@"Error de log in, revise su email y/o clave" withTitle:@"Oops"];
+            return;
+        }
+        
+        [self closeDisplayedLogInPopUp:nil];
+//        NSLog(@"Exito!");
+        if (_user) {
+            _user = user;
+            [self performSegueWithIdentifier:[allSegues objectAtIndex:1] sender:sender];
+            return;
+        }
+        
+        _user = user;
+        _user.password = @"";
+        [[NSUserDefaults standardUserDefaults] setObject:_user.email forKey:@"UserEmailKey"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ChachedUser"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self setUserIsPreLoggedIn];
+        
+        
+        
+        
+
+    };
+    
+    [user performUserLogInWithEmail:pUUsernameTextField.text
+                       withPassword:pUPasswordTextField.text
+              withComplitionHandler:block];
+    
+}
+
 
 
 #pragma mark End -
@@ -357,5 +429,40 @@
     return UIStatusBarStyleLightContent;
 
 }
+#pragma mark End -
+
+#pragma mark - Prepare For Segue -
+#pragma mark - Pass User
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:goToProfile]) {
+        ProfileViewController* destination = (ProfileViewController*)[segue destinationViewController];
+        destination.user = _user;
+    }
+}
+#pragma mark End -
+
+#pragma mark - AlertView -
+#pragma mark - Display Alert View
+
+- (void)displayErrorMsgAlertViewWithMessage:(NSString*)message withTitle:(NSString*)title{
+    
+    if (!title) {
+        title = @"Opps!";
+    }
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Continuar"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction *action)
+                                   {
+                                   }];
+    
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
 #pragma mark End -
 @end
