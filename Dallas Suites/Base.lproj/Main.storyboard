@@ -415,7 +415,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.91372549533843994" green="0.73725491762161255" blue="0.58431375026702881" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74a-fC-JzK" userLabel="Password - Bottom Line">
                                                 <rect key="frame" x="0.0" y="132" width="600" height="1"/>
@@ -1745,6 +1745,6 @@ guacamole y caraotas.</string>
         <image name="serviceBg" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H6Q-5x-Alr"/>
+        <segue reference="gIl-Dc-JpJ"/>
     </inferredMetricsTieBreakers>
 </document>

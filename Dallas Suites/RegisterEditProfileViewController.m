@@ -339,6 +339,45 @@ typedef struct {
 }
 
 - (IBAction)addPasswordButton:(UIButton *)sender {
+    
+    void (^block)(NSInteger, NSString*, NSError*) = ^(NSInteger flag, NSString* errorMsg, NSError* error) {
+        [self closeAddPasswordPopUp:nil];
+        
+        if (error) {
+            [self displayErrorMsgAlertViewWithMessage:@"Problemas agregando la clave nueva. Verifique su conexión a internet." withTitle:@"Oops"];
+            return;
+        }
+        
+        if (flag == kErrorAddingNewPassword) {
+            [self displayErrorMsgAlertViewWithMessage:errorMsg withTitle:@"Oops"];
+            return;
+        }
+        
+        [self displayErrorMsgAlertViewWithMessage:errorMsg withTitle:@"Logrado!"];
+
+        
+    };
+    
+    if ([addPasswordPopUpPasswordTextField.text isEqualToString:addPasswordPopUpPasswordAgainTextField.text] &&
+        ![addPasswordPopUpPasswordAgainTextField.text isEqualToString:@""] &&
+        ![addPasswordPopUpPasswordTextField.text isEqualToString:@""] &&
+        addPasswordPopUpPasswordAgainTextField.text.length > 5)
+    {
+        
+        [_user addPasswordToUser:_user withNewPassword:addPasswordPopUpPasswordTextField.text copletitionHandler:block];
+        return;
+        
+    }
+    
+    if (addPasswordPopUpPasswordAgainTextField.text.length <= 5) {
+        [self displayErrorMsgAlertViewWithMessage:@"La clave es muy corta." withTitle:@"Oops!"];
+        return;
+    }
+    
+    [self displayErrorMsgAlertViewWithMessage:@"Las claves no coinciden!" withTitle:@"Oops!"];
+    
+    
+    
 }
 
 #pragma mark End -
@@ -893,6 +932,8 @@ NSString* machineName()
                                        if ([alert.title isEqualToString:@"Yay!"]) {
                                            [self.navigationController popViewControllerAnimated:YES];
                                            
+                                       } else if ([alert.title isEqualToString:@"Logrado!"]){
+                                           [self.navigationController popToRootViewControllerAnimated:YES];
                                        }
                                    }];
     

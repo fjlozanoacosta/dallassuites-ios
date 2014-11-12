@@ -10,10 +10,7 @@
 #import "AFNetworking.h"
 #import "ConnectionManager.h"
 
-typedef enum{
-    kNewPasswordAdded,
-    kErrorAddingNewPassword
-} kAddNewPassword;
+
 
 @implementation UserModel
 
@@ -126,6 +123,14 @@ typedef enum{
     
     [manager POST:[BaseURL stringByAppendingString:@"?o=addPassword"] parameters:parameters success:success failure:failure];
     
+}
+
+-(void)addPasswordToUser:(UserModel *)user withNewPassword:(NSString*)newPassword copletitionHandler:(void (^)(NSInteger, NSString*, NSError*))block{
+    
+    user.password = newPassword;
+    
+    [self addPasswordToUser:user copletitionHandler:block];
+
 }
 
 -(void)performUserLogInWithEmail:(NSString*)email withPassword:(NSString*)password withComplitionHandler:(void (^)(UserModel*, NSError*))block{
