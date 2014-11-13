@@ -265,4 +265,39 @@
 
 }
 
+-(void)recoverUserPasswordWithUserEmail:(NSString*)userEmail withCompletitionHanlder:(void (^)(BOOL, NSString*, NSError*))block{
+    NSDictionary* parameters = @{
+                                 @"user_email" : userEmail
+                                 };
+    
+    id success = ^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+        
+        NSLog(@"%@", responseObject);
+        
+        NSString* error = [responseObject objectForKey:@"error"];
+        
+        if (error) {
+            block(NO,error,nil);
+            return;
+        }
+        
+        block (YES, @"Contraseñas reestablecidas con éxito. Revise su correo.", nil);
+        
+        
+        
+    };
+    
+    id failure =^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@", error.localizedDescription);
+        
+        block(nil,nil,error);
+    };
+    
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager POST:[BaseURL stringByAppendingString:@"?o=resetUserPassword"] parameters:parameters success:success failure:failure];
+    
+}
+
 @end

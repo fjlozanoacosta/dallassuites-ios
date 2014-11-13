@@ -33,4 +33,6 @@ typedef enum{
 
 -(void)updateUserInfoWithUser:(UserModel *)user copletitionHandler:(void (^)(BOOL, NSString*, NSError*))block;
 
+-(void)recoverUserPasswordWithUserEmail:(NSString*)userEmail withCompletitionHanlder:(void (^)(BOOL, NSString*, NSError*))block;
+
 @end

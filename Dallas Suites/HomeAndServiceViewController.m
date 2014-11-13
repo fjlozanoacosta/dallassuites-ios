@@ -344,6 +344,73 @@
     
 }
 
+- (IBAction)recoverPasswordButton:(UIButton *)sender {
+    
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Recuperar Contraseñas"
+                                                                   message:@"Ingrese su email:"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"correo@ejemplo.com";
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction *action)
+                                   {
+                                   }];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action)
+                                   {
+                                       UITextField* emailField = alert.textFields.firstObject;
+                                       
+                                       [_user recoverUserPasswordWithUserEmail:emailField.text withCompletitionHanlder:^(BOOL passwordsReseted, NSString * msg, NSError * error) {
+                                           if (error) {
+                                               UIAlertController* alert2 = [UIAlertController alertControllerWithTitle:@"Oops!"
+                                                                                                              message:@"Error reestableciendo su(s) contraseña(s). Verifique su conexión a internet."
+                                                                                                       preferredStyle:UIAlertControllerStyleAlert];
+                                               
+                                               UIAlertAction *cancelAction2 = [UIAlertAction actionWithTitle:@"Continuar"
+                                                                                                      style:UIAlertActionStyleCancel
+                                                                                                    handler:^(UIAlertAction *action)
+                                                                              {
+                                                                                  
+                                                                              }];
+                                               [alert2 addAction:cancelAction2];
+                                               [self presentViewController:alert2 animated:YES completion:nil];
+                                               return ;
+                                           }
+                                           
+                                           UIAlertController* alert2 = [UIAlertController alertControllerWithTitle:@"Oops!"
+                                                                                                           message:msg
+                                                                                                    preferredStyle:UIAlertControllerStyleAlert];
+                                           
+                                           UIAlertAction *cancelAction2 = [UIAlertAction actionWithTitle:@"Continuar"
+                                                                                                   style:UIAlertActionStyleCancel
+                                                                                                 handler:^(UIAlertAction *action)
+                                                                           {
+                                                                               
+                                                                           }];
+                                           [alert2 addAction:cancelAction2];
+                                           [self presentViewController:alert2 animated:YES completion:nil];
+
+                                           
+                                           
+                                       }];
+                                       
+                                   }];
+    
+    [alert addAction:okAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    
+}
+
+
 
 
 #pragma mark End -
