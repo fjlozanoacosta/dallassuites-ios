@@ -383,7 +383,7 @@
                                                return ;
                                            }
                                            
-                                           UIAlertController* alert2 = [UIAlertController alertControllerWithTitle:@"Oops!"
+                                           UIAlertController* alert2 = [UIAlertController alertControllerWithTitle:(passwordsReseted)?@"Yay!":@"Oops!"
                                                                                                            message:msg
                                                                                                     preferredStyle:UIAlertControllerStyleAlert];
                                            
