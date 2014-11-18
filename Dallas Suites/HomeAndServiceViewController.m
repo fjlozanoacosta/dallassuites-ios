@@ -9,6 +9,7 @@
 #import "HomeAndServiceViewController.h"
 #import "UserModel.h"
 #import "ProfileViewController.h"
+#import "systemCheck.h"
 
 
 //Segues
@@ -20,7 +21,7 @@
 #define servicePopUpDescriptions @[ @"Para complementar su estadía, le ofrecemos una gran variedad de platos y una extensa carta de bebidas paraque las disfrute tanto en nuestro Bar/Restaurant, como en la comodidad de su Suite.", @"No sólo la calidad de nuestros servicios nos distinguen, sino también la Privacidad y Seguridad de nuestras instalaciones.", @"Sólo en Dallas Suites Hotel tenemos una Doble Recepción que le garantiza fluidez a su llegada y el menor tiempo de espera posible.", @"Sauna, Vapor, Jacuzzi, Pole Dance, son algunas de las Amenidades que le esperan en nuestras Suites, para que su visita se Única en su Estilo."]
 #define servicePopUpIconImageName @[@"roomServiceIcon", @"privacyAndSecurityIcon", @"dobleReceptionIcon", @"comfortIcon"]
 
-@interface HomeAndServiceViewController () <UITextFieldDelegate> {
+@interface HomeAndServiceViewController () <UITextFieldDelegate, UIAlertViewDelegate> {
     
     //Main View
         //Services Nav Bar
@@ -165,7 +166,7 @@
     
     
     [homeButtonsContainerBottomSpaceConstraint setConstant:-250.f];
-    [logInBtnRightMarginConstraint setConstant: -40.f];
+//    [logInBtnRightMarginConstraint setConstant: -40.f];
     
     if ([UIScreen mainScreen].bounds.size.height == 480) {
         [logoImageHeightConstraint setConstant:165.f];
@@ -240,7 +241,7 @@
     } completion:^(BOOL finished) {
         
         [homeButtonsContainerBottomSpaceConstraint setConstant:.0f];
-        [logInBtnRightMarginConstraint setConstant: 10.f];
+//        [logInBtnRightMarginConstraint setConstant: 10.f];
         
         if ([UIScreen mainScreen].bounds.size.height == 480) {
             [logoImageHeightConstraint setConstant:186.f];
@@ -346,21 +347,21 @@
 
 - (IBAction)recoverPasswordButton:(UIButton *)sender {
     
-    
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Recuperar Contraseñas"
-                                                                   message:@"Ingrese su email:"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"correo@ejemplo.com";
-    }];
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction *action)
-                                   {
-                                   }];
-    
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok"
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Recuperar Contraseñas"
+                                                                       message:@"Ingrese su email:"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"correo@ejemplo.com";
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar"
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction *action)
+                                       {
+                                       }];
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction *action)
                                    {
@@ -369,15 +370,15 @@
                                        [_user recoverUserPasswordWithUserEmail:emailField.text withCompletitionHanlder:^(BOOL passwordsReseted, NSString * msg, NSError * error) {
                                            if (error) {
                                                UIAlertController* alert2 = [UIAlertController alertControllerWithTitle:@"Oops!"
-                                                                                                              message:@"Error reestableciendo su(s) contraseña(s). Verifique su conexión a internet."
-                                                                                                       preferredStyle:UIAlertControllerStyleAlert];
+                                                                                                               message:@"Error reestableciendo su(s) contraseña(s). Verifique su conexión a internet."
+                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
                                                
                                                UIAlertAction *cancelAction2 = [UIAlertAction actionWithTitle:@"Continuar"
-                                                                                                      style:UIAlertActionStyleCancel
-                                                                                                    handler:^(UIAlertAction *action)
-                                                                              {
-                                                                                  
-                                                                              }];
+                                                                                                       style:UIAlertActionStyleCancel
+                                                                                                     handler:^(UIAlertAction *action)
+                                                                               {
+                                                                                   
+                                                                               }];
                                                [alert2 addAction:cancelAction2];
                                                [self presentViewController:alert2 animated:YES completion:nil];
                                                return ;
@@ -395,16 +396,18 @@
                                                                            }];
                                            [alert2 addAction:cancelAction2];
                                            [self presentViewController:alert2 animated:YES completion:nil];
-
+                                           
                                            
                                            
                                        }];
                                        
                                    }];
-    
-    [alert addAction:okAction];
-    [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];
+        
+        [alert addAction:okAction];
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
     
     
     
@@ -517,19 +520,30 @@
         title = @"Opps!";
     }
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
-                                                                   message:message
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Continuar"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction *action)
-                                   {
-                                   }];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Continuar"
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction *action)
+                                       {
+                                       }];
+        
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Continuar" otherButtonTitles: nil];
+        [alert show];
+    }
     
-    [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];
+
     
 }
 
 #pragma mark End -
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+}
 @end

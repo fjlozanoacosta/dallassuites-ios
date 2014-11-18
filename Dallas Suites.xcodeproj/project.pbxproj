@@ -84,6 +84,7 @@
 		270E6C7B19FAC685005994F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dallas_SuitesTests.m; sourceTree = "<group>"; };
 		270E6C8619FAE677005994F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		271FADB21A1BD1E8004E0DDA /* systemCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = systemCheck.h; sourceTree = "<group>"; };
 		27201D491A0BF97500900E62 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		27201D4A1A0BF97500900E62 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		2735BFF11A07D65C001BFB8A /* RegisterEditActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEditActionTableViewCell.h; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 				277307F11A00260D000FC4B1 /* Fonts */,
 				270E6C6119FAC685005994F9 /* Info.plist */,
 				270E6C6219FAC685005994F9 /* main.m */,
+				271FADB21A1BD1E8004E0DDA /* systemCheck.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -752,7 +754,7 @@
 					"./**",
 				);
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a9893d1f-3f5b-469d-84f7-f8ddfcdde80b";
@@ -770,7 +772,7 @@
 					"./**",
 				);
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a9893d1f-3f5b-469d-84f7-f8ddfcdde80b";

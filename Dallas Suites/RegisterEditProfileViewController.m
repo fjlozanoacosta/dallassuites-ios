@@ -13,6 +13,7 @@
 #import "RegisterEditActionTableViewCell.h"
 #import "ProfileViewController.h"
 #import "DatePicker.h"
+#import "systemCheck.h"
 
 
 #import <sys/utsname.h>
@@ -40,7 +41,7 @@ typedef struct {
 }User;
 
 
-@interface RegisterEditProfileViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UITextFieldDelegate> {
+@interface RegisterEditProfileViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
     
     
     //Nav Bar Outlets
@@ -922,24 +923,31 @@ NSString* machineName()
         title = @"Opps!";
     }
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
-                                                                   message:message
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Continuar"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction *action)
-                                   {
-                                       if ([alert.title isEqualToString:@"Yay!"]) {
-                                           [self.navigationController popViewControllerAnimated:YES];
-                                           
-                                       } else if ([alert.title isEqualToString:@"Logrado!"]){
-                                           [self.navigationController popToRootViewControllerAnimated:YES];
-                                       }
-                                   }];
-    
-    [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Continuar"
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction *action)
+                                       {
+                                           if ([alert.title isEqualToString:@"Yay!"]) {
+                                               [self.navigationController popViewControllerAnimated:YES];
+                                               
+                                           } else if ([alert.title isEqualToString:@"Logrado!"]){
+                                               [self.navigationController popToRootViewControllerAnimated:YES];
+                                           }
+                                       }];
+        
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
 
+    } else {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Continuar" otherButtonTitles: nil];
+        [alert show];
+    }
+    
+    
 }
 
 -(NSString*)errorMessageForIndex:(NSInteger)index{
@@ -964,6 +972,16 @@ NSString* machineName()
 }
 
 #pragma mark End -
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if ([alertView.title isEqualToString:@"Yay!"]) {
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } else if ([alertView.title isEqualToString:@"Logrado!"]){
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
+
 
 #pragma mark - Nav Bar Methods -
 #pragma mark - Button Actions
