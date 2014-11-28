@@ -182,6 +182,9 @@ typedef struct {
             [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
                 NSLog(@"%@ = %@", [RegisterTextFieldsPlaceholders objectAtIndex:idx], obj);
             }];
+            if (_user.cedula == nil) {
+                _user.cedula = @(0);
+            }
             [_user updateUserInfoWithUser:_user copletitionHandler:^(BOOL wasUserUpdated, NSString * msg, NSError * error) {
                 
                 if (error || !wasUserUpdated) {
@@ -233,6 +236,9 @@ typedef struct {
         registeringUser.username = [textFields objectAtIndex:5];
         registeringUser.password = [textFields objectAtIndex:6];
         
+        if (_user.cedula == nil) {
+            _user.cedula = @(0);
+        }
         
         void (^block)(BOOL, NSString*, NSError*) = ^(BOOL wasUserCreated, NSString* errorMsg, NSError* error) {
         
