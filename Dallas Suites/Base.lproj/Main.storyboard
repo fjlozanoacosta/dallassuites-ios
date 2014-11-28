@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qpm-2y-imx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qpm-2y-imx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -1395,11 +1395,11 @@ como en la comodidad de su Suite.</string>
                                                 <exclude reference="c7Y-yd-4Oa"/>
                                                 <exclude reference="RUt-mJ-9Uc"/>
                                                 <exclude reference="mBA-LB-8Ky"/>
-                                                <exclude reference="h5Z-sh-UwP"/>
-                                                <exclude reference="mUh-0Q-lpm"/>
                                                 <exclude reference="E81-W3-PWc"/>
                                                 <exclude reference="IGK-Ca-CTQ"/>
                                                 <exclude reference="agL-g5-yAP"/>
+                                                <exclude reference="h5Z-sh-UwP"/>
+                                                <exclude reference="mUh-0Q-lpm"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -1414,16 +1414,16 @@ como en la comodidad de su Suite.</string>
                                                 <include reference="RUt-mJ-9Uc"/>
                                                 <exclude reference="cBt-Tz-nNT"/>
                                                 <include reference="mBA-LB-8Ky"/>
-                                                <exclude reference="SVq-1n-JDJ"/>
-                                                <include reference="h5Z-sh-UwP"/>
-                                                <include reference="mUh-0Q-lpm"/>
-                                                <exclude reference="t8f-ye-IbQ"/>
                                                 <include reference="E81-W3-PWc"/>
                                                 <include reference="IGK-Ca-CTQ"/>
                                                 <exclude reference="UH4-uz-5h1"/>
                                                 <include reference="agL-g5-yAP"/>
                                                 <exclude reference="mUX-t5-OAb"/>
                                                 <exclude reference="xHV-Yn-l6u"/>
+                                                <exclude reference="SVq-1n-JDJ"/>
+                                                <include reference="h5Z-sh-UwP"/>
+                                                <include reference="mUh-0Q-lpm"/>
+                                                <exclude reference="t8f-ye-IbQ"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1554,11 +1554,11 @@ como en la comodidad de su Suite.</string>
                                 <exclude reference="Dg8-wz-gog"/>
                                 <exclude reference="KRJ-IW-BAo"/>
                                 <exclude reference="iDF-90-zrc"/>
-                                <exclude reference="eKM-fn-6ew"/>
                                 <exclude reference="gZQ-u2-2BU"/>
                                 <exclude reference="jxH-14-kye"/>
                                 <exclude reference="BQA-Dj-m2b"/>
                                 <exclude reference="Qvj-LW-rCk"/>
+                                <exclude reference="eKM-fn-6ew"/>
                                 <exclude reference="kse-be-FD9"/>
                             </mask>
                         </variation>
@@ -1605,7 +1605,6 @@ como en la comodidad de su Suite.</string>
                                 <exclude reference="cQj-fl-bZ6"/>
                                 <include reference="iDF-90-zrc"/>
                                 <exclude reference="SIL-vA-gJn"/>
-                                <include reference="eKM-fn-6ew"/>
                                 <include reference="gZQ-u2-2BU"/>
                                 <include reference="jxH-14-kye"/>
                                 <exclude reference="mIR-DY-Sr9"/>
@@ -1614,6 +1613,7 @@ como en la comodidad de su Suite.</string>
                                 <exclude reference="Mcf-YP-Rnb"/>
                                 <include reference="Qvj-LW-rCk"/>
                                 <exclude reference="U1S-yl-npd"/>
+                                <include reference="eKM-fn-6ew"/>
                                 <exclude reference="iBC-sm-KxH"/>
                                 <include reference="kse-be-FD9"/>
                                 <exclude reference="wBP-RE-DJQ"/>
@@ -1717,7 +1717,9 @@ como en la comodidad de su Suite.</string>
                                                     <rect key="frame" x="27" y="106" width="200" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="1Pb-kZ-FP5"/>
-                                                        <constraint firstAttribute="width" constant="200" id="pD9-5s-ViR"/>
+                                                        <constraint firstAttribute="width" constant="200" id="pD9-5s-ViR">
+                                                            <variation key="widthClass=compact" constant="266"/>
+                                                        </constraint>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit amet,
 consectetur adipiscing elit.</string>
@@ -1782,7 +1784,7 @@ consectetur adipiscing elit.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGq-eW-tja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="-370"/>
+            <point key="canvasLocation" x="45" y="-370"/>
         </scene>
         <!--Restaurant View Controller-->
         <scene sceneID="EMY-fZ-k27">
@@ -2419,7 +2421,7 @@ guacamole y caraotas.</string>
                                             <constraint firstAttribute="height" constant="45" id="gJz-AL-tQi"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Hay HIstorial. Deberias Visitarnos." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N2-jV-xDt">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Hay Historial. Deberias Visitarnos." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N2-jV-xDt">
                                         <rect key="frame" x="0.0" y="114" width="600" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="EYV-WW-7ag"/>

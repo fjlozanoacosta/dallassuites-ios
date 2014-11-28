@@ -157,7 +157,8 @@
         user.username = [userAsJSON objectForKey:@"user_username"];
         user.email = [userAsJSON objectForKey:@"user_email"];
         user.birthDay = [userAsJSON objectForKey:@"user_dob"];
-        user.cedula = @([(NSString*)[userAsJSON objectForKey:@"user_ci"] integerValue]);
+        NSInteger cedula = [(NSString*)[userAsJSON objectForKey:@"user_ci"] integerValue];
+        user.cedula = (cedula == 0)?nil:@(cedula);
         user.password = password;
         
         [self getUserPoints:user withComplitionHandler:^(UserModel * user, NSError * error) {

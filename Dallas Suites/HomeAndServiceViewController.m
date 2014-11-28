@@ -283,7 +283,7 @@
     [self allTextFieldResignFirstResponder];
     
     CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
-    transform = CATransform3DScale(transform, 1.8f, 1.8f, 1.f);
+    transform = CATransform3DScale(transform, .2f, .2f, 1.f);
     
     [UIView animateWithDuration:.5f animations:^{
         
@@ -462,7 +462,7 @@
 - (IBAction)closeDisplayedServiePopUp:(UIButton *)sender {
     
     CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
-    transform = CATransform3DScale(transform, 1.8f, 1.8f, 1.f);
+    transform = CATransform3DScale(transform, .2f, .2f, 1.f);
     
     [UIView animateWithDuration:.5f animations:^{
         

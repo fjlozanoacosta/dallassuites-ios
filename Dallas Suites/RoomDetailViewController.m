@@ -56,6 +56,8 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [room360WebView loadRequest:requestObj];
     
+    [self.navigationController setNavigationBarHidden:YES];
+    
 }
 
 
@@ -67,11 +69,11 @@
 #pragma mark - Button Actions
 
 - (IBAction)navBackButtonAction:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-    
+//    
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark End -

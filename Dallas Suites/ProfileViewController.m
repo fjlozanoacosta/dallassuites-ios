@@ -78,20 +78,22 @@
         
     });
     
+    
+    [userNameLabel setText:user];
     //User's full name animation block
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        
-        for (int i=0; i<user.length; i++)
-        {
-            dispatch_async(dispatch_get_main_queue(),
-                           ^{
-                               [userNameLabel setText:[NSString stringWithFormat:@"%@%C", userNameLabel.text, [user characterAtIndex:i]]];
-                           });
-            
-            [NSThread sleepForTimeInterval:1.f/user.length];
-        }
-        
-    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+//        
+//        for (int i=0; i<user.length; i++)
+//        {
+//            dispatch_async(dispatch_get_main_queue(),
+//                           ^{
+//                               [userNameLabel setText:[NSString stringWithFormat:@"%@%C", userNameLabel.text, [user characterAtIndex:i]]];
+//                           });
+//            
+//            [NSThread sleepForTimeInterval:1.f/user.length];
+//        }
+//        
+//    });
     
 }
 

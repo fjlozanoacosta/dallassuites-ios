@@ -15,6 +15,7 @@
 		270E6C7119FAC685005994F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C6F19FAC685005994F9 /* LaunchScreen.xib */; };
 		270E6C7D19FAC685005994F9 /* Dallas_SuitesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */; };
 		270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C8619FAE677005994F9 /* Default-568h@2x.png */; };
+		270FFA0F1A26487B0006DD8E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270FFA0E1A26487B0006DD8E /* Fabric.framework */; };
 		27201D4B1A0BF97500900E62 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27201D4A1A0BF97500900E62 /* UserModel.m */; };
 		2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */; };
 		274ABE101A0ADA910079475B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274ABE0F1A0ADA910079475B /* Crashlytics.framework */; };
@@ -84,6 +85,7 @@
 		270E6C7B19FAC685005994F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270E6C7C19FAC685005994F9 /* Dallas_SuitesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dallas_SuitesTests.m; sourceTree = "<group>"; };
 		270E6C8619FAE677005994F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		270FFA0E1A26487B0006DD8E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		271FADB21A1BD1E8004E0DDA /* systemCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = systemCheck.h; sourceTree = "<group>"; };
 		27201D491A0BF97500900E62 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		27201D4A1A0BF97500900E62 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				274ABE101A0ADA910079475B /* Crashlytics.framework in Frameworks */,
 				27FE6A741A0C4ABD00F320DC /* Foundation.framework in Frameworks */,
 				27FE6A751A0C4ABD00F320DC /* UIKit.framework in Frameworks */,
+				270FFA0F1A26487B0006DD8E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +226,7 @@
 		270E6C6019FAC685005994F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				270FFA0E1A26487B0006DD8E /* Fabric.framework */,
 				27AD8D191A0D14A5001A17E3 /* AFNetworking */,
 				2772B3721A0C4A78008FA875 /* Foundation.framework */,
 				2772B3701A0C4A72008FA875 /* UIKit.framework */,
@@ -475,7 +479,7 @@
 				270E6C5919FAC685005994F9 /* Sources */,
 				270E6C5A19FAC685005994F9 /* Frameworks */,
 				270E6C5B19FAC685005994F9 /* Resources */,
-				274ABE0D1A0ADA5A0079475B /* ShellScript */,
+				274ABE0D1A0ADA5A0079475B /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -576,18 +580,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		274ABE0D1A0ADA5A0079475B /* ShellScript */ = {
+		274ABE0D1A0ADA5A0079475B /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 066ba67f08cc916150aa7135b5b6768c160228c3 dd2e67a64876ad23608b46df9dda6d1ace5fa10f82442150ebdb743b6df4ca6b";
+			shellScript = "./Fabric.framework/run 066ba67f08cc916150aa7135b5b6768c160228c3 dd2e67a64876ad23608b46df9dda6d1ace5fa10f82442150ebdb743b6df4ca6b";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -752,12 +757,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"./**",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a9893d1f-3f5b-469d-84f7-f8ddfcdde80b";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -770,12 +776,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"./**",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Dallas Suites/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a9893d1f-3f5b-469d-84f7-f8ddfcdde80b";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

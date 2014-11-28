@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 
 //Crashlytics
+#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -22,7 +24,9 @@
     // Override point for customization after application launch.
     
     //Chrashlytics
-    [Crashlytics startWithAPIKey:@"066ba67f08cc916150aa7135b5b6768c160228c3"];
+    [Fabric with:@[CrashlyticsKit]];
+
+    //[Crashlytics startWithAPIKey:@"066ba67f08cc916150aa7135b5b6768c160228c3"];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     

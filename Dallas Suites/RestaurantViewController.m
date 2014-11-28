@@ -162,12 +162,10 @@ typedef enum {
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (tableViewElementControl == kRestaurant) {
-        [(RestaurantTableViewCell*)cell tablleViewWillDisplayCellAnimationWithAnimationNumber:0];
-
-        
-        
-    }
+//    if (tableViewElementControl == kRestaurant) {
+//        [(RestaurantTableViewCell*)cell tablleViewWillDisplayCellAnimationWithAnimationNumber:0];
+// 
+//    }
     
 
     

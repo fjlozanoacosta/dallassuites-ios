@@ -21,7 +21,7 @@
 #define RegisterEditCell @"registerEditCell"
 #define RegisterEditActionCell @"registerEditActionCell"
 
-#define RegisterTextFieldsPlaceholders @[ @"NOMBRE", @"APELLIDO", @"CORREO ELECTRÓNICO", @"FECHA DE NACIMIENTO", @"C.I. (V-1234567)", @"NOMBRE DE USUARIO", @"CONTRASEÑA", @"REPETIR CONTRASEÑA"]
+#define RegisterTextFieldsPlaceholders @[ @"NOMBRE", @"APELLIDO", @"CORREO ELECTRÓNICO", @"FECHA DE NACIMIENTO", @"C.I. (Ej: 12345678)", @"NOMBRE DE USUARIO", @"CONTRASEÑA", @"REPETIR CONTRASEÑA"]
 #define RegisterIcons @[ @"registerEditIcon_1", @"registerEditIcon_1", @"registerEditIcon_2", @"registerEditIcon_3", @"registerEditIcon_4", @"registerEditIcon_1", @"registerEditIcon_5", @"registerEditIcon_5" ]
 
 #define EditTextFieldsPlaceholders @[ @"NOMBRE", @"APELLIDO", @"CORREO ELECTRÓNICO", @"FECHA DE NACIMIENTO", @"C.I.", @"NOMBRE DE USUARIO", @"CONTRASEÑA", @"AGREGAR CONTRASEÑA"]
@@ -479,33 +479,42 @@ typedef struct {
     
     //Validate input on C.I. Field
     if (textField.tag == 4) {
-        if (range.location == 0 && range.length == 0) {
-            if ([string isEqualToString:@"v"] || [string isEqualToString:@"V"]) {
-                textField.text = @"V-";
-                [textField setKeyboardType:UIKeyboardTypeNumberPad];
-                [textField resignFirstResponder];
-                [textField becomeFirstResponder];
-                //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
-                return NO;
-            } else if ([string isEqualToString:@"e"] || [string isEqualToString:@"E"]){
-                textField.text = @"E-";
-                [textField setKeyboardType:UIKeyboardTypeNumberPad];
-                [textField resignFirstResponder];
-                [textField becomeFirstResponder];
-                //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
-                return NO;
-            } else {
-                //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
-                return NO;
-            }
-        } else if (range.location == 1 && range.length == 1 && [string isEqualToString:@""]) {
-            textField.text = @"";
-            [textField setKeyboardType:UIKeyboardTypeAlphabet];
-            [textField resignFirstResponder];
-            [textField becomeFirstResponder];
-            //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
+        
+        const char * _char = [string cStringUsingEncoding:NSUTF8StringEncoding];
+        int isBackSpace = strcmp(_char, "\b");
+        
+        NSNumberFormatter *formater = [NSNumberFormatter new];
+        NSNumber* number = [formater numberFromString:string];
+        if ((!number || textField.text.length > 7) && isBackSpace != -8) {
             return NO;
         }
+//        if (range.location == 0 && range.length == 0) {
+//            if ([string isEqualToString:@"v"] || [string isEqualToString:@"V"]) {
+//                textField.text = @"V-";
+//                [textField setKeyboardType:UIKeyboardTypeNumberPad];
+//                [textField resignFirstResponder];
+//                [textField becomeFirstResponder];
+//                //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
+//                return NO;
+//            } else if ([string isEqualToString:@"e"] || [string isEqualToString:@"E"]){
+//                textField.text = @"E-";
+//                [textField setKeyboardType:UIKeyboardTypeNumberPad];
+//                [textField resignFirstResponder];
+//                [textField becomeFirstResponder];
+//                //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
+//                return NO;
+//            } else {
+//                //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
+//                return NO;
+//            }
+//        } else if (range.location == 1 && range.length == 1 && [string isEqualToString:@""]) {
+//            textField.text = @"";
+//            [textField setKeyboardType:UIKeyboardTypeAlphabet];
+//            [textField resignFirstResponder];
+//            [textField becomeFirstResponder];
+//            //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text.copy];
+//            return NO;
+//        }
     }
     
     //[textFields replaceObjectAtIndex:textField.tag withObject:textField.text];
@@ -856,6 +865,9 @@ NSString* machineName()
             break;
         case 4:
             s = [NSString stringWithFormat:@"%i", _user.cedula.intValue];
+            if (_user.cedula.intValue == 0 || !_user.cedula) {
+                s = @"";
+            }
             break;
         case 5:
             s = _user.username;

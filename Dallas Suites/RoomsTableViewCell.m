@@ -8,7 +8,8 @@
 
 #import "RoomsTableViewCell.h"
 
-@implementation RoomsTableViewCell
+@implementation RoomsTableViewCell {
+}
 
 - (void)awakeFromNib {
     // Initialization code    
@@ -23,6 +24,7 @@
 }
 
 -(void)tablleViewWillDisplayCellAnimationWithAnimationNumber:(NSInteger)animationNumber{
+    
     //[cell.bgImage setAlpha:.0f];
     [self.roomBriefDescription setAlpha:.0f];
     [self.roomName setAlpha:.0f];
@@ -43,6 +45,7 @@
         [self.roomName setAlpha:1.f];
         self.roomName.layer.transform = self.roomBriefDescription.layer.transform = transform;
     }];
+    
 }
 
 @end

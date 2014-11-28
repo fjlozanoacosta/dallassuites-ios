@@ -44,6 +44,8 @@
 
     NSMutableArray* roomList;
     
+    NSMutableArray* cellHasAnimated;
+    
 }
 //Main View
     //TableView
@@ -69,7 +71,7 @@
     [activityIndicator startAnimating];
     [self getRoomsFromServer];
 
-    
+    cellHasAnimated = [NSMutableArray new];
     
 }
 
@@ -114,6 +116,12 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    if (cellHasAnimated.count == 0) {
+        for (int i = 0; i < roomList.count; i++) {
+            [cellHasAnimated addObject:@(0)];
+        }
+    }
+
     
     return roomList.count;
 }
@@ -128,7 +136,8 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     [cell.roomName setText:[(NSString*)[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_category] uppercaseString]];
-    [cell.roomBriefDescription setText:[NSString stringWithFormat:@"Puntos: %i",[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_full_reward].intValue]];
+//    [cell.roomBriefDescription setText:[NSString stringWithFormat:@"Puntos: %i",[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_full_reward].intValue]];
+    [cell.roomBriefDescription setText:[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_description]];
     
 #warning Mising images for rooms 5 - 14
     if (indexPath.row < 5) {
@@ -159,16 +168,28 @@
     controller.roomWebAddress = (NSString*)[(RoomModel*)[roomList objectAtIndex:indexPath.row] room_360];
     
 //    self.animationController = [[ZoomAnimationController alloc] init];
-    self.animationController = [[DropAnimationController alloc] init];
-    controller.transitioningDelegate  = self;
-    [self presentViewController:controller animated:YES completion:nil];
+//    self.animationController = [[DropAnimationController alloc] init];
+//    controller.transitioningDelegate  = self;
+    
+    [self.navigationController pushViewController:controller animated:YES];
     
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(RoomsTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [cell tablleViewWillDisplayCellAnimationWithAnimationNumber:(indexPath.row % 2)];
+    if ([ (NSNumber*)[cellHasAnimated objectAtIndex:indexPath.row] isEqualToNumber:@(1)]) {
+        return;
+    }
     
+    NSMutableArray* copy = [NSMutableArray new];
+    [cell tablleViewWillDisplayCellAnimationWithAnimationNumber:(indexPath.row % 2)];
+    [cellHasAnimated enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (idx == indexPath.row) {
+            obj = @(1);
+        }
+        [copy addObject:obj];
+    }];
+    cellHasAnimated = copy.mutableCopy;
 }
 
 #pragma mark End -

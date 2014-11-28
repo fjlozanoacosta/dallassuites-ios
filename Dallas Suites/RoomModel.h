@@ -15,7 +15,8 @@
 }
 
 @property (strong, nonatomic) NSString* room_category,
-                                      * room_360;
+                                      * room_360,
+                                      * room_description;
 
 @property (strong, nonatomic) NSNumber* room_id,
                                       * room_promo_reward,

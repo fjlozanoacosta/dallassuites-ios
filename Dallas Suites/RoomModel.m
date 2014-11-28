@@ -32,6 +32,7 @@
             [room setRoom_full_reward:(NSNumber *)[obj objectForKey:@"room_full_reward"]];
             [room setRoom_promo_redeem:(NSNumber *)[obj objectForKey:@"room_promo_redeem"]];
             [room setRoom_promo_reward:(NSNumber *)[obj objectForKey:@"room_promo_reward"]];
+            [room setRoom_description:(NSString *)[obj objectForKey:@"room_description"]];
             [responseArray addObject:room];
         }];
         
