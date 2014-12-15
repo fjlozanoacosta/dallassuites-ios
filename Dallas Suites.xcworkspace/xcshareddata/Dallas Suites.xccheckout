@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EAA22245-A362-47F1-B035-2BBFE27770A4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Dallas Suites</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>96B6EC3B18FFE0F930EFBBE61DE2268AE1890F6E</key>
+		<string>https://bitbucket.org/icogroup/dallas-suites-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Dallas Suites.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>96B6EC3B18FFE0F930EFBBE61DE2268AE1890F6E</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/icogroup/dallas-suites-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>96B6EC3B18FFE0F930EFBBE61DE2268AE1890F6E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>96B6EC3B18FFE0F930EFBBE61DE2268AE1890F6E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Dallas%20Suites</string>
+		</dict>
+	</array>
+</dict>
+</plist>

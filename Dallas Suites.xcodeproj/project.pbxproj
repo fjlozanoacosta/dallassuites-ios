@@ -19,6 +19,8 @@
 		27201D4B1A0BF97500900E62 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27201D4A1A0BF97500900E62 /* UserModel.m */; };
 		2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */; };
 		274ABE101A0ADA910079475B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274ABE0F1A0ADA910079475B /* Crashlytics.framework */; };
+		2767FD2A1A3F894A00107159 /* QRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD291A3F894A00107159 /* QRReaderViewController.m */; };
+		2767FD2E1A3F8D2C00107159 /* QRWriterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD2D1A3F8D2C00107159 /* QRWriterViewController.m */; };
 		2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801519FEE9B3009C5968 /* RoomsViewController.m */; };
 		2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */; };
 		2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801D19FF0510009C5968 /* RoomDetailViewController.m */; };
@@ -58,6 +60,7 @@
 		27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */; };
 		27FE6A741A0C4ABD00F320DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3721A0C4A78008FA875 /* Foundation.framework */; };
 		27FE6A751A0C4ABD00F320DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3701A0C4A72008FA875 /* UIKit.framework */; };
+		C19CBD421F602847A922DD42 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D81A04C7F6B21959A5F167B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,10 @@
 		2735BFF11A07D65C001BFB8A /* RegisterEditActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEditActionTableViewCell.h; sourceTree = "<group>"; };
 		2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditActionTableViewCell.m; sourceTree = "<group>"; };
 		274ABE0F1A0ADA910079475B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		2767FD281A3F894A00107159 /* QRReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRReaderViewController.h; sourceTree = "<group>"; };
+		2767FD291A3F894A00107159 /* QRReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRReaderViewController.m; sourceTree = "<group>"; };
+		2767FD2C1A3F8D2C00107159 /* QRWriterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRWriterViewController.h; sourceTree = "<group>"; };
+		2767FD2D1A3F8D2C00107159 /* QRWriterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRWriterViewController.m; sourceTree = "<group>"; };
 		2769801419FEE9B3009C5968 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
 		2769801519FEE9B3009C5968 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
 		2769801819FEEFD1009C5968 /* RoomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewCell.h; sourceTree = "<group>"; };
@@ -159,6 +166,9 @@
 		27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterOrEditTableViewCell.m; sourceTree = "<group>"; };
 		27F6CB691A11886400A93B9A /* UserHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistoryModel.h; sourceTree = "<group>"; };
 		27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistoryModel.m; sourceTree = "<group>"; };
+		5D81A04C7F6B21959A5F167B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		889B40BAE93C16A84B759D24 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DFB7E19C49492F94878FC336 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +180,7 @@
 				27FE6A741A0C4ABD00F320DC /* Foundation.framework in Frameworks */,
 				27FE6A751A0C4ABD00F320DC /* UIKit.framework in Frameworks */,
 				270FFA0F1A26487B0006DD8E /* Fabric.framework in Frameworks */,
+				C19CBD421F602847A922DD42 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +194,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1866615D862509B07A1363A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFB7E19C49492F94878FC336 /* Pods.debug.xcconfig */,
+				889B40BAE93C16A84B759D24 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		270E6C5419FAC685005994F9 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +210,8 @@
 				270E6C5F19FAC685005994F9 /* Dallas Suites */,
 				270E6C7919FAC685005994F9 /* Dallas SuitesTests */,
 				270E6C5E19FAC685005994F9 /* Products */,
+				1866615D862509B07A1363A9 /* Pods */,
+				49884C48CF638A42AA933199 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +227,8 @@
 		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
 			isa = PBXGroup;
 			children = (
+				2767FD2B1A3F8D1800107159 /* QRScannerWrite */,
+				2767FD271A3F893200107159 /* QRScannerReader */,
 				27201D481A0BF96400900E62 /* Models */,
 				276E7A5A1A08300E00B72273 /* DatePicker */,
 				27AE73D81A0535A4009746CF /* Register/Edit Profile */,
@@ -294,6 +318,24 @@
 				274ABE0F1A0ADA910079475B /* Crashlytics.framework */,
 			);
 			name = Chrashlytics;
+			sourceTree = "<group>";
+		};
+		2767FD271A3F893200107159 /* QRScannerReader */ = {
+			isa = PBXGroup;
+			children = (
+				2767FD281A3F894A00107159 /* QRReaderViewController.h */,
+				2767FD291A3F894A00107159 /* QRReaderViewController.m */,
+			);
+			name = QRScannerReader;
+			sourceTree = "<group>";
+		};
+		2767FD2B1A3F8D1800107159 /* QRScannerWrite */ = {
+			isa = PBXGroup;
+			children = (
+				2767FD2C1A3F8D2C00107159 /* QRWriterViewController.h */,
+				2767FD2D1A3F8D2C00107159 /* QRWriterViewController.m */,
+			);
+			name = QRScannerWrite;
 			sourceTree = "<group>";
 		};
 		2769801319FEE997009C5968 /* Rooms */ = {
@@ -469,6 +511,14 @@
 			name = RegisterOrEditTableViewCells;
 			sourceTree = "<group>";
 		};
+		49884C48CF638A42AA933199 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D81A04C7F6B21959A5F167B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -476,10 +526,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 270E6C8019FAC685005994F9 /* Build configuration list for PBXNativeTarget "Dallas Suites" */;
 			buildPhases = (
+				33DF2A8A67BB28FDC116628F /* Check Pods Manifest.lock */,
 				270E6C5919FAC685005994F9 /* Sources */,
 				270E6C5A19FAC685005994F9 /* Frameworks */,
 				270E6C5B19FAC685005994F9 /* Resources */,
 				274ABE0D1A0ADA5A0079475B /* Run Script */,
+				C72EDCC7889024820FDB20DC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -594,6 +646,36 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 066ba67f08cc916150aa7135b5b6768c160228c3 dd2e67a64876ad23608b46df9dda6d1ace5fa10f82442150ebdb743b6df4ca6b";
 		};
+		33DF2A8A67BB28FDC116628F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C72EDCC7889024820FDB20DC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -619,6 +701,7 @@
 				277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */,
 				27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */,
 				27AD8D2F1A0D14A5001A17E3 /* AFHTTPSessionManager.m in Sources */,
+				2767FD2E1A3F8D2C00107159 /* QRWriterViewController.m in Sources */,
 				27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */,
 				27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */,
 				27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */,
@@ -627,6 +710,7 @@
 				2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */,
 				27201D4B1A0BF97500900E62 /* UserModel.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
+				2767FD2A1A3F894A00107159 /* QRReaderViewController.m in Sources */,
 				27AD8D301A0D14A5001A17E3 /* AFNetworkReachabilityManager.m in Sources */,
 				27AD8D341A0D14A5001A17E3 /* AFURLResponseSerialization.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,
@@ -750,6 +834,7 @@
 		};
 		270E6C8119FAC685005994F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFB7E19C49492F94878FC336 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -769,6 +854,7 @@
 		};
 		270E6C8219FAC685005994F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 889B40BAE93C16A84B759D24 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

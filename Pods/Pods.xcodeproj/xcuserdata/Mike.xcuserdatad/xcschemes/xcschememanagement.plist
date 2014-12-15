@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-Dallas Suites-ZXingObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Dallas Suites.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Dallas SuitesTests-ZXingObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Dallas SuitesTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ZXingObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>088BDC93D5280EDBBA2D98A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0AE10FECB8721FAEACF58ECE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>68E48ADBE74B142193B1DFEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>714B536C53556D3C30699527</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AA621A7A984CFAD66B6427C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFEB61E025BAE386CF7D8365</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
