@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBg" translatesAutoresizingMaskIntoConstraints="NO" id="HnN-Rt-Mwq">
@@ -50,12 +50,12 @@
                     <exclude reference="AN1-jR-6Ia"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="AFk-Mt-MCR"/>
+                    <exclude reference="onn-ZY-9I2"/>
                     <exclude reference="DNx-Gg-3f5"/>
                     <exclude reference="Dwe-dI-xw4"/>
                     <exclude reference="iWS-88-85B"/>
                     <exclude reference="mKc-wr-cZC"/>
-                    <exclude reference="AFk-Mt-MCR"/>
-                    <exclude reference="onn-ZY-9I2"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -64,12 +64,12 @@
                     <include reference="AN1-jR-6Ia"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="AFk-Mt-MCR"/>
+                    <include reference="onn-ZY-9I2"/>
                     <include reference="DNx-Gg-3f5"/>
                     <include reference="Dwe-dI-xw4"/>
                     <include reference="iWS-88-85B"/>
                     <include reference="mKc-wr-cZC"/>
-                    <include reference="AFk-Mt-MCR"/>
-                    <include reference="onn-ZY-9I2"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>

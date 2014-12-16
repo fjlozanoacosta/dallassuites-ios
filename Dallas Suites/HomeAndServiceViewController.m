@@ -28,6 +28,7 @@
     __weak IBOutlet UINavigationBar *servicesNavBar;
     
     __weak IBOutlet UIImageView* bgImage;
+    __weak IBOutlet UIImageView *temporaryBgLayer;
     
         //Buttons
             //LogIn (Iniciar Sesion)
@@ -93,6 +94,9 @@
     
     //User
     UserModel* _user;
+    
+    CGFloat logoYOriginalOrigin;
+    BOOL notFirstTime;
 }
 
 @end
@@ -124,6 +128,33 @@
         [self setUserIsPreLoggedIn];
     }
     
+    logoYOriginalOrigin = logoImageYPositionConstraint.constant;
+    [homeButtonsContainerBottomSpaceConstraint setConstant:-250.f];
+    [logoImageYPositionConstraint setConstant:.0f];
+    [self.view layoutIfNeeded];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (notFirstTime) {
+        return;
+    }
+    [homeButtonsContainerBottomSpaceConstraint setConstant:.0f];
+    [logoImageYPositionConstraint setConstant:125.f];
+    [UIView animateWithDuration:.8f
+                          delay:.5f
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [temporaryBgLayer setAlpha:.0f];
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished) {
+                         notFirstTime = YES;
+                     }
+     ];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
