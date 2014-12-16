@@ -18,7 +18,7 @@
 #define allSegues @[ goToRegister, goToProfile ]
 
 #define servicePopUpTitles @[@"ROOM SERVICE", @"PRIVACIDAD Y SEGURIDAD", @"DOBLE RECEPCIÓN", @"CONFORT Y AMENIDADES"]
-#define servicePopUpDescriptions @[ @"Para complementar su estadía, le ofrecemos una gran variedad de platos y una extensa carta de bebidas paraque las disfrute tanto en nuestro Bar/Restaurant, como en la comodidad de su Suite.", @"No sólo la calidad de nuestros servicios nos distinguen, sino también la Privacidad y Seguridad de nuestras instalaciones.", @"Sólo en Dallas Suites Hotel tenemos una Doble Recepción que le garantiza fluidez a su llegada y el menor tiempo de espera posible.", @"Sauna, Vapor, Jacuzzi, Pole Dance, son algunas de las Amenidades que le esperan en nuestras Suites, para que su visita se Única en su Estilo."]
+#define servicePopUpDescriptions @[ @"Para complementar su estadía, le ofrecemos una gran variedad de platos y una extensa carta de bebidas para que las disfrute tanto en nuestro bar/restaurant, como en la comodidad de su Suite.", @"No sólo la calidad de nuestros servicios nos distinguen, sino también la privacidad y seguridad de nuestras instalaciones.", @"Sólo en Dallas Suites Hotel tenemos una doble recepción que le garantiza fluidez a su llegada y el menor tiempo de espera posible.", @"Sauna, vapor, jacuzzi, pole dance, son algunas de las amenidades que le esperan en nuestras Suites, para que su visita se única en su estilo."]
 #define servicePopUpIconImageName @[@"roomServiceIcon", @"privacyAndSecurityIcon", @"dobleReceptionIcon", @"comfortIcon"]
 
 @interface HomeAndServiceViewController () <UITextFieldDelegate, UIAlertViewDelegate> {

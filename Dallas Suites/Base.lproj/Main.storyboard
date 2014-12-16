@@ -1314,18 +1314,18 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN1-EG-l5D" userLabel="Service Text">
-                                                <rect key="frame" x="155" y="107" width="290" height="87"/>
+                                                <rect key="frame" x="150" y="107" width="300" height="98"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="87" id="Mpg-pO-sVi"/>
-                                                    <constraint firstAttribute="height" constant="87" id="SdA-rb-LKy"/>
+                                                    <constraint firstAttribute="height" constant="98" id="SdA-rb-LKy"/>
                                                     <constraint firstAttribute="width" constant="290" id="f39-AD-yHR"/>
-                                                    <constraint firstAttribute="width" constant="290" id="wMF-c2-xFP"/>
+                                                    <constraint firstAttribute="width" constant="300" id="wMF-c2-xFP"/>
                                                 </constraints>
                                                 <string key="text">Para complementar su estadía, le ofrecemos una gran
 variedad de platos y una extensa carta de bebidas para
-que las disfrute tanto en nuestro Bar/Restaurant,
+que las disfrute tanto en nuestro bar/restaurant,
 como en la comodidad de su Suite.</string>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="15"/>
                                                 <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
@@ -1351,7 +1351,7 @@ como en la comodidad de su Suite.</string>
                                             <constraint firstAttribute="trailing" secondItem="0UO-ST-7K5" secondAttribute="trailing" id="IGK-Ca-CTQ"/>
                                             <constraint firstAttribute="height" constant="272" id="OVa-SZ-xoD"/>
                                             <constraint firstItem="fMo-1K-6vb" firstAttribute="top" secondItem="dU2-Yy-U8Y" secondAttribute="bottom" constant="8" id="RUt-mJ-9Uc"/>
-                                            <constraint firstItem="0UO-ST-7K5" firstAttribute="top" secondItem="BN1-EG-l5D" secondAttribute="bottom" constant="19" id="TpA-Nk-Qky"/>
+                                            <constraint firstItem="0UO-ST-7K5" firstAttribute="top" secondItem="BN1-EG-l5D" secondAttribute="bottom" constant="8" id="TpA-Nk-Qky"/>
                                             <constraint firstAttribute="bottom" secondItem="0UO-ST-7K5" secondAttribute="bottom" constant="-1" id="W63-lp-iT7"/>
                                             <constraint firstItem="BN1-EG-l5D" firstAttribute="top" secondItem="fMo-1K-6vb" secondAttribute="bottom" id="Xu3-Nd-3m4"/>
                                             <constraint firstItem="0UO-ST-7K5" firstAttribute="leading" secondItem="p1f-3P-yWD" secondAttribute="leading" id="agL-g5-yAP"/>
