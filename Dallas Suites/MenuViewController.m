@@ -86,6 +86,12 @@
     
     RestauranItemModel* item = [tableViewElements objectAtIndex:indexPath.row];
     
+    if (indexPath.row == tableViewElements.count - 1) {
+        [cell hideSeparatorLine];
+    } else {
+        [cell showSeparatorLine];
+    }
+    
     cell.menuItemLabel.text = item.food_product;
     cell.menuItemDescriptionLabel.text = item.food_description;
     

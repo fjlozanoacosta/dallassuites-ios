@@ -14,11 +14,11 @@
 #define RestaurantCell @"restaurantCell"
 #define BeverageCell @"beverageCell"
 
-#define restaurantElementsTitles @[ @"Desayuno", @"Ensaladas", @"De picar", @"Sandwiches", @"Pizzas", @"A la plancha", @"Parrilla", @"Snacks 24 horas", @"Bebidas" ]
+#define restaurantElementsTitles @[ @"Desayuno", @"Ensaladas", @"De picar", @"Sandwiches", @"Pizzas", @"Parrilla", @"Resto del día", @"A la plancha", @"Snacks 24 horas", @"Bebidas" ]
 #define restaurantBeverages @[ @"Champagne", @"Espumantes", @"Vinos", @"Whiskies", @"Rones", @"Vodka", @"Gyn", @"Aperitivos y tragos preparados", @"Cocktails", @"Batidos", @"Café y té", @"Otras" ]
 #define lastRestaurantElement @[ @"Postres" ]
 #define tableViewData @[ restaurantElementsTitles, restaurantBeverages, lastRestaurantElement, @[] ]
-#define restaurantIconsImageName @[ @"restaurantBreakfastIcon", @"restaurantSalatIcon", @"restaurantSnackIcon", @"restaurantSandwichIcon", @"restaurantPizzaIcon", @"restaurantLunchIcon", @"restaurantGrillIcon", @"restaurant24HoursSnackIcon", @"restaurantDrinkIcon", @"restaurantDessertIcon" ]
+#define restaurantIconsImageName @[ @"restaurantBreakfastIcon", @"restaurantSalatIcon", @"restaurantSnackIcon", @"restaurantSandwichIcon", @"restaurantPizzaIcon", @"restaurantGrillIcon", @"restaurantLunchIcon", @"restaurantIronIcon", @"restaurant24HoursSnackIcon", @"restaurantDrinkIcon", @"restaurantDessertIcon" ]
 
 
 @interface MenuPreparationObject : NSObject {

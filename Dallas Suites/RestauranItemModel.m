@@ -9,7 +9,7 @@
 #import "RestauranItemModel.h"
 #import "ConnectionManager.h"
 
-#define categoryDictinoary @{ @"desayuno" : @"desayuno", @"bebida" : @"bebida" , @"a la plancha" : @"plancha", @"parrilla" : @"parrilla", @"ensaladas" : @"ensalada", @"de picar" : @"picar", @"sandwiches" : @"sandwich", @"pizzas" : @"pizza", @"postres" : @"postre", @"snacks 24 horas" : @"snack"}
+#define categoryDictinoary @{ @"desayuno" : @"desayuno", @"bebida" : @"bebida" , @"a la plancha" : @"plancha", @"parrilla" : @"parrilla", @"ensaladas" : @"ensalada", @"de picar" : @"picar", @"sandwiches" : @"sandwich", @"pizzas" : @"pizza", @"postres" : @"postre", @"snacks 24 horas" : @"snack", @"resto del día" : @"resto"}
 #define drinkDictionary @{ @"champagne" : @"champagne", @"espumantes" : @"espumante", @"vinos" : @"vino", @"whiskies" : @"whisky", @"rones" : @"ron", @"vodka" : @"vodka", @"gyn" : @"gyn", @"aperitivos y tragos preparados" : @"aperitivo", @"cocktails" : @"coctel", @"batidos" : @"batido", @"café y té" : @"cafe", @"otras" : @"otras" }
 
 @implementation RestauranItemModel
@@ -48,6 +48,7 @@
     id failure =^(AFHTTPRequestOperation *operation, NSError *error) {
         
         block(nil, error);
+        
         
     };
     [[AFHTTPRequestOperationManager manager] GET:BaseURL parameters:parameters success:success failure:failure];
