@@ -21,6 +21,9 @@
 		274ABE101A0ADA910079475B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274ABE0F1A0ADA910079475B /* Crashlytics.framework */; };
 		2767FD2A1A3F894A00107159 /* QRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD291A3F894A00107159 /* QRReaderViewController.m */; };
 		2767FD2E1A3F8D2C00107159 /* QRWriterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD2D1A3F8D2C00107159 /* QRWriterViewController.m */; };
+		2767FD321A40771400107159 /* BeveragesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD311A40771400107159 /* BeveragesTableViewCell.m */; };
+		2767FD351A41C02800107159 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD341A41C02800107159 /* MenuViewController.m */; };
+		2767FD381A41C68D00107159 /* RestauranItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD371A41C68D00107159 /* RestauranItemModel.m */; };
 		2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801519FEE9B3009C5968 /* RoomsViewController.m */; };
 		2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801919FEEFD1009C5968 /* RoomsTableViewCell.m */; };
 		2769801E19FF0510009C5968 /* RoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769801D19FF0510009C5968 /* RoomDetailViewController.m */; };
@@ -99,6 +102,12 @@
 		2767FD291A3F894A00107159 /* QRReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRReaderViewController.m; sourceTree = "<group>"; };
 		2767FD2C1A3F8D2C00107159 /* QRWriterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRWriterViewController.h; sourceTree = "<group>"; };
 		2767FD2D1A3F8D2C00107159 /* QRWriterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRWriterViewController.m; sourceTree = "<group>"; };
+		2767FD301A40771400107159 /* BeveragesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeveragesTableViewCell.h; sourceTree = "<group>"; };
+		2767FD311A40771400107159 /* BeveragesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeveragesTableViewCell.m; sourceTree = "<group>"; };
+		2767FD331A41C02800107159 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		2767FD341A41C02800107159 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		2767FD361A41C68D00107159 /* RestauranItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestauranItemModel.h; sourceTree = "<group>"; };
+		2767FD371A41C68D00107159 /* RestauranItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestauranItemModel.m; sourceTree = "<group>"; };
 		2769801419FEE9B3009C5968 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
 		2769801519FEE9B3009C5968 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
 		2769801819FEEFD1009C5968 /* RoomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewCell.h; sourceTree = "<group>"; };
@@ -308,6 +317,8 @@
 				27AD8D171A0CFD17001A17E3 /* RoomModel.m */,
 				27F6CB691A11886400A93B9A /* UserHistoryModel.h */,
 				27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */,
+				2767FD361A41C68D00107159 /* RestauranItemModel.h */,
+				2767FD371A41C68D00107159 /* RestauranItemModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -336,6 +347,15 @@
 				2767FD2D1A3F8D2C00107159 /* QRWriterViewController.m */,
 			);
 			name = QRScannerWrite;
+			sourceTree = "<group>";
+		};
+		2767FD2F1A4076FB00107159 /* BeveragesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2767FD301A40771400107159 /* BeveragesTableViewCell.h */,
+				2767FD311A40771400107159 /* BeveragesTableViewCell.m */,
+			);
+			name = BeveragesTableViewCell;
 			sourceTree = "<group>";
 		};
 		2769801319FEE997009C5968 /* Rooms */ = {
@@ -410,10 +430,13 @@
 		2773080A1A0029D9000FC4B1 /* Restaurant/Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2767FD2F1A4076FB00107159 /* BeveragesTableViewCell */,
 				277308121A004251000FC4B1 /* MenuTableViewCell */,
 				2773080E1A002F77000FC4B1 /* RestaurantTableViewCell */,
 				2773080B1A0029E9000FC4B1 /* RestaurantViewController.h */,
 				2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */,
+				2767FD331A41C02800107159 /* MenuViewController.h */,
+				2767FD341A41C02800107159 /* MenuViewController.m */,
 			);
 			name = Restaurant/Menu;
 			sourceTree = "<group>";
@@ -684,6 +707,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AD8D331A0D14A5001A17E3 /* AFURLRequestSerialization.m in Sources */,
+				2767FD351A41C02800107159 /* MenuViewController.m in Sources */,
 				27AD8D321A0D14A5001A17E3 /* AFURLConnectionOperation.m in Sources */,
 				2769801A19FEEFD1009C5968 /* RoomsTableViewCell.m in Sources */,
 				270E6C6919FAC685005994F9 /* HomeAndServiceViewController.m in Sources */,
@@ -695,6 +719,7 @@
 				27AD8D311A0D14A5001A17E3 /* AFSecurityPolicy.m in Sources */,
 				27AD8D2D1A0D14A5001A17E3 /* AFHTTPRequestOperation.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
+				2767FD381A41C68D00107159 /* RestauranItemModel.m in Sources */,
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
 				27AD8D181A0CFD17001A17E3 /* RoomModel.m in Sources */,
 				27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */,
@@ -715,6 +740,7 @@
 				27AD8D341A0D14A5001A17E3 /* AFURLResponseSerialization.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,
 				27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */,
+				2767FD321A40771400107159 /* BeveragesTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

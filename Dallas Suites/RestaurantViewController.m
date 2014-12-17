@@ -8,17 +8,36 @@
 
 #import "RestaurantViewController.h"
 #import "RestaurantTableViewCell.h"
-#import "MenuTableViewCell.h"
+#import "BeveragesTableViewCell.h"
+#import "MenuViewController.h"
 
 #define RestaurantCell @"restaurantCell"
-#define MenuCell @"menuCell"
+#define BeverageCell @"beverageCell"
 
-#define restaurantElementsTitles @[ @"DESAYUNO", @"ENSALADAS", @"DE PICAR", @"SANDWICHES", @"PIZZAS" , @"POSTRES", @"RESTO DEL DÍA", @"BEBIDAS" ]
-#define restaurantIconsImageName @[ @"restaurantBreakfastIcon", @"restaurantSalatIcon", @"restaurantSnackIcon", @"restaurantSandwichIcon", @"restaurantPizzaIcon", @"restaurantDessertIcon", @"restaurantLunchIcon", @"restaurantDrinkIcon" ]
+#define restaurantElementsTitles @[ @"Desayuno", @"Ensaladas", @"De picar", @"Sandwiches", @"Pizzas", @"A la plancha", @"Parrilla", @"Snacks 24 horas", @"Bebidas" ]
+#define restaurantBeverages @[ @"Champagne", @"Espumantes", @"Vinos", @"Whiskies", @"Rones", @"Vodka", @"Gyn", @"Aperitivos y tragos preparados", @"Cocktails", @"Batidos", @"Café y té", @"Otras" ]
+#define lastRestaurantElement @[ @"Postres" ]
+#define tableViewData @[ restaurantElementsTitles, restaurantBeverages, lastRestaurantElement, @[] ]
+#define restaurantIconsImageName @[ @"restaurantBreakfastIcon", @"restaurantSalatIcon", @"restaurantSnackIcon", @"restaurantSandwichIcon", @"restaurantPizzaIcon", @"restaurantLunchIcon", @"restaurantGrillIcon", @"restaurant24HoursSnackIcon", @"restaurantDrinkIcon", @"restaurantDessertIcon" ]
+
+
+@interface MenuPreparationObject : NSObject {
+    @public
+    NSString * category;
+    NSString * drinkSub;
+}
+
+@end
+
+@implementation MenuPreparationObject
+
+
+
+@end
 
 typedef enum {
     kRestaurant,
-    kMenu
+    kWithBeverages
 } tableViewElements;
 
 @interface RestaurantViewController () <UITableViewDataSource, UITableViewDelegate>{
@@ -64,112 +83,101 @@ typedef enum {
 //TODO: Populate table with real data!!!
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    if (tableViewElementControl == kMenu) {
-        //Here you return number of elements in selected restaurant item
-        return 10;
+
+    switch (section) {
+        case 0:
+            return restaurantElementsTitles.count;
+            break;
+        case 1:
+            return (tableViewElementControl == kWithBeverages)? restaurantBeverages.count : 0;
+            break;
     }
     
-    //Here you return number of element in restaurant View
-    return 8;
+    return lastRestaurantElement.count;
+    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (tableViewElementControl == kMenu) {
-        return 95.f;
-    }
     
     return 60.f;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (tableViewElementControl == kMenu) {
-        //Return Menu Cell
-        MenuTableViewCell* mCell = (MenuTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:MenuCell];
-        [mCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+
+
+    if (indexPath.section == 0) {
+        RestaurantTableViewCell* rCell = (RestaurantTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:RestaurantCell];
+        [rCell setSelectionStyle:UITableViewCellSelectionStyleNone];
         
+        [[rCell restaurantItemLabel] setText:[restaurantElementsTitles objectAtIndex:indexPath.row]];
+        [[rCell iconImage] setImage:[UIImage imageNamed:[restaurantIconsImageName objectAtIndex:indexPath.row]]];
+        [rCell.restaurantItemLabel setTextColor:[UIColor whiteColor]];
         
-        //If is the last cell remove the separator line
-        if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1) {
-            [mCell hideSeparatorLine];
-        } else {
-            [mCell showSeparatorLine];
+        [rCell showSeparatorLine];
+        
+        if (indexPath.row == restaurantElementsTitles.count - 1 && tableViewElementControl == kWithBeverages) {
+            [rCell hideSeparatorLine];
+            [rCell.restaurantItemLabel setTextColor:[UIColor colorWithRed:223.f/255.f
+                                                                    green:188.f/255.f
+                                                                     blue:149.f/255.f
+                                                                    alpha:1.f]];
         }
         
-        return mCell;
+        return rCell;
+    } else if (indexPath.section == 1){
+        BeveragesTableViewCell* bCell = [tableView dequeueReusableCellWithIdentifier:BeverageCell];
+        [bCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+        [bCell.beverageLabel setText:[restaurantBeverages objectAtIndex:indexPath.row]];
+        
+        return bCell;   
     }
     
     RestaurantTableViewCell* rCell = (RestaurantTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:RestaurantCell];
     [rCell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    [[rCell restaurantItemLabel] setText:[restaurantElementsTitles objectAtIndex:indexPath.row]];
-    [[rCell iconImage] setImage:[UIImage imageNamed:[restaurantIconsImageName objectAtIndex:indexPath.row]]];
+    [[rCell restaurantItemLabel] setText:[lastRestaurantElement objectAtIndex:indexPath.row]];
+    [[rCell iconImage] setImage:[UIImage imageNamed:[restaurantIconsImageName lastObject]]];
+    [rCell.restaurantItemLabel setTextColor:[UIColor whiteColor]];
     
     //If is the last cell remove the separator line
-    if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1) {
-        [rCell hideSeparatorLine];
-    } else {
-        [rCell showSeparatorLine];
-    }
+    [rCell hideSeparatorLine];
     
     return rCell;
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Here you do the transition to menu screen
     
-    if (tableViewElementControl == kRestaurant) {
-        //Use indexPath.row to get the element selected and load inner item elements and display them accordingly
-        
-        [UIView animateWithDuration:.25f animations:^{
-            [navBar setAlpha:.0f];
-        } completion:^(BOOL finished) {
-           navBarTitle.title = [restaurantElementsTitles objectAtIndex:indexPath.row]; // Here's where you get the selected items name and change nav bar name accordingly
-           [UIView animateWithDuration:.25f animations:^{
-               [navBar setAlpha:1.0f];
-           }];
-        }];
-        
-//        CATransform3D zoom = CATransform3DMakeScale(1.25f, 1.25f, 1.25f);
-//        zoom = CATransform3DTranslate(zoom, -20.f, -40.f, .0f);
-//        [UIView animateWithDuration:.5f animations:^{
-//            [bgImage.layer setTransform:zoom];
-//        }];
-        
-        tableViewElementControl = kMenu; //This now sets the tableview to display menu items
-        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft]; //This forces a table reload to put in the new info
-        
-        [_tableView setContentOffset:CGPointMake(.0f, .0f)];
-        
-        return; //So the method does not keep excecuting
-        
-        //All this should be done async and an activity indicator should be added
-    } else if (tableViewElementControl == kMenu) {
-        
-        //Whatever has to happen when a menu element is selected
-        //If nothing has to happen, then nothing goes here
-        
+    if (indexPath.section == 0 && indexPath.row == restaurantElementsTitles.count - 1) {
+        tableViewElementControl = (tableViewElementControl == kWithBeverages)? kRestaurant : kWithBeverages;
+        [tableView reloadSections:[NSIndexSet indexSetWithIndex:1]
+                 withRowAnimation:UITableViewRowAnimationMiddle];
+        [tableView reloadData];
+        return;
     }
     
+    MenuPreparationObject* senderObject = [[MenuPreparationObject alloc] init];
+    switch (indexPath.section) {
+        case 0:
+        case 2:
+            senderObject->category = [[(RestaurantTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] restaurantItemLabel] text];
+            senderObject->drinkSub = nil;
+            break;
+        default:
+            senderObject->category = @"bebida";
+            senderObject->drinkSub = [[(BeveragesTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] beverageLabel] text];
+            break;
+    }
+    [self performSegueWithIdentifier:@"toMenuSegue" sender:senderObject];
+    
     
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    if (tableViewElementControl == kRestaurant) {
-//        [(RestaurantTableViewCell*)cell tablleViewWillDisplayCellAnimationWithAnimationNumber:0];
-// 
-//    }
-    
-
-    
-}
 
 #pragma mark End -
 
@@ -180,31 +188,6 @@ typedef enum {
 
 - (IBAction)navBackButtonAction:(id)sender {
     
-    if (tableViewElementControl == kMenu) {
-        //Here you animate back to restaurant list
-        
-        tableViewElementControl = kRestaurant;
-        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
-        [UIView animateWithDuration:.25f animations:^{
-            [navBar setAlpha:.0f];
-        } completion:^(BOOL finished) {
-            navBarTitle.title = @"RESTAURANTE";
-            [UIView animateWithDuration:.25f animations:^{
-                [navBar setAlpha:1.0f];
-            }];
-        }];
-        
-//        CATransform3D unZoom = CATransform3DMakeScale(1.f, 1.f, 1.f);
-//        [UIView animateWithDuration:.5f animations:^{
-//           [bgImage.layer setTransform:unZoom];
-//        }];
-        
-        [_tableView setContentOffset:CGPointMake(.0f, .0f)];
-        
-        return;
-    }
-    
-//    [self dismissViewControllerAnimated:YES completion:^{}];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -216,6 +199,18 @@ typedef enum {
     return UIStatusBarStyleLightContent;
     
 }
+#pragma mark End -
+
+#pragma mark - Navigation -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MenuPreparationObject*)sender{
+    if (sender) {
+        MenuViewController* destination = [segue destinationViewController];
+        destination.category = sender->category;
+        destination.drinkSub = sender->drinkSub;
+    }
+}
+
 #pragma mark End -
 
 
