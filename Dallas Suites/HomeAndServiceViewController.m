@@ -125,7 +125,7 @@
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"ChachedUser"]){
         _user = [UserModel new];
         _user.email = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserEmailKey"];
-        [self setUserIsPreLoggedIn];
+//        [self setUserIsPreLoggedIn];
     }
     
     logoYOriginalOrigin = logoImageYPositionConstraint.constant;
@@ -171,7 +171,7 @@
     }
     isLogInPopUpDisplayed = YES;
     
-    if (sender.tag == 1) {
+    if (_user.email) {
         pUUsernameTextField.text = _user.email;
     }
     
@@ -350,6 +350,13 @@
         }
         
         [self closeDisplayedLogInPopUp:nil];
+        
+        _user = user;
+        _user.password = @"";
+        [[NSUserDefaults standardUserDefaults] setObject:_user.email forKey:@"UserEmailKey"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ChachedUser"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
 //        NSLog(@"Exito!");
         if (_user) {
             _user = user;
@@ -357,12 +364,8 @@
             return;
         }
         
-        _user = user;
-        _user.password = @"";
-        [[NSUserDefaults standardUserDefaults] setObject:_user.email forKey:@"UserEmailKey"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ChachedUser"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        [self setUserIsPreLoggedIn];
+
+//        [self setUserIsPreLoggedIn];
         
         
         
