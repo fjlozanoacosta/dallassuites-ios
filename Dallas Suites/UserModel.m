@@ -77,7 +77,7 @@
         
         NSLog(@"%@", error.localizedDescription);
 
-        block(nil,nil,error);
+        block(NO,error.localizedDescription,error);
     };
     
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
@@ -257,7 +257,7 @@
         
         NSLog(@"%@", error.localizedDescription);
         
-        block(nil,nil,error);
+        block(NO,error.localizedDescription,error);
     };
     
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
@@ -292,7 +292,7 @@
         
         NSLog(@"%@", error.localizedDescription);
         
-        block(nil,nil,error);
+        block(NO,error.localizedDescription,error);
     };
     
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];

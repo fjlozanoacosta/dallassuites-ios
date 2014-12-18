@@ -46,6 +46,7 @@
 		277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */; };
 		277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308141A00425F000FC4B1 /* MenuTableViewCell.m */; };
 		27A3A7DD1A43034F006A398B /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3A7DC1A43034F006A398B /* LogInViewController.m */; };
+		27A3A7E11A432CF8006A398B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3A7E01A432CF8006A398B /* ForgotPasswordViewController.m */; };
 		27AD8D181A0CFD17001A17E3 /* RoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD8D171A0CFD17001A17E3 /* RoomModel.m */; };
 		27AD8D2D1A0D14A5001A17E3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD8D1B1A0D14A5001A17E3 /* AFHTTPRequestOperation.m */; };
 		27AD8D2E1A0D14A5001A17E3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD8D1D1A0D14A5001A17E3 /* AFHTTPRequestOperationManager.m */; };
@@ -144,6 +145,8 @@
 		277308141A00425F000FC4B1 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
 		27A3A7DB1A43034F006A398B /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		27A3A7DC1A43034F006A398B /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		27A3A7DF1A432CF8006A398B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		27A3A7E01A432CF8006A398B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		27AD8D161A0CFD17001A17E3 /* RoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomModel.h; sourceTree = "<group>"; };
 		27AD8D171A0CFD17001A17E3 /* RoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomModel.m; sourceTree = "<group>"; };
 		27AD8D1A1A0D14A5001A17E3 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
 			isa = PBXGroup;
 			children = (
+				27A3A7DE1A432CE5006A398B /* Forgot Password */,
 				27A3A7DA1A430336006A398B /* LogIn */,
 				27A3A7D91A430329006A398B /* QRControllers */,
 				27201D481A0BF96400900E62 /* Models */,
@@ -478,6 +482,15 @@
 				27A3A7DC1A43034F006A398B /* LogInViewController.m */,
 			);
 			name = LogIn;
+			sourceTree = "<group>";
+		};
+		27A3A7DE1A432CE5006A398B /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				27A3A7DF1A432CF8006A398B /* ForgotPasswordViewController.h */,
+				27A3A7E01A432CF8006A398B /* ForgotPasswordViewController.m */,
+			);
+			name = "Forgot Password";
 			sourceTree = "<group>";
 		};
 		27AD8D191A0D14A5001A17E3 /* AFNetworking */ = {
@@ -736,6 +749,7 @@
 				27AD8D351A0D14A5001A17E3 /* AFURLSessionManager.m in Sources */,
 				276E7A5D1A08301B00B72273 /* DatePicker.m in Sources */,
 				2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */,
+				27A3A7E11A432CF8006A398B /* ForgotPasswordViewController.m in Sources */,
 				270E6C6619FAC685005994F9 /* AppDelegate.m in Sources */,
 				27AD8D311A0D14A5001A17E3 /* AFSecurityPolicy.m in Sources */,
 				27AD8D2D1A0D14A5001A17E3 /* AFHTTPRequestOperation.m in Sources */,
