@@ -41,6 +41,8 @@
     [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     navBar.shadowImage = [UIImage new];
     navBar.translucent = YES;
+    [navBar setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:20.f],
+                                      NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     //NSLog(@"New Title : %@", _navTitle);
     //NSLog(@"Old Title : %@", navBarTitle.title);

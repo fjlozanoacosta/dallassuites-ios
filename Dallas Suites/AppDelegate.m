@@ -34,7 +34,8 @@
 //    [[NSUserDefaults standardUserDefaults] synchronize];
     
     
-    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:20.f],
+                                      NSForegroundColorAttributeName : [UIColor colorWithRed:223.f/255.f green:188.f/255.f blue:149.f/255.f alpha:1.f]}];
     
     
     

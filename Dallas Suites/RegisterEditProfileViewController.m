@@ -1015,9 +1015,15 @@ NSString* machineName()
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+ 
+}
 
+#pragma mark - Status Bar Style -
+#pragma mark - Change Color
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
     
 }
+#pragma mark End -
 
 @end
