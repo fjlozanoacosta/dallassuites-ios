@@ -9,7 +9,10 @@
 #import "QRReaderViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface QRReaderViewController ()
+@interface QRReaderViewController (){
+    
+    __weak IBOutlet UINavigationBar *navBar;
+}
 
 @property (nonatomic, strong) ZXCapture *capture;
 @property (nonatomic, weak) IBOutlet UIView *scanRectView;
@@ -24,6 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    navBar.shadowImage = [UIImage new];
+    navBar.translucent = YES;
+    [navBar setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:20.f],
+                                      NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
     self.capture = [[ZXCapture alloc] init];
     self.capture.camera = self.capture.back;
     self.capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
@@ -35,7 +44,7 @@
     [self.view bringSubviewToFront:self.scanRectView];
     [self.view bringSubviewToFront:self.decodedLabel];
 //    
-//    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,17 +60,17 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-//    [UIView animateWithDuration:.5
-//                          delay:.0
-//                        options:UIViewAnimationOptionCurveEaseIn
-//                     animations:^{
-//                         
-//                         [self.view setBackgroundColor:[UIColor clearColor]];
-//                         
-//                     }
-//                     completion:^(BOOL finished) {
-//                     }
-//     ];
+    [UIView animateWithDuration:.5
+                          delay:.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         [self.view setBackgroundColor:[UIColor clearColor]];
+                         
+                     }
+                     completion:^(BOOL finished) {
+                     }
+     ];
 }
 
 
@@ -69,9 +78,10 @@
     return toInterfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+- (IBAction)backBtnAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 #pragma mark - Private Methods
 
