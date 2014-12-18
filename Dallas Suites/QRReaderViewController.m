@@ -34,8 +34,8 @@
 
     [self.view bringSubviewToFront:self.scanRectView];
     [self.view bringSubviewToFront:self.decodedLabel];
-    
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+//    
+//    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,17 +51,17 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [UIView animateWithDuration:.5
-                          delay:.0
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         
-                         [self.view setBackgroundColor:[UIColor clearColor]];
-                         
-                     }
-                     completion:^(BOOL finished) {
-                     }
-     ];
+//    [UIView animateWithDuration:.5
+//                          delay:.0
+//                        options:UIViewAnimationOptionCurveEaseIn
+//                     animations:^{
+//                         
+//                         [self.view setBackgroundColor:[UIColor clearColor]];
+//                         
+//                     }
+//                     completion:^(BOOL finished) {
+//                     }
+//     ];
 }
 
 

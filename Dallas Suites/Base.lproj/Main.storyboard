@@ -69,6 +69,24 @@
             </objects>
             <point key="canvasLocation" x="-1538" y="-370"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="eWZ-dH-KdG">
+            <objects>
+                <viewController id="R0g-vw-bk5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6yL-f5-V5M"/>
+                        <viewControllerLayoutGuide type="bottom" id="qki-qb-Ffx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5vS-p1-vPX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCQ-GI-zRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="-1063"/>
+        </scene>
         <!--Home And Service View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -1649,7 +1667,7 @@ consectetur adipiscing elit.</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wvh-gr-i55" id="vt3-DA-krs">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="roomServiceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gGe-Dz-vjI" userLabel="Cell Icon">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="roomServiceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gGe-Dz-vjI" userLabel="Cell Icon">
                                                     <rect key="frame" x="15" y="18" width="24" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="7V6-p4-AfW"/>
@@ -2711,16 +2729,6 @@ guacamole y caraotas.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPN-Ud-1Bo">
-                                <rect key="frame" x="279" y="521" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="Eh0-uu-EY2"/>
-                                    <constraint firstAttribute="height" constant="21" id="sE9-mn-btY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toca en cualquier lado para salir" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j3-lt-e7s">
                                 <rect key="frame" x="176" y="20" width="248" height="21"/>
                                 <constraints>
@@ -2733,23 +2741,33 @@ guacamole y caraotas.</string>
                             </label>
                             <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XF-XV-VwD">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="3yT-cg-gFB"/>
                                     <constraint firstAttribute="height" constant="300" id="cWq-by-C7r"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPN-Ud-1Bo">
+                                <rect key="frame" x="179" y="138" width="243" height="291"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="Eh0-uu-EY2"/>
+                                    <constraint firstAttribute="height" constant="291" id="sE9-mn-btY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="7XF-XV-VwD" secondAttribute="centerY" id="53x-nl-q3b"/>
                             <constraint firstAttribute="centerX" secondItem="0j3-lt-e7s" secondAttribute="centerX" id="Ced-xS-vGw"/>
                             <constraint firstAttribute="centerX" secondItem="OPN-Ud-1Bo" secondAttribute="centerX" id="U1K-SU-2AB"/>
-                            <constraint firstItem="OPN-Ud-1Bo" firstAttribute="top" secondItem="7XF-XV-VwD" secondAttribute="bottom" constant="71" id="V4Q-yk-k3L"/>
+                            <constraint firstItem="OPN-Ud-1Bo" firstAttribute="top" secondItem="7XF-XV-VwD" secondAttribute="bottom" constant="-312" id="V4Q-yk-k3L"/>
                             <constraint firstAttribute="centerX" secondItem="7XF-XV-VwD" secondAttribute="centerX" id="Wpv-5c-AnB"/>
                             <constraint firstItem="0j3-lt-e7s" firstAttribute="top" secondItem="xxZ-Bs-r0O" secondAttribute="bottom" id="hXu-ML-SqU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cpH-OX-mOk"/>
                     <connections>
                         <outlet property="decodedLabel" destination="OPN-Ud-1Bo" id="hm5-V9-0IT"/>
                         <outlet property="scanRectView" destination="7XF-XV-VwD" id="dTc-eC-gIg"/>
