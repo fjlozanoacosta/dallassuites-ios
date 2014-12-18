@@ -24,6 +24,8 @@
     __weak IBOutlet UIActivityIndicatorView *activityIndicator;
     
     
+    __weak IBOutlet NSLayoutConstraint *containerYConstraint;
+    
     UserModel* _user;
 }
 
@@ -42,6 +44,7 @@
     [navBar setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:20.f],
                                       NSForegroundColorAttributeName : [UIColor colorWithRed:223.f/255.f green:188.f/255.f blue:149.f/255.f alpha:1.f]}];
     
+    //TextField Styling
     NSDictionary* attributes = @{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:18.f],
                                   NSForegroundColorAttributeName : [UIColor colorWithWhite:1.f alpha:.5f]};
     NSAttributedString* string = [[NSAttributedString alloc] initWithString:@"Sobrenombre ó correo electrónico" attributes:attributes];
@@ -49,6 +52,7 @@
     string = [[NSAttributedString alloc] initWithString:@"Contraseña" attributes:attributes];
     [passwordTextField setAttributedPlaceholder:string];
     
+    //Forgot Pass Btn Styling
     attributes = @{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:16.f],
                     NSForegroundColorAttributeName : [UIColor colorWithRed:223.f/255.f green:188.f/255.f blue:149.f/255.f alpha:1.f],
                     NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle),
@@ -63,12 +67,23 @@
     string = [[NSAttributedString alloc] initWithString:@"Recuperar Contraseña" attributes:attributes];
     [forgotPassowrdBtn setAttributedTitle:string forState:UIControlStateHighlighted];
     
-    
+    //Init Usermodel
     _user = [[UserModel alloc] init];
     
+    //Prefill user email if needed
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ChachedUser"]) {
         [usertextField setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"UserEmailKey"]];
     }
+    
+    
+    //KeyboardNotificatons
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardDidHideNotification object:nil];
 }
 
 
@@ -193,6 +208,55 @@
     }
     
 }
+
+#pragma mark - Keyboard Methods -
+#pragma mark - Keyboard presenting methods
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    if ([UIScreen mainScreen].bounds.size.height != 480) {
+        return;
+    }
+    
+//    CGRect keyboardRect = [[[notification userInfo] valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSTimeInterval duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
+    
+    containerYConstraint.constant -= 50.f;
+    
+    [UIView animateWithDuration:duration animations:^{
+        
+        [UIView setAnimationCurve:curve];
+
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    if ([UIScreen mainScreen].bounds.size.height != 480) {
+        return;
+    }
+    
+    NSTimeInterval duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
+
+    containerYConstraint.constant += 50.f;
+    
+    [UIView animateWithDuration:duration animations:^{
+        
+        [UIView setAnimationCurve:curve];
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+
 /*
 #pragma mark - Navigation
 
