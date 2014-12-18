@@ -182,7 +182,8 @@
 - (IBAction)navBackButtonAction:(id)sender {
     
     //    [self dismissViewControllerAnimated:YES completion:^{}];
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark End -

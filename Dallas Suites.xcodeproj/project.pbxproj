@@ -45,6 +45,7 @@
 		2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */; };
 		277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */; };
 		277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308141A00425F000FC4B1 /* MenuTableViewCell.m */; };
+		27A3A7DD1A43034F006A398B /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3A7DC1A43034F006A398B /* LogInViewController.m */; };
 		27AD8D181A0CFD17001A17E3 /* RoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD8D171A0CFD17001A17E3 /* RoomModel.m */; };
 		27AD8D2D1A0D14A5001A17E3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD8D1B1A0D14A5001A17E3 /* AFHTTPRequestOperation.m */; };
 		27AD8D2E1A0D14A5001A17E3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD8D1D1A0D14A5001A17E3 /* AFHTTPRequestOperationManager.m */; };
@@ -141,6 +142,8 @@
 		277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTableViewCell.m; sourceTree = "<group>"; };
 		277308131A00425F000FC4B1 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		277308141A00425F000FC4B1 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		27A3A7DB1A43034F006A398B /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		27A3A7DC1A43034F006A398B /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		27AD8D161A0CFD17001A17E3 /* RoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomModel.h; sourceTree = "<group>"; };
 		27AD8D171A0CFD17001A17E3 /* RoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomModel.m; sourceTree = "<group>"; };
 		27AD8D1A1A0D14A5001A17E3 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -236,8 +239,8 @@
 		270E6C5F19FAC685005994F9 /* Dallas Suites */ = {
 			isa = PBXGroup;
 			children = (
-				2767FD2B1A3F8D1800107159 /* QRScannerWrite */,
-				2767FD271A3F893200107159 /* QRScannerReader */,
+				27A3A7DA1A430336006A398B /* LogIn */,
+				27A3A7D91A430329006A398B /* QRControllers */,
 				27201D481A0BF96400900E62 /* Models */,
 				276E7A5A1A08300E00B72273 /* DatePicker */,
 				27AE73D81A0535A4009746CF /* Register/Edit Profile */,
@@ -457,6 +460,24 @@
 				277308141A00425F000FC4B1 /* MenuTableViewCell.m */,
 			);
 			name = MenuTableViewCell;
+			sourceTree = "<group>";
+		};
+		27A3A7D91A430329006A398B /* QRControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2767FD2B1A3F8D1800107159 /* QRScannerWrite */,
+				2767FD271A3F893200107159 /* QRScannerReader */,
+			);
+			name = QRControllers;
+			sourceTree = "<group>";
+		};
+		27A3A7DA1A430336006A398B /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				27A3A7DB1A43034F006A398B /* LogInViewController.h */,
+				27A3A7DC1A43034F006A398B /* LogInViewController.m */,
+			);
+			name = LogIn;
 			sourceTree = "<group>";
 		};
 		27AD8D191A0D14A5001A17E3 /* AFNetworking */ = {
@@ -738,6 +759,7 @@
 				2767FD2A1A3F894A00107159 /* QRReaderViewController.m in Sources */,
 				27AD8D301A0D14A5001A17E3 /* AFNetworkReachabilityManager.m in Sources */,
 				27AD8D341A0D14A5001A17E3 /* AFURLResponseSerialization.m in Sources */,
+				27A3A7DD1A43034F006A398B /* LogInViewController.m in Sources */,
 				2769802519FF0B1A009C5968 /* DropAnimationController.m in Sources */,
 				27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */,
 				2767FD321A40771400107159 /* BeveragesTableViewCell.m in Sources */,

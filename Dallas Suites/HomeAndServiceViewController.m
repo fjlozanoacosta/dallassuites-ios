@@ -56,26 +56,6 @@
     
     
     // Log In PopUp (pU)
-    __weak IBOutlet UIView *pUViewContainer;
-    
-        //Frame - Form
-    __weak IBOutlet UIView *pUFrameView;
-    
-        //Text Fields
-            //Username (Usuario)
-    __weak IBOutlet UITextField *pUUsernameTextField;
-            //Password (Contraseña)
-    __weak IBOutlet UITextField *pUPasswordTextField;
-    
-        //Buttons
-            //LogIn Btn (Iniciar Sesión)
-    __weak IBOutlet UIButton *pULogInBtn;
-            //Forgot Password Btn (Recuperar Contraseña)
-    __weak IBOutlet UIButton *pUForgotPasswordBtn;
-            //Close PopUp Btn (Cerrar)
-    __weak IBOutlet UIButton *pUCloseBtn;
-    
-    // Log In PopUp (pU)
     __weak IBOutlet UIView *sPUViewContainer;
         //Frame
     __weak IBOutlet UIView *sPUFrameView;
@@ -112,13 +92,12 @@
     servicesNavBar.shadowImage = [UIImage new];
     servicesNavBar.translucent = YES;
     
+    
     [self.navigationController.navigationBar setHidden:YES];
     
     //Service Pop Up Description Label Multiline
     [sPUServicesDescriptionLabel setNumberOfLines:0];
     
-    
-    pUUsernameTextField.placeholder = @"EMAIL";
     
 #warning TODO: Check For User
     //Here is where the code that checks if there's an user logged in and changes the register bttn acordingly!!
@@ -134,6 +113,12 @@
     [self.view layoutIfNeeded];
     
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -163,35 +148,6 @@
 
 #pragma mark - Main View Methods -
 #pragma mark - Buttons Actions
-
-- (IBAction)displayLogInPopUp:(UIButton *)sender {
-
-    if (isLogInPopUpDisplayed) {
-        return;
-    }
-    isLogInPopUpDisplayed = YES;
-    
-    if (_user.email) {
-        pUUsernameTextField.text = _user.email;
-    }
-    
-    CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
-    transform = CATransform3DScale(transform, .2f, .2f, 1.f);
-    [pUFrameView.layer setTransform:transform];
-    
-    CATransform3D revertTransform = CATransform3DMakeRotation(0, 0, 0, 1);
-    transform = CATransform3DScale(transform, 1.f, 1.f, 1.f);
-    
-    [UIView animateWithDuration:.5f animations:^{
-       
-        [pUViewContainer setAlpha:1.f];
-        [pUFrameView.layer setTransform:revertTransform];
-        
-    } completion:^(BOOL finished) {
-        
-    }];
-
-}
 
 - (IBAction)displayServicesOptionsMenuButtons:(UIButton *)sender {
     
@@ -237,10 +193,6 @@
 
 - (IBAction)goToRegisterOrProfileView:(UIButton*)sender {
     
-    if (sender.tag == 1) {
-        [self displayLogInPopUp:sender];
-        return;
-    }
     [self performSegueWithIdentifier:[allSegues objectAtIndex:sender.tag] sender:sender];
     
 }
@@ -309,75 +261,6 @@
 #pragma mark - Buttons Actions
 
 
-- (IBAction)closeDisplayedLogInPopUp:(UIButton *)sender {
-    
-    [self allTextFieldResignFirstResponder];
-    
-    CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
-    transform = CATransform3DScale(transform, .2f, .2f, 1.f);
-    
-    [UIView animateWithDuration:.5f animations:^{
-        
-        [pUViewContainer setAlpha:.0f];
-        [pUFrameView.layer setTransform:transform];
-        
-    } completion:^(BOOL finished) {
-        
-        pUUsernameTextField.text = pUPasswordTextField.text = @"";
-        
-        isLogInPopUpDisplayed = NO;
-        
-    }];
-    
-}
-
-- (IBAction)performLogInAction:(UIButton *)sender {
-    
-    UserModel* user = [UserModel new];
-    
-    [self.view setUserInteractionEnabled:NO];
-    
-    void (^block)(UserModel*, NSError*) = ^(UserModel* user, NSError* error){
-        [self.view setUserInteractionEnabled:YES];
-        if (error) {
-            [self displayErrorMsgAlertViewWithMessage:@"Ocurrio un error al hacer log in. Revise su conexión a internet." withTitle:@"Oops"];
-            return;
-        }
-        
-        if (!user) {
-            [self displayErrorMsgAlertViewWithMessage:@"Error de log in, revise su email y/o clave" withTitle:@"Oops"];
-            return;
-        }
-        
-        [self closeDisplayedLogInPopUp:nil];
-        
-        _user = user;
-        _user.password = @"";
-        [[NSUserDefaults standardUserDefaults] setObject:_user.email forKey:@"UserEmailKey"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ChachedUser"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-//        NSLog(@"Exito!");
-        if (_user) {
-            _user = user;
-            [self performSegueWithIdentifier:[allSegues objectAtIndex:1] sender:sender];
-            return;
-        }
-        
-
-//        [self setUserIsPreLoggedIn];
-        
-        
-        
-        
-
-    };
-    
-    [user performUserLogInWithEmail:pUUsernameTextField.text
-                       withPassword:pUPasswordTextField.text
-              withComplitionHandler:block];
-    
-}
 
 - (IBAction)recoverPasswordButton:(UIButton *)sender {
     
@@ -516,8 +399,6 @@
 #pragma mark - TextField Methods -
 #pragma mark - Utility Methods
 -(void)allTextFieldResignFirstResponder{
-    [pUUsernameTextField resignFirstResponder];
-    [pUPasswordTextField resignFirstResponder];
 }
 #pragma mark End -
 #pragma mark - Delegate Methods
