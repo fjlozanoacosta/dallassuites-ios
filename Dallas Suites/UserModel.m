@@ -301,4 +301,42 @@
     
 }
 
+-(void)updatePasswordForUser:(UserModel *)user withNewPassword:(NSString*)newPassword copletitionHandler:(void (^)(NSInteger, NSString*, NSError*))block{
+    
+    NSDictionary* parameters = @{ @"user_id" : user.idUser,
+                                  @"old_password" : user.password,
+                                  @"new_password" : newPassword
+                                  };
+    
+    
+    id success = ^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+        
+        //        NSString* msg = [responseObject objectForKey:@"msg"];
+        NSString* error = [responseObject objectForKey:@"error"];
+        
+        if (error) {
+            block(kErrorAddingNewPassword, @"Password duplicado", nil);
+            return;
+        }
+        
+        block(kNewPasswordAdded, @"Password cambiado", nil);
+        
+        
+    };
+    
+    id failure =^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@", error.localizedDescription);
+        
+        block(kErrorAddingNewPassword, nil, error);
+        
+    };
+    
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager POST:[BaseURL stringByAppendingString:@"?o=updateUserPassword"] parameters:parameters success:success failure:failure];
+    
+}
+
+
 @end

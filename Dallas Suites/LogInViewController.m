@@ -143,7 +143,7 @@
         
         
         _user = user;
-        _user.password = @"";
+//        _user.password = @"";
         [[NSUserDefaults standardUserDefaults] setObject:_user.email forKey:@"UserEmailKey"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ChachedUser"];
         [[NSUserDefaults standardUserDefaults] synchronize];

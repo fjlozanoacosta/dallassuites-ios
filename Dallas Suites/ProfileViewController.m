@@ -10,6 +10,7 @@
 #import "ProfileTableViewCell.h"
 #import "RegisterEditProfileViewController.h"
 #import "UserHistoryModel.h"
+#import "EditProfileViewController.h"
 
 #define ProfileCell @"profileCell"
 
@@ -199,8 +200,14 @@
 #pragma mark - Navigation Methods -
 #pragma mark - Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    [(RegisterEditProfileViewController*)[segue destinationViewController] setIsForEdit:YES];
-    [(RegisterEditProfileViewController*)[segue destinationViewController] setUser:_user];
+//    [(RegisterEditProfileViewController*)[segue destinationViewController] setIsForEdit:YES];
+//    [(RegisterEditProfileViewController*)[segue destinationViewController] setUser:_user];
+    if ([segue.identifier isEqualToString:EditProfileSegue]) {
+        [(EditProfileViewController*)segue.destinationViewController setUser:_user];
+    }
+    
+    
+    
 }
 
 #pragma mark End -

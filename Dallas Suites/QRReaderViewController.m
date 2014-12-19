@@ -12,6 +12,12 @@
 @interface QRReaderViewController (){
     
     __weak IBOutlet UINavigationBar *navBar;
+    
+    
+    __weak IBOutlet UILabel *instructionLabel;
+    
+    IBOutletCollection(UIView) NSArray *blackFrame;
+    
 }
 
 @property (nonatomic, strong) ZXCapture *capture;
@@ -43,6 +49,13 @@
 
     [self.view bringSubviewToFront:self.scanRectView];
     [self.view bringSubviewToFront:self.decodedLabel];
+    
+    [blackFrame enumerateObjectsUsingBlock:^(UIView* obj, NSUInteger idx, BOOL *stop) {
+        [self.view bringSubviewToFront:obj];
+    }];
+    [self.view bringSubviewToFront:navBar];
+    [self.view bringSubviewToFront:instructionLabel];
+    
 //    
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }

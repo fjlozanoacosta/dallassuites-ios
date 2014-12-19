@@ -62,6 +62,7 @@
 		27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */; };
 		27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */; };
 		27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */; };
+		27EDF3021A445835005D1A30 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3011A445835005D1A30 /* EditProfileViewController.m */; };
 		27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */; };
 		27FE6A741A0C4ABD00F320DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3721A0C4A78008FA875 /* Foundation.framework */; };
 		27FE6A751A0C4ABD00F320DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3701A0C4A72008FA875 /* UIKit.framework */; };
@@ -179,6 +180,8 @@
 		27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditProfileViewController.m; sourceTree = "<group>"; };
 		27AE73DC1A053BF9009746CF /* RegisterOrEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterOrEditTableViewCell.h; sourceTree = "<group>"; };
 		27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterOrEditTableViewCell.m; sourceTree = "<group>"; };
+		27EDF3001A445835005D1A30 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		27EDF3011A445835005D1A30 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		27F6CB691A11886400A93B9A /* UserHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistoryModel.h; sourceTree = "<group>"; };
 		27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistoryModel.m; sourceTree = "<group>"; };
 		5D81A04C7F6B21959A5F167B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -553,6 +556,8 @@
 				27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCells */,
 				27AE73D91A0535BD009746CF /* RegisterEditProfileViewController.h */,
 				27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */,
+				27EDF3001A445835005D1A30 /* EditProfileViewController.h */,
+				27EDF3011A445835005D1A30 /* EditProfileViewController.m */,
 			);
 			name = "Register/Edit Profile";
 			sourceTree = "<group>";
@@ -766,6 +771,7 @@
 				27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */,
 				27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */,
 				27AD8D2E1A0D14A5001A17E3 /* AFHTTPRequestOperationManager.m in Sources */,
+				27EDF3021A445835005D1A30 /* EditProfileViewController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
 				2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */,
 				27201D4B1A0BF97500900E62 /* UserModel.m in Sources */,

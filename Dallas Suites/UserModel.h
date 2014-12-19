@@ -20,7 +20,8 @@ typedef enum{
                                       * username,
                                       * email,
                                       * birthDay,
-                                      * password;
+                                      * password,
+                                      * keyWord;
 @property (strong, nonatomic) NSNumber* cedula;
 @property (strong, nonatomic) NSNumber* idUser;
 @property (strong, nonatomic) NSNumber* points;
@@ -34,5 +35,5 @@ typedef enum{
 -(void)updateUserInfoWithUser:(UserModel *)user copletitionHandler:(void (^)(BOOL, NSString*, NSError*))block;
 
 -(void)recoverUserPasswordWithUserEmail:(NSString*)userEmail withCompletitionHanlder:(void (^)(BOOL, NSString*, NSError*))block;
-
+-(void)updatePasswordForUser:(UserModel *)user withNewPassword:(NSString*)newPassword copletitionHandler:(void (^)(NSInteger, NSString*, NSError*))block;
 @end
