@@ -951,10 +951,14 @@ NSString* machineName()
                                                              handler:^(UIAlertAction *action)
                                        {
                                            if ([alert.title isEqualToString:@"Yay!"]) {
-                                               [self.navigationController popViewControllerAnimated:YES];
+//                                               [self.navigationController popViewControllerAnimated:YES];
+                                               [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"registerTutorialView"]
+                                                                                    animated:YES];
                                                
                                            } else if ([alert.title isEqualToString:@"Logrado!"]){
-                                               [self.navigationController popToRootViewControllerAnimated:YES];
+//                                               [self.navigationController popToRootViewControllerAnimated:YES];
+                                               [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"registerTutorialView"]
+                                                                                    animated:YES];
                                            }
                                        }];
         
@@ -994,10 +998,14 @@ NSString* machineName()
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if ([alertView.title isEqualToString:@"Yay!"]) {
-        [self.navigationController popViewControllerAnimated:YES];
+//        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"registerTutorialView"]
+                                                animated:YES];
         
     } else if ([alertView.title isEqualToString:@"Logrado!"]){
-        [self.navigationController popToRootViewControllerAnimated:YES];
+//        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"registerTutorialView"]
+                                             animated:YES];
     }
 }
 
