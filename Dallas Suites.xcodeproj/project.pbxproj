@@ -65,6 +65,7 @@
 		27EDF3021A445835005D1A30 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3011A445835005D1A30 /* EditProfileViewController.m */; };
 		27EDF3071A4857AE005D1A30 /* RegisterTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3061A4857AE005D1A30 /* RegisterTutorialViewController.m */; };
 		27EDF30A1A48819E005D1A30 /* AddNewPasswordPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3091A48819E005D1A30 /* AddNewPasswordPopUpViewController.m */; };
+		27EDF30D1A48A796005D1A30 /* SevicesPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF30C1A48A796005D1A30 /* SevicesPopUpViewController.m */; };
 		27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */; };
 		27FE6A741A0C4ABD00F320DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3721A0C4A78008FA875 /* Foundation.framework */; };
 		27FE6A751A0C4ABD00F320DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3701A0C4A72008FA875 /* UIKit.framework */; };
@@ -188,6 +189,8 @@
 		27EDF3061A4857AE005D1A30 /* RegisterTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTutorialViewController.m; sourceTree = "<group>"; };
 		27EDF3081A48819E005D1A30 /* AddNewPasswordPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewPasswordPopUpViewController.h; sourceTree = "<group>"; };
 		27EDF3091A48819E005D1A30 /* AddNewPasswordPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewPasswordPopUpViewController.m; sourceTree = "<group>"; };
+		27EDF30B1A48A796005D1A30 /* SevicesPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevicesPopUpViewController.h; sourceTree = "<group>"; };
+		27EDF30C1A48A796005D1A30 /* SevicesPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevicesPopUpViewController.m; sourceTree = "<group>"; };
 		27F6CB691A11886400A93B9A /* UserHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistoryModel.h; sourceTree = "<group>"; };
 		27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistoryModel.m; sourceTree = "<group>"; };
 		5D81A04C7F6B21959A5F167B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +322,8 @@
 			children = (
 				270E6C6719FAC685005994F9 /* HomeAndServiceViewController.h */,
 				270E6C6819FAC685005994F9 /* HomeAndServiceViewController.m */,
+				27EDF30B1A48A796005D1A30 /* SevicesPopUpViewController.h */,
+				27EDF30C1A48A796005D1A30 /* SevicesPopUpViewController.m */,
 			);
 			name = Home/Service;
 			sourceTree = "<group>";
@@ -786,6 +791,7 @@
 				27EDF3021A445835005D1A30 /* EditProfileViewController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
 				2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */,
+				27EDF30D1A48A796005D1A30 /* SevicesPopUpViewController.m in Sources */,
 				27201D4B1A0BF97500900E62 /* UserModel.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
 				2767FD2A1A3F894A00107159 /* QRReaderViewController.m in Sources */,

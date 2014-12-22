@@ -10,6 +10,7 @@
 #import "UserModel.h"
 #import "ProfileViewController.h"
 #import "systemCheck.h"
+#import "SevicesPopUpViewController.h"
 
 
 //Segues
@@ -55,22 +56,6 @@
     __weak IBOutlet NSLayoutConstraint *logoImageYPositionConstraint;
     
     
-    // Log In PopUp (pU)
-    __weak IBOutlet UIView *sPUViewContainer;
-        //Frame
-    __weak IBOutlet UIView *sPUFrameView;
-        //Service Icon
-    __weak IBOutlet UIImageView *sPUServiceIconImage;
-        //Service Name
-    __weak IBOutlet UILabel *sPUServiceNameLabel;
-        //Service Description
-    __weak IBOutlet UILabel *sPUServicesDescriptionLabel;
-        //Ok PopUp Button
-    __weak IBOutlet UIButton *sPUOkBtn;
-    
-    //Validation vars!
-    BOOL isLogInPopUpDisplayed;
-    BOOL isServicePopUpDisplayed;
     
     //User
     UserModel* _user;
@@ -94,10 +79,6 @@
     
     
     [self.navigationController.navigationBar setHidden:YES];
-    
-    //Service Pop Up Description Label Multiline
-    [sPUServicesDescriptionLabel setNumberOfLines:0];
-    
     
 #warning TODO: Check For User
     //Here is where the code that checks if there's an user logged in and changes the register bttn acordingly!!
@@ -261,59 +242,28 @@
 
 
 - (IBAction)displayServicePopUp:(UIButton *)sender {
-    
-    if (isServicePopUpDisplayed) {
-        return;
+
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        [self performSegueWithIdentifier:@"toServicesPopUp" sender:sender];
+    } else {
+        
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        self.navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        SevicesPopUpViewController* vC = (SevicesPopUpViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"servicesPopUpViewController"];
+        
+        NSInteger tag = [sender tag];
+        vC.titleText = [servicePopUpTitles objectAtIndex:tag];
+        vC.contentText = [servicePopUpDescriptions objectAtIndex:tag];
+        vC.imageName = [servicePopUpIconImageName objectAtIndex:tag];
+        
+        [self presentViewController:vC
+                           animated:YES
+                         completion:^{
+                         }
+         ];
     }
-    isServicePopUpDisplayed = YES;
-    
-    /*
-     Set Service popUp Info Acrodingly
-    */
-    sPUServiceNameLabel.text = [servicePopUpTitles objectAtIndex:sender.tag];
-    sPUServicesDescriptionLabel.text = [servicePopUpDescriptions objectAtIndex:sender.tag];
-    [sPUServiceIconImage setImage:[UIImage imageNamed:[servicePopUpIconImageName objectAtIndex:sender.tag]]];
-        
-    CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
-    transform = CATransform3DScale(transform, .2f, .2f, 1.f);
-    [sPUFrameView.layer setTransform:transform];
-    
-    CATransform3D revertTransform = CATransform3DMakeRotation(0, 0, 0, 1);
-    transform = CATransform3DScale(transform, 1.f, 1.f, 1.f);
-    
-    [UIView animateWithDuration:.5f animations:^{
-        
-        [sPUViewContainer setAlpha:1.f];
-        [sPUFrameView.layer setTransform:revertTransform];
-        
-    } completion:^(BOOL finished) {
-        
-    }];
     
 }
-
-#pragma mark End -
-
-#pragma mark - Service Pop Up Methods -
-#pragma mark - Buttons Actions
-
-- (IBAction)closeDisplayedServiePopUp:(UIButton *)sender {
-    
-    CATransform3D transform = CATransform3DMakeRotation(180.0 * M_PI, 0, 0, 1);
-    transform = CATransform3DScale(transform, .2f, .2f, 1.f);
-    
-    [UIView animateWithDuration:.5f animations:^{
-        
-        [sPUViewContainer setAlpha:.0f];
-        [sPUFrameView.layer setTransform:transform];
-        
-    } completion:^(BOOL finished) {
-        
-        isServicePopUpDisplayed = NO;
-        
-    }];
-}
-
 
 #pragma mark End -
 
@@ -343,6 +293,16 @@
     if ([segue.identifier isEqualToString:goToProfile]) {
         ProfileViewController* destination = (ProfileViewController*)[segue destinationViewController];
         destination.user = _user;
+    } else if ([segue.identifier isEqualToString:@"toServicesPopUp"]){
+        SevicesPopUpViewController* destination = (SevicesPopUpViewController*)[segue destinationViewController];
+        NSInteger tag = [(UIButton*)sender tag];
+        /*
+         Set Service popUp Info Acrodingly
+         */
+        destination.titleText = [servicePopUpTitles objectAtIndex:tag];
+        destination.contentText = [servicePopUpDescriptions objectAtIndex:tag];
+        destination.imageName = [servicePopUpIconImageName objectAtIndex:tag];
+
     }
 }
 #pragma mark End -
