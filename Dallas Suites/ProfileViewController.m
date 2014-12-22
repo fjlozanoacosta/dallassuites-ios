@@ -11,6 +11,8 @@
 #import "RegisterEditProfileViewController.h"
 #import "UserHistoryModel.h"
 #import "EditProfileViewController.h"
+#import "AddNewPasswordPopUpViewController.h"
+#import "systemCheck.h"
 
 #define ProfileCell @"profileCell"
 
@@ -30,6 +32,14 @@
     
 
     NSMutableArray* userHistory;
+    
+    __weak IBOutlet UIView *profileContainer;
+    UIView* overlayProfile;
+    
+    __weak IBOutlet UIView *menuContainer;
+    BOOL menuShown;
+    __weak IBOutlet NSLayoutConstraint *menuLeftConstraint;
+    __weak IBOutlet NSLayoutConstraint *profileRightConstraint;
 }
 //History Tableview
 @property (weak, nonatomic) IBOutlet UITableView *historyTableView;
@@ -53,6 +63,16 @@
     navBar.shadowImage = [UIImage new];
     navBar.translucent = YES;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [menuContainer setAlpha:1.f];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+//    [menuContainer setAlpha:.0f];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -96,6 +116,15 @@
 //        
 //    });
     
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch* touch = [touches anyObject];
+//    CGPoint location = [touch locationInView:touch.view];
+    
+    if (touch.view == overlayProfile) {
+        [self openMenu:nil];
+    }
 }
 
 -(void)loadUserHistory{
@@ -186,6 +215,67 @@
 //    [self.navigationController popViewControllerAnimated:YES];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+- (IBAction)openMenu:(id)sender {
+    if (!menuShown) {
+//        menuShown = YES;
+        [menuLeftConstraint setConstant:0];
+        [profileRightConstraint setConstant:-104];
+        
+        
+        
+        [profileContainer setUserInteractionEnabled:NO];
+        
+        
+    } else {
+//        menuShown = NO;
+        [menuLeftConstraint setConstant:-88];
+        [profileRightConstraint setConstant:-16];
+        [profileContainer setUserInteractionEnabled:YES];
+    }
+    
+    [UIView animateWithDuration:.3f animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        if (!menuShown) {
+            menuShown = YES;
+            
+            overlayProfile = [[UIView alloc] initWithFrame:profileContainer.frame];
+            [overlayProfile setBackgroundColor:[UIColor clearColor]];
+            [self.view addSubview:overlayProfile];
+        } else {
+            menuShown = NO;
+            [overlayProfile removeFromSuperview];
+        }
+
+    }];
+}
+
+- (IBAction)addNewPassword:(id)sender {
+    
+    [self openMenu:nil];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        [self performSegueWithIdentifier:@"ios8ProfilePopUp" sender:nil];
+    } else {
+    
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        self.navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        AddNewPasswordPopUpViewController* vC = (AddNewPasswordPopUpViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"addPaswordViewController"];
+        [vC.view setAlpha:0.f];
+        [self presentViewController:vC
+                           animated:YES
+                         completion:^{
+                             
+                             //                         [UIView animateWithDuration:.5f
+                             //                                          animations:^{
+                             //                                              [vC.view setAlpha:1.f];
+                             //
+                             //                                          }
+                             //                          ];
+                         }
+         ];
+    }
+}
 
 #pragma mark End -
 
@@ -202,6 +292,13 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 //    [(RegisterEditProfileViewController*)[segue destinationViewController] setIsForEdit:YES];
 //    [(RegisterEditProfileViewController*)[segue destinationViewController] setUser:_user];
+    
+//    [self performSelectorOnMainThread:@selector(openMenu:) withObject:nil waitUntilDone:YES];
+    if (menuShown) {
+        [self openMenu:nil];
+    }
+    
+    
     if ([segue.identifier isEqualToString:EditProfileSegue]) {
         [(EditProfileViewController*)segue.destinationViewController setUser:_user];
     }

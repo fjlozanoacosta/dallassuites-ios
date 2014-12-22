@@ -64,6 +64,7 @@
 		27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */; };
 		27EDF3021A445835005D1A30 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3011A445835005D1A30 /* EditProfileViewController.m */; };
 		27EDF3071A4857AE005D1A30 /* RegisterTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3061A4857AE005D1A30 /* RegisterTutorialViewController.m */; };
+		27EDF30A1A48819E005D1A30 /* AddNewPasswordPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3091A48819E005D1A30 /* AddNewPasswordPopUpViewController.m */; };
 		27F6CB6B1A11886400A93B9A /* UserHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */; };
 		27FE6A741A0C4ABD00F320DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3721A0C4A78008FA875 /* Foundation.framework */; };
 		27FE6A751A0C4ABD00F320DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772B3701A0C4A72008FA875 /* UIKit.framework */; };
@@ -185,6 +186,8 @@
 		27EDF3011A445835005D1A30 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		27EDF3051A4857AE005D1A30 /* RegisterTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTutorialViewController.h; sourceTree = "<group>"; };
 		27EDF3061A4857AE005D1A30 /* RegisterTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTutorialViewController.m; sourceTree = "<group>"; };
+		27EDF3081A48819E005D1A30 /* AddNewPasswordPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewPasswordPopUpViewController.h; sourceTree = "<group>"; };
+		27EDF3091A48819E005D1A30 /* AddNewPasswordPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewPasswordPopUpViewController.m; sourceTree = "<group>"; };
 		27F6CB691A11886400A93B9A /* UserHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistoryModel.h; sourceTree = "<group>"; };
 		27F6CB6A1A11886400A93B9A /* UserHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistoryModel.m; sourceTree = "<group>"; };
 		5D81A04C7F6B21959A5F167B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -540,6 +543,8 @@
 				27AE73D71A050FF9009746CF /* ProfileTableViewCell */,
 				27AE73D11A044CF5009746CF /* ProfileViewController.h */,
 				27AE73D21A044CF5009746CF /* ProfileViewController.m */,
+				27EDF3081A48819E005D1A30 /* AddNewPasswordPopUpViewController.h */,
+				27EDF3091A48819E005D1A30 /* AddNewPasswordPopUpViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -765,6 +770,7 @@
 				27AD8D2D1A0D14A5001A17E3 /* AFHTTPRequestOperation.m in Sources */,
 				270E6C6319FAC685005994F9 /* main.m in Sources */,
 				2767FD381A41C68D00107159 /* RestauranItemModel.m in Sources */,
+				27EDF30A1A48819E005D1A30 /* AddNewPasswordPopUpViewController.m in Sources */,
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
 				27EDF3071A4857AE005D1A30 /* RegisterTutorialViewController.m in Sources */,
 				27AD8D181A0CFD17001A17E3 /* RoomModel.m in Sources */,
