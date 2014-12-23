@@ -18,8 +18,8 @@
     
     __weak IBOutlet UINavigationBar *navBar;
     
-    __weak IBOutlet UILabel *NameNicknameLabel;
-    
+    __weak IBOutlet UILabel *nicknameLabel;
+    __weak IBOutlet UITextField *nameLastnameTextfield;
     
     __weak IBOutlet UITextField *emailTextField;
     __weak IBOutlet UITextField *keyWordTextField;
@@ -29,6 +29,7 @@
     __weak IBOutlet UIButton *birthDateButton;
     __weak IBOutlet UIButton *changePasswordBtn;
     
+    NSString* birthDateUglyString;
     
     //Pop Ups
     
@@ -113,32 +114,23 @@
 }
 
 -(void)styleUserNameAndNicknameWith:(NSString*)name withLastName:(NSString*)lastname withNickname:(NSString*)nickname{
-    NSDictionary* attributes = @{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Medium" size:18.f],
-                    NSForegroundColorAttributeName : [UIColor colorWithRed:233.f/255.f green:188.f/255.f blue:149.f/255.f alpha:1.f]};
     
     nickname = [NSString stringWithFormat:@"%@ | ", nickname];
-    NSAttributedString* string = [[NSAttributedString alloc] initWithString:nickname attributes:attributes];
     
-    NSMutableAttributedString* mString = [[NSMutableAttributedString alloc] init];
-    [mString appendAttributedString:string];
-    
-    attributes = @{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:18.f],
-                    NSForegroundColorAttributeName : [UIColor whiteColor]};
+    [nicknameLabel setText:nickname];
     
     name = [NSString stringWithFormat:@"%@ %@", name, lastname];
     
-    string = [[NSAttributedString alloc] initWithString:name attributes:attributes];
+    [nameLastnameTextfield setText:name];
     
-    [mString appendAttributedString:string];
-    
-    [NameNicknameLabel setAttributedText:mString];
 }
 
 -(void)loadUserInfoToFields{
     [self styleUserNameAndNicknameWith:_user.name withLastName:_user.lastname withNickname:_user.username];
     [emailTextField setText:_user.email];
-//    [keyWordTextField setText:_user.keyWord];
+    [keyWordTextField setText:_user.keyWord];
     [birthDateButton setTitle:[self prettyDateStringFromStringDate:_user.birthDay] forState:UIControlStateNormal];
+    birthDateUglyString = _user.birthDay;
     [idTextField setText:[NSString stringWithFormat:@"%i", _user.cedula.intValue]];
     
 //    [changePasswordBtn setTitle:_user.password forState:UIControlStateNormal];
@@ -162,7 +154,38 @@
 
 - (IBAction)saveProfileEditAction:(id)sender {
     
+    NSArray* nameLastname = [nameLastnameTextfield.text componentsSeparatedByString:@" "];
+    if (nameLastname.count == 0) {
+        _user.name = @"";
+        _user.lastname = @"";
+    } else if (nameLastname.count == 1){
+        _user.name = [nameLastname firstObject];
+        _user.lastname = @"";
+    } else if (nameLastname.count == 2){
+        _user.name = [nameLastname firstObject];
+        _user.lastname = [nameLastname lastObject];
+    } else if (nameLastname.count > 2){
+        [self displayErrorMsgAlertViewWithMessage:@"Coloque solo su primer nombre y primer apellido." withTitle:@"Error en el nombre"];
+        return;
+    }
+    
+    if (idTextField.text.length == 0) {
+        [self displayErrorMsgAlertViewWithMessage:@"Por favor coloque su cédula." withTitle:@"Falta cédula"];
+        return;
+    } else if (idTextField.text.length > 0 && idTextField.text.length <= 4){
+        [self displayErrorMsgAlertViewWithMessage:@"Su cédula no es valida. Por favor revise su cédula." withTitle:@"Error en cédula"];
+        return;
+    }
+    
     _user.cedula = @(idTextField.text.integerValue);
+    _user.birthDay = birthDateUglyString;
+
+    if (keyWordTextField.text.length == 0) {
+        [self displayErrorMsgAlertViewWithMessage:@"Se recomienda el uso de una palabra clave asociada con la contraseña." withTitle:@"Falta palabra clave"];
+        return;
+    }
+    
+    _user.keyWord = keyWordTextField.text;
     
     [_user updateUserInfoWithUser:_user copletitionHandler:^(BOOL userUpdated, NSString * msg, NSError * error) {
         if (error) {
@@ -262,7 +285,7 @@
     [birthDateButton setTitle:[self prettyDateStringFromStringDate:[datePicker getDateAsString]]
                      forState:UIControlStateNormal];
     
-    _user.birthDay = datePicker.getDateAsString;
+    birthDateUglyString = datePicker.getDateAsString;
     
     [self closeEditSelectBirthDayPopUp:sender];
 }
@@ -361,6 +384,23 @@
     [[[[UIApplication sharedApplication] delegate] window] endEditing:YES];
 }
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    //Validate input on C.I. Field
+    if (textField.tag == 4) {
+        
+        const char * _char = [string cStringUsingEncoding:NSUTF8StringEncoding];
+        int isBackSpace = strcmp(_char, "\b");
+        
+        NSNumberFormatter *formater = [NSNumberFormatter new];
+        NSNumber* number = [formater numberFromString:string];
+        if ((!number || textField.text.length > 7) && isBackSpace != -8) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
 
 #pragma mark - AlertView -
 #pragma mark - Display Alert View

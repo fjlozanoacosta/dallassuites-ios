@@ -7,6 +7,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Brandon_bld.otf">
+            <string>BrandonGrotesque-Bold</string>
+        </mutableArray>
         <mutableArray key="Brandon_light.otf">
             <string>BrandonGrotesque-Light</string>
             <string>BrandonGrotesque-Light</string>
@@ -3058,15 +3061,6 @@ guacamole y caraotas.</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-2A-hNX">
                                 <rect key="frame" x="0.0" y="60" width="600" height="480"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jotabust | Nombre Apellido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-8M-KTK">
-                                        <rect key="frame" x="0.0" y="27" width="600" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="mux-lA-xGA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmN-uL-TnJ" userLabel="email upper line">
                                         <rect key="frame" x="0.0" y="81" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.73725490199999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -3261,14 +3255,14 @@ guacamole y caraotas.</string>
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cédula" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2T-xe-aXe">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cédula" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2T-xe-aXe">
                                         <rect key="frame" x="46" y="249" width="540" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="T4B-7e-jKN"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
                                         <connections>
                                             <outlet property="delegate" destination="fkb-rp-90B" id="ZWM-Vk-YLY"/>
                                         </connections>
@@ -3344,6 +3338,31 @@ guacamole y caraotas.</string>
                                             </mask>
                                         </variation>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username |   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvS-Qw-bbh">
+                                        <rect key="frame" x="164" y="33" width="136" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="eh6-LK-Kai"/>
+                                            <constraint firstAttribute="width" constant="136" id="vcO-fK-GjB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="18"/>
+                                        <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre Apellido" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fr-ou-Yzf">
+                                        <rect key="frame" x="304" y="30" width="180" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Nsz-8G-QNe"/>
+                                            <constraint firstAttribute="width" constant="180" id="kwA-aq-XFy"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -3355,10 +3374,10 @@ guacamole y caraotas.</string>
                                     <constraint firstItem="Ag2-Dx-CpX" firstAttribute="top" secondItem="GmN-uL-TnJ" secondAttribute="bottom" constant="11" id="5uT-kF-DQW"/>
                                     <constraint firstItem="SYv-zN-SUj" firstAttribute="leading" secondItem="R01-9p-TEu" secondAttribute="leading" id="6ps-eq-LG7"/>
                                     <constraint firstItem="kQJ-ED-RpC" firstAttribute="leading" secondItem="H1k-NN-7LE" secondAttribute="leading" id="7Zw-vq-O9x"/>
-                                    <constraint firstItem="Aq9-8M-KTK" firstAttribute="top" secondItem="NaE-2A-hNX" secondAttribute="top" constant="27" id="9gE-lk-rgh"/>
                                     <constraint firstItem="NAt-Za-59w" firstAttribute="leading" secondItem="R01-9p-TEu" secondAttribute="trailing" constant="16" id="C6R-XR-VQv"/>
                                     <constraint firstItem="WFr-mZ-hG6" firstAttribute="trailing" secondItem="GmN-uL-TnJ" secondAttribute="trailing" id="Elc-9t-ycz"/>
                                     <constraint firstItem="wah-dL-mm5" firstAttribute="top" secondItem="kQJ-ED-RpC" secondAttribute="bottom" constant="14" id="FoB-oK-3Jv"/>
+                                    <constraint firstAttribute="centerX" secondItem="WvS-Qw-bbh" secondAttribute="centerX" constant="68" id="GFb-Ug-0dr"/>
                                     <constraint firstItem="8mU-nw-dXS" firstAttribute="trailing" secondItem="WFr-mZ-hG6" secondAttribute="trailing" id="GkV-Pd-dcV"/>
                                     <constraint firstItem="Ag2-Dx-CpX" firstAttribute="leading" secondItem="kRe-Yb-5rT" secondAttribute="trailing" constant="16" id="HJP-cV-0Af"/>
                                     <constraint firstItem="kQJ-ED-RpC" firstAttribute="top" secondItem="w2T-xe-aXe" secondAttribute="bottom" constant="10" id="KZr-Ge-2iq"/>
@@ -3369,6 +3388,7 @@ guacamole y caraotas.</string>
                                     <constraint firstItem="EOW-Qf-o0E" firstAttribute="top" secondItem="WFr-mZ-hG6" secondAttribute="bottom" constant="14" id="St9-aL-dZZ"/>
                                     <constraint firstItem="R01-9p-TEu" firstAttribute="top" secondItem="8mU-nw-dXS" secondAttribute="bottom" constant="14" id="T7K-Yo-8I0"/>
                                     <constraint firstItem="8mU-nw-dXS" firstAttribute="top" secondItem="DbY-7Z-JUn" secondAttribute="bottom" constant="10" id="XTR-yF-QNa"/>
+                                    <constraint firstItem="WvS-Qw-bbh" firstAttribute="top" secondItem="NaE-2A-hNX" secondAttribute="top" constant="33" id="YKO-6o-zuy"/>
                                     <constraint firstItem="EOW-Qf-o0E" firstAttribute="leading" secondItem="R01-9p-TEu" secondAttribute="leading" id="Zle-zM-2sb"/>
                                     <constraint firstItem="kRe-Yb-5rT" firstAttribute="leading" secondItem="NaE-2A-hNX" secondAttribute="leading" constant="7" id="Zwh-jP-6Xg"/>
                                     <constraint firstItem="H1k-NN-7LE" firstAttribute="top" secondItem="wah-dL-mm5" secondAttribute="bottom" constant="14" id="a3t-8G-hzJ"/>
@@ -3380,18 +3400,18 @@ guacamole y caraotas.</string>
                                     <constraint firstItem="DbY-7Z-JUn" firstAttribute="trailing" secondItem="Ag2-Dx-CpX" secondAttribute="trailing" id="hTm-4g-ZXX"/>
                                     <constraint firstItem="w2T-xe-aXe" firstAttribute="trailing" secondItem="AmR-SA-4wP" secondAttribute="trailing" id="ikx-Dm-G6c"/>
                                     <constraint firstItem="GmN-uL-TnJ" firstAttribute="leading" secondItem="WFr-mZ-hG6" secondAttribute="leading" id="k3N-iM-ncC"/>
+                                    <constraint firstItem="9fr-ou-Yzf" firstAttribute="leading" secondItem="WvS-Qw-bbh" secondAttribute="trailing" constant="4" id="khe-MH-tmV"/>
                                     <constraint firstItem="AmR-SA-4wP" firstAttribute="top" secondItem="kQJ-ED-RpC" secondAttribute="bottom" constant="15" id="mYm-UQ-0yi"/>
                                     <constraint firstItem="kQJ-ED-RpC" firstAttribute="trailing" secondItem="fUc-wT-wcH" secondAttribute="trailing" id="mfi-an-N6Y"/>
                                     <constraint firstItem="GmN-uL-TnJ" firstAttribute="leading" secondItem="NaE-2A-hNX" secondAttribute="leading" id="mp6-AM-BhK"/>
+                                    <constraint firstItem="9fr-ou-Yzf" firstAttribute="top" secondItem="NaE-2A-hNX" secondAttribute="top" constant="30" id="nOa-4n-B3x"/>
                                     <constraint firstItem="fUc-wT-wcH" firstAttribute="trailing" secondItem="8mU-nw-dXS" secondAttribute="trailing" id="o2y-cS-ila"/>
                                     <constraint firstAttribute="trailing" secondItem="Ag2-Dx-CpX" secondAttribute="trailing" constant="14" id="q4w-mY-6vN"/>
-                                    <constraint firstItem="Aq9-8M-KTK" firstAttribute="leading" secondItem="GmN-uL-TnJ" secondAttribute="leading" id="qJ5-mk-82c"/>
                                     <constraint firstItem="kRe-Yb-5rT" firstAttribute="leading" secondItem="EOW-Qf-o0E" secondAttribute="leading" id="qQi-V0-s2I"/>
                                     <constraint firstItem="kRe-Yb-5rT" firstAttribute="top" secondItem="GmN-uL-TnJ" secondAttribute="bottom" constant="14" id="qx3-z5-U6E"/>
                                     <constraint firstItem="H1k-NN-7LE" firstAttribute="centerX" secondItem="NaE-2A-hNX" secondAttribute="centerX" id="ral-BH-OWh"/>
-                                    <constraint firstItem="Aq9-8M-KTK" firstAttribute="trailing" secondItem="GmN-uL-TnJ" secondAttribute="trailing" id="rsf-a4-Qw1"/>
+                                    <constraint firstItem="GmN-uL-TnJ" firstAttribute="top" secondItem="9fr-ou-Yzf" secondAttribute="bottom" constant="21" id="tyo-4k-jJP"/>
                                     <constraint firstItem="DbY-7Z-JUn" firstAttribute="trailing" secondItem="NAt-Za-59w" secondAttribute="trailing" id="vh7-Oe-Nd7"/>
-                                    <constraint firstItem="GmN-uL-TnJ" firstAttribute="top" secondItem="Aq9-8M-KTK" secondAttribute="bottom" constant="33" id="wsT-cf-JEb"/>
                                     <constraint firstItem="SYv-zN-SUj" firstAttribute="leading" secondItem="wah-dL-mm5" secondAttribute="leading" id="yLu-Wb-JcS"/>
                                     <constraint firstItem="fUc-wT-wcH" firstAttribute="leading" secondItem="8mU-nw-dXS" secondAttribute="leading" id="yWH-Dx-fmr"/>
                                     <constraint firstItem="WFr-mZ-hG6" firstAttribute="top" secondItem="Ag2-Dx-CpX" secondAttribute="bottom" constant="10" id="z7P-EV-fj1"/>
@@ -3628,7 +3648,6 @@ guacamole y caraotas.</string>
                     </view>
                     <navigationItem key="navigationItem" id="Mdn-cx-twG"/>
                     <connections>
-                        <outlet property="NameNicknameLabel" destination="Aq9-8M-KTK" id="X6G-Px-yM6"/>
                         <outlet property="birthDateButton" destination="NAt-Za-59w" id="O1g-hd-yNQ"/>
                         <outlet property="changePasswordBtn" destination="AmR-SA-4wP" id="imk-1G-oRk"/>
                         <outlet property="datePicker" destination="HZd-zx-aBi" id="rwk-gg-hCh"/>
@@ -3639,7 +3658,9 @@ guacamole y caraotas.</string>
                         <outlet property="emailTextField" destination="Ag2-Dx-CpX" id="Wfn-94-Nzp"/>
                         <outlet property="idTextField" destination="w2T-xe-aXe" id="VA8-FQ-vBD"/>
                         <outlet property="keyWordTextField" destination="DbY-7Z-JUn" id="cRb-7X-Pkb"/>
+                        <outlet property="nameLastnameTextfield" destination="9fr-ou-Yzf" id="mvg-0l-cUv"/>
                         <outlet property="navBar" destination="kGT-53-a2u" id="qf5-6b-tBM"/>
+                        <outlet property="nicknameLabel" destination="WvS-Qw-bbh" id="SUd-6m-mSA"/>
                         <outlet property="popUpcontainer" destination="snh-ML-sOD" id="fk4-qA-X6F"/>
                         <outlet property="saveBtnBottomConstraint" destination="YI2-We-2dF" id="0OJ-U5-qUV"/>
                         <outlet property="scrollView" destination="NaE-2A-hNX" id="A24-L7-QbJ"/>
