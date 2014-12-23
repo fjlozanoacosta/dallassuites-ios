@@ -8,7 +8,6 @@
 
 #import "ProfileViewController.h"
 #import "ProfileTableViewCell.h"
-#import "RegisterEditProfileViewController.h"
 #import "UserHistoryModel.h"
 #import "EditProfileViewController.h"
 #import "AddNewPasswordPopUpViewController.h"

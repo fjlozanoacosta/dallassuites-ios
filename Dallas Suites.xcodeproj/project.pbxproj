@@ -17,7 +17,6 @@
 		270E6C8719FAE677005994F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 270E6C8619FAE677005994F9 /* Default-568h@2x.png */; };
 		270FFA0F1A26487B0006DD8E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270FFA0E1A26487B0006DD8E /* Fabric.framework */; };
 		27201D4B1A0BF97500900E62 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27201D4A1A0BF97500900E62 /* UserModel.m */; };
-		2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */; };
 		274ABE101A0ADA910079475B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274ABE0F1A0ADA910079475B /* Crashlytics.framework */; };
 		2767FD2A1A3F894A00107159 /* QRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD291A3F894A00107159 /* QRReaderViewController.m */; };
 		2767FD2E1A3F8D2C00107159 /* QRWriterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767FD2D1A3F8D2C00107159 /* QRWriterViewController.m */; };
@@ -61,8 +60,6 @@
 		27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73CD1A0419ED009746CF /* NavigationViewController.m */; };
 		27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D21A044CF5009746CF /* ProfileViewController.m */; };
 		27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */; };
-		27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */; };
-		27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */; };
 		27EDF3021A445835005D1A30 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3011A445835005D1A30 /* EditProfileViewController.m */; };
 		27EDF3071A4857AE005D1A30 /* RegisterTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3061A4857AE005D1A30 /* RegisterTutorialViewController.m */; };
 		27EDF30A1A48819E005D1A30 /* AddNewPasswordPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF3091A48819E005D1A30 /* AddNewPasswordPopUpViewController.m */; };
@@ -102,8 +99,6 @@
 		271FADB21A1BD1E8004E0DDA /* systemCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = systemCheck.h; sourceTree = "<group>"; };
 		27201D491A0BF97500900E62 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		27201D4A1A0BF97500900E62 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		2735BFF11A07D65C001BFB8A /* RegisterEditActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEditActionTableViewCell.h; sourceTree = "<group>"; };
-		2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditActionTableViewCell.m; sourceTree = "<group>"; };
 		274ABE0F1A0ADA910079475B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2767FD281A3F894A00107159 /* QRReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRReaderViewController.h; sourceTree = "<group>"; };
 		2767FD291A3F894A00107159 /* QRReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRReaderViewController.m; sourceTree = "<group>"; };
@@ -182,10 +177,6 @@
 		27AE73D21A044CF5009746CF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		27AE73D41A050FF4009746CF /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
 		27AE73D51A050FF4009746CF /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
-		27AE73D91A0535BD009746CF /* RegisterEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEditProfileViewController.h; sourceTree = "<group>"; };
-		27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEditProfileViewController.m; sourceTree = "<group>"; };
-		27AE73DC1A053BF9009746CF /* RegisterOrEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterOrEditTableViewCell.h; sourceTree = "<group>"; };
-		27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterOrEditTableViewCell.m; sourceTree = "<group>"; };
 		27EDF3001A445835005D1A30 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		27EDF3011A445835005D1A30 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		27EDF3051A4857AE005D1A30 /* RegisterTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTutorialViewController.h; sourceTree = "<group>"; };
@@ -569,9 +560,6 @@
 		27AE73D81A0535A4009746CF /* Register/Edit Profile */ = {
 			isa = PBXGroup;
 			children = (
-				27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCells */,
-				27AE73D91A0535BD009746CF /* RegisterEditProfileViewController.h */,
-				27AE73DA1A0535BD009746CF /* RegisterEditProfileViewController.m */,
 				27EDF3001A445835005D1A30 /* EditProfileViewController.h */,
 				27EDF3011A445835005D1A30 /* EditProfileViewController.m */,
 				27EDF3051A4857AE005D1A30 /* RegisterTutorialViewController.h */,
@@ -580,17 +568,6 @@
 				279905DF1A49998C008F9047 /* RegisterViewController.m */,
 			);
 			name = "Register/Edit Profile";
-			sourceTree = "<group>";
-		};
-		27AE73DF1A053BFC009746CF /* RegisterOrEditTableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				27AE73DC1A053BF9009746CF /* RegisterOrEditTableViewCell.h */,
-				27AE73DD1A053BF9009746CF /* RegisterOrEditTableViewCell.m */,
-				2735BFF11A07D65C001BFB8A /* RegisterEditActionTableViewCell.h */,
-				2735BFF21A07D65C001BFB8A /* RegisterEditActionTableViewCell.m */,
-			);
-			name = RegisterOrEditTableViewCells;
 			sourceTree = "<group>";
 		};
 		49884C48CF638A42AA933199 /* Frameworks */ = {
@@ -784,19 +761,16 @@
 				2769802619FF0B1A009C5968 /* ZoomAnimationController.m in Sources */,
 				27EDF3071A4857AE005D1A30 /* RegisterTutorialViewController.m in Sources */,
 				27AD8D181A0CFD17001A17E3 /* RoomModel.m in Sources */,
-				27AE73DE1A053BF9009746CF /* RegisterOrEditTableViewCell.m in Sources */,
 				277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */,
 				27AE73CE1A0419ED009746CF /* NavigationViewController.m in Sources */,
 				27AD8D2F1A0D14A5001A17E3 /* AFHTTPSessionManager.m in Sources */,
 				2767FD2E1A3F8D2C00107159 /* QRWriterViewController.m in Sources */,
 				27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */,
 				279905E01A49998C008F9047 /* RegisterViewController.m in Sources */,
-				27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */,
 				27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */,
 				27AD8D2E1A0D14A5001A17E3 /* AFHTTPRequestOperationManager.m in Sources */,
 				27EDF3021A445835005D1A30 /* EditProfileViewController.m in Sources */,
 				2769801619FEE9B3009C5968 /* RoomsViewController.m in Sources */,
-				2735BFF31A07D65C001BFB8A /* RegisterEditActionTableViewCell.m in Sources */,
 				27EDF30D1A48A796005D1A30 /* SevicesPopUpViewController.m in Sources */,
 				27201D4B1A0BF97500900E62 /* UserModel.m in Sources */,
 				277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */,
