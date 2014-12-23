@@ -18,10 +18,12 @@
     
     __weak IBOutlet UINavigationBar *navBar;
     
-    __weak IBOutlet UILabel *nicknameLabel;
-    __weak IBOutlet UITextField *nameLastnameTextfield;
+//    __weak IBOutlet UILabel *nicknameLabel;
+//    __weak IBOutlet UITextField *nameLastnameTextfield;
     
-    __weak IBOutlet UITextField *emailTextField;
+    __weak IBOutlet UITextField *nameTextField;
+    __weak IBOutlet UITextField *lastNameTextField;
+//    __weak IBOutlet UITextField *emailTextField;
     __weak IBOutlet UITextField *keyWordTextField;
     __weak IBOutlet UITextField *idTextField;
     
@@ -104,7 +106,7 @@
     NSDictionary* attributes = @{ NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:18.f],
                                   NSForegroundColorAttributeName : [UIColor colorWithWhite:1.f alpha:.5f]};
     NSAttributedString* string = [[NSAttributedString alloc] initWithString:@"Correo electrónico" attributes:attributes];
-    [emailTextField setAttributedPlaceholder:string];
+//    [emailTextField setAttributedPlaceholder:string];
     string = [[NSAttributedString alloc] initWithString:@"Palabra clave" attributes:attributes];
     [keyWordTextField setAttributedPlaceholder:string];
     string = [[NSAttributedString alloc] initWithString:@"Cédula" attributes:attributes];
@@ -114,20 +116,24 @@
 }
 
 -(void)styleUserNameAndNicknameWith:(NSString*)name withLastName:(NSString*)lastname withNickname:(NSString*)nickname{
+//    
+//    nickname = [NSString stringWithFormat:@"%@ | ", nickname];
+//    
+//    [nicknameLabel setText:nickname];
+//    
+//    name = [NSString stringWithFormat:@"%@ %@", name, lastname];
+//    
+//    [nameLastnameTextfield setText:name];
     
-    nickname = [NSString stringWithFormat:@"%@ | ", nickname];
+    [nameTextField setText:name];
+    [lastNameTextField setText:lastname];
     
-    [nicknameLabel setText:nickname];
-    
-    name = [NSString stringWithFormat:@"%@ %@", name, lastname];
-    
-    [nameLastnameTextfield setText:name];
     
 }
 
 -(void)loadUserInfoToFields{
     [self styleUserNameAndNicknameWith:_user.name withLastName:_user.lastname withNickname:_user.username];
-    [emailTextField setText:_user.email];
+//    [emailTextField setText:_user.email];
     [keyWordTextField setText:_user.keyWord];
     [birthDateButton setTitle:[self prettyDateStringFromStringDate:_user.birthDay] forState:UIControlStateNormal];
     birthDateUglyString = _user.birthDay;
@@ -155,20 +161,23 @@
 - (IBAction)saveProfileEditAction:(id)sender {
     [self allTextFieldResignFirstResponder];
     
-    NSArray* nameLastname = [nameLastnameTextfield.text componentsSeparatedByString:@" "];
-    if (nameLastname.count == 0) {
-        _user.name = @"";
-        _user.lastname = @"";
-    } else if (nameLastname.count == 1){
-        _user.name = [nameLastname firstObject];
-        _user.lastname = @"";
-    } else if (nameLastname.count == 2){
-        _user.name = [nameLastname firstObject];
-        _user.lastname = [nameLastname lastObject];
-    } else if (nameLastname.count > 2){
-        [self displayErrorMsgAlertViewWithMessage:@"Coloque solo su primer nombre y primer apellido." withTitle:@"Error en el nombre"];
-        return;
-    }
+//    NSArray* nameLastname = [nameLastnameTextfield.text componentsSeparatedByString:@" "];
+//    if (nameLastname.count == 0) {
+//        _user.name = @"";
+//        _user.lastname = @"";
+//    } else if (nameLastname.count == 1){
+//        _user.name = [nameLastname firstObject];
+//        _user.lastname = @"";
+//    } else if (nameLastname.count == 2){
+//        _user.name = [nameLastname firstObject];
+//        _user.lastname = [nameLastname lastObject];
+//    } else if (nameLastname.count > 2){
+//        [self displayErrorMsgAlertViewWithMessage:@"Coloque solo su primer nombre y primer apellido." withTitle:@"Error en el nombre"];
+//        return;
+//    }
+    
+    _user.name = nameTextField.text;
+    _user.lastname = lastNameTextField.text;
     
     if (idTextField.text.length == 0) {
         [self displayErrorMsgAlertViewWithMessage:@"Por favor coloque su cédula." withTitle:@"Falta cédula"];
@@ -525,7 +534,9 @@
 }
 
 #pragma mark End -
-
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 /*
 #pragma mark - Navigation
