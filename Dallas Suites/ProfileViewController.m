@@ -98,8 +98,19 @@
         
     });
     
+    NSDictionary* attributes = @{NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Bold" size:18.f],
+                                 NSForegroundColorAttributeName : [UIColor colorWithRed:233.f/255.f green:188.f/255.f blue:149.f/255.f alpha:1.f]};
     
-    [userNameLabel setText:user];
+    NSMutableAttributedString* string = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ | ", _user.username] attributes:attributes];
+    
+    attributes = @{NSFontAttributeName : [UIFont fontWithName:@"BrandonGrotesque-Regular" size:18.f],
+                   NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    NSAttributedString* namelastname = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@", _user.name, _user.lastname] attributes:attributes];
+    
+    [string appendAttributedString:namelastname];
+    
+    [userNameLabel setAttributedText:string];
     //User's full name animation block
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 //        
