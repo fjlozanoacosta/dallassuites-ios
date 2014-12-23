@@ -80,6 +80,8 @@
 #pragma mark - Button Actions
 
 - (IBAction)displayBirthDatePicker:(id)sender {
+    [self allTextFieldResignFirstResponder];
+    
     if (isPopUpContainerShown) {
         return;
     }
@@ -125,6 +127,8 @@
 
 
 - (IBAction)registerButtonAction:(id)sender {
+    [self allTextFieldResignFirstResponder];
+    
     UserModel* user = [[UserModel alloc] init];
     
     user.name = nameTextField.text;
@@ -195,7 +199,7 @@
     }
 
     void (^block)(BOOL, NSString*, NSError*) = ^(BOOL wasUserCreated, NSString* errorMsg, NSError* error) {
-        
+        [self.view setUserInteractionEnabled:YES];
         if (error) {
             [self displayErrorMsgAlertViewWithMessage:@"Problemas registrando el usuario. Verifique su conexión a internet." withTitle:@"Opps"];
             return;
@@ -209,7 +213,7 @@
         
     };
     
-    
+    [self.view setUserInteractionEnabled:NO];
     [user registerUserWithUser:user copletitionHandler:block];
     
     

@@ -3362,6 +3362,9 @@ guacamole y caraotas.</string>
                                                 <color key="value" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="fkb-rp-90B" id="oNf-3l-HS3"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <gestureRecognizers/>

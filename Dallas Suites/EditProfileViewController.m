@@ -153,6 +153,7 @@
 }
 
 - (IBAction)saveProfileEditAction:(id)sender {
+    [self allTextFieldResignFirstResponder];
     
     NSArray* nameLastname = [nameLastnameTextfield.text componentsSeparatedByString:@" "];
     if (nameLastname.count == 0) {
@@ -187,12 +188,22 @@
     
     _user.keyWord = keyWordTextField.text;
     
+    [self.view setUserInteractionEnabled:NO];
+    
+    __strong UINavigationController* strongNavController = self.navigationController;
     [_user updateUserInfoWithUser:_user copletitionHandler:^(BOOL userUpdated, NSString * msg, NSError * error) {
+        [self.view setUserInteractionEnabled:YES];
         if (error) {
             NSLog(@"Error");
+            [self displayErrorMsgAlertViewWithMessage:@"Error actualizando su información. Revise su conexión a internet." withTitle:@"Opps"];
             return;
         }
         
+        if (!userUpdated) {
+            [self displayErrorMsgAlertViewWithMessage:msg withTitle:@"Opps"];
+        }
+        
+        [strongNavController popViewControllerAnimated:YES];
         NSLog(@"Success");
     }];
     
@@ -202,6 +213,8 @@
 #pragma mark - PopUp Display Methods
 
 -(IBAction)displaySelectBirthDayPopUp:(id)sender {
+    [self allTextFieldResignFirstResponder];
+    
     if (isPopUpContainerShown) {
         return;
     }
