@@ -45,6 +45,7 @@
 		2773080D1A0029E9000FC4B1 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773080C1A0029E9000FC4B1 /* RestaurantViewController.m */; };
 		277308111A002F91000FC4B1 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */; };
 		277308151A00425F000FC4B1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277308141A00425F000FC4B1 /* MenuTableViewCell.m */; };
+		279905E01A49998C008F9047 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279905DF1A49998C008F9047 /* RegisterViewController.m */; };
 		27A3A7DD1A43034F006A398B /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3A7DC1A43034F006A398B /* LogInViewController.m */; };
 		27A3A7E11A432CF8006A398B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3A7E01A432CF8006A398B /* ForgotPasswordViewController.m */; };
 		27AD8D181A0CFD17001A17E3 /* RoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD8D171A0CFD17001A17E3 /* RoomModel.m */; };
@@ -147,6 +148,8 @@
 		277308101A002F91000FC4B1 /* RestaurantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTableViewCell.m; sourceTree = "<group>"; };
 		277308131A00425F000FC4B1 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		277308141A00425F000FC4B1 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		279905DE1A49998C008F9047 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		279905DF1A49998C008F9047 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		27A3A7DB1A43034F006A398B /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		27A3A7DC1A43034F006A398B /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		27A3A7DF1A432CF8006A398B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
@@ -573,6 +576,8 @@
 				27EDF3011A445835005D1A30 /* EditProfileViewController.m */,
 				27EDF3051A4857AE005D1A30 /* RegisterTutorialViewController.h */,
 				27EDF3061A4857AE005D1A30 /* RegisterTutorialViewController.m */,
+				279905DE1A49998C008F9047 /* RegisterViewController.h */,
+				279905DF1A49998C008F9047 /* RegisterViewController.m */,
 			);
 			name = "Register/Edit Profile";
 			sourceTree = "<group>";
@@ -785,6 +790,7 @@
 				27AD8D2F1A0D14A5001A17E3 /* AFHTTPSessionManager.m in Sources */,
 				2767FD2E1A3F8D2C00107159 /* QRWriterViewController.m in Sources */,
 				27AE73D61A050FF4009746CF /* ProfileTableViewCell.m in Sources */,
+				279905E01A49998C008F9047 /* RegisterViewController.m in Sources */,
 				27AE73DB1A0535BD009746CF /* RegisterEditProfileViewController.m in Sources */,
 				27AE73D31A044CF5009746CF /* ProfileViewController.m in Sources */,
 				27AD8D2E1A0D14A5001A17E3 /* AFHTTPRequestOperationManager.m in Sources */,

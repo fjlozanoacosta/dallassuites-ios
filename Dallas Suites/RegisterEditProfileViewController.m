@@ -22,23 +22,13 @@
 #define RegisterEditActionCell @"registerEditActionCell"
 
 #define RegisterTextFieldsPlaceholders @[ @"Nombre", @"Apellido", @"Correo electrónico", @"Fecha de nacimiento", @"Cédula de identidad", @"Sobrenombre", @"Contraseña", @"Repetir contraseña", @"Palabra clave"]
-#define RegisterIcons @[ @"registerEditIcon_1", @"registerEditIcon_1", @"registerEditIcon_2", @"registerEditIcon_3", @"registerEditIcon_4", @"registerEditIcon_1", @"registerEditIcon_5", @"registerEditIcon_5", @"registerEditIcon_6" ]
+#define RegisterIcons @[ @"registerEditIcon_1", @"registerEditIcon_1", @"registerEditIcon_2", @"registerEditIcon_3", @"registerEditIcon_4", @"registerEditIcon_7", @"registerEditIcon_5", @"registerEditIcon_8", @"registerEditIcon_6" ]
 
 #define EditTextFieldsPlaceholders @[ @"NOMBRE", @"APELLIDO", @"CORREO ELECTRÓNICO", @"FECHA DE NACIMIENTO", @"C.I.", @"NOMBRE DE USUARIO", @"CONTRASEÑA", @"AGREGAR CONTRASEÑA"]
 
 #define monthArray @[@"ENE", @"FEB", @"MAR", @"ABR", @"MAY", @"JUN", @"JUL", @"AGO", @"SEP", @"OCT", @"NOV", @"DIC"]
 
-//Testing without service conection to server
-typedef struct {
-    __unsafe_unretained NSString* nombre;
-    __unsafe_unretained NSString* apellido;
-    __unsafe_unretained NSString* fechaDeNacimiento;
-    __unsafe_unretained NSString* email;
-    __unsafe_unretained NSString* cedula;
-    __unsafe_unretained NSString* usuario;
-    __unsafe_unretained NSString* clave;
-    
-}User;
+
 
 
 @interface RegisterEditProfileViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
@@ -160,45 +150,7 @@ typedef struct {
     
     [self.view setUserInteractionEnabled:NO];
     
-    //From here the code only works locally, should be adapted to work with services!!!
-//    
-//    if (_isForEdit) {
-//        //If editing profile, do actions here
-//        __block BOOL completeUpdate = YES;
-//        [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
-//            if ([obj isEqualToString:@""] && (idx == 3)) {
-//                completeUpdate = NO;
-//                *stop = YES;
-//                [self.view setUserInteractionEnabled:YES];
-//                [self displayErrorMsgAlertViewWithMessage:[self errorMessageForIndex:idx] withTitle:@"Opps"];
-//                return;
-//            }
-//        }];
-//        if (completeUpdate) {
-//            [self.view setUserInteractionEnabled:YES];
-//            if(!validEmail){
-//                return;
-//            }
-//            [textFields enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
-//                NSLog(@"%@ = %@", [RegisterTextFieldsPlaceholders objectAtIndex:idx], obj);
-//            }];
-//            if (_user.cedula == nil) {
-//                _user.cedula = @(0);
-//            }
-//            [_user updateUserInfoWithUser:_user copletitionHandler:^(BOOL wasUserUpdated, NSString * msg, NSError * error) {
-//                
-//                if (error || !wasUserUpdated) {
-//                    [self displayErrorMsgAlertViewWithMessage:@"Problemas registrando el usuario. Verifique su conexión a internet." withTitle:@"Opps"];
-//                    return;
-//                }
-//                userInfoGotEdited = YES;
-//                [self displayErrorMsgAlertViewWithMessage:msg withTitle:@"Yay!"];
-//                
-//            }];
-//        }
-//        [self.view setUserInteractionEnabled:YES];
-//        return;
-//    }
+
     
     //If registering User Actions go here
     __block BOOL completeRegister = YES;

@@ -174,7 +174,7 @@
 
 - (IBAction)goToRegisterOrProfileView:(UIButton*)sender {
     
-    [self performSegueWithIdentifier:[allSegues objectAtIndex:sender.tag] sender:sender];
+//    [self performSegueWithIdentifier:[allSegues objectAtIndex:sender.tag] sender:sender];
     
 }
 
