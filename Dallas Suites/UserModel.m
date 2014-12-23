@@ -125,9 +125,10 @@
     
 }
 
--(void)addPasswordToUser:(UserModel *)user withNewPassword:(NSString*)newPassword copletitionHandler:(void (^)(NSInteger, NSString*, NSError*))block{
+-(void)addPasswordToUser:(UserModel *)user withNewPassword:(NSString*)newPassword withKeyWord:(NSString *)keyword copletitionHandler:(void (^)(NSInteger, NSString *, NSError *))block {
     
     user.password = newPassword;
+    user.keyWord = keyword;
     
     [self addPasswordToUser:user copletitionHandler:block];
 

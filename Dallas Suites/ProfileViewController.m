@@ -261,6 +261,7 @@
         self.navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         AddNewPasswordPopUpViewController* vC = (AddNewPasswordPopUpViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"addPaswordViewController"];
         [vC.view setAlpha:0.f];
+        [vC setUser:_user];
         [self presentViewController:vC
                            animated:YES
                          completion:^{
@@ -297,6 +298,9 @@
         [self openMenu:nil];
     }
     
+    if ([segue.identifier isEqualToString:@"ios8ProfilePopUp"]) {
+        [(AddNewPasswordPopUpViewController*)segue.destinationViewController setUser:_user];
+    }
     
     if ([segue.identifier isEqualToString:EditProfileSegue]) {
         [(EditProfileViewController*)segue.destinationViewController setUser:_user];

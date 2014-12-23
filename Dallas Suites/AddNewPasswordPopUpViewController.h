@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserModel.h"
 
 @interface AddNewPasswordPopUpViewController : UIViewController
+
+@property (nonatomic) UserModel* user;
 
 @end

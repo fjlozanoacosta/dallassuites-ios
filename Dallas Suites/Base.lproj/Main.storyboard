@@ -3669,6 +3669,10 @@ guacamole y caraotas.</string>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bp3-H5-l1q" userLabel="PopUps">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Si-GR-imt" userLabel="Background">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYk-5F-6Ze" userLabel="Edit Password PopUp Frame">
                                         <rect key="frame" x="0.0" y="164" width="600" height="272"/>
                                         <subviews>
@@ -3702,6 +3706,9 @@ guacamole y caraotas.</string>
                                                 <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="0gj-ya-j9a" id="VMq-1j-OxX"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yga-v7-s3D" userLabel="User - Bottom Line">
                                                 <rect key="frame" x="0.0" y="67" width="600" height="1"/>
@@ -3725,6 +3732,9 @@ guacamole y caraotas.</string>
                                                 <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="0gj-ya-j9a" id="EId-0e-P9A"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3b-fs-G5I" userLabel="Password - Bottom Line">
                                                 <rect key="frame" x="0.0" y="124" width="600" height="1"/>
@@ -3769,7 +3779,10 @@ guacamole y caraotas.</string>
                                                 </constraints>
                                                 <color key="textColor" red="0.91372549530000002" green="0.73725491759999995" blue="0.58431375029999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="0gj-ya-j9a" id="8D0-8U-XKM"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3806,10 +3819,6 @@ guacamole y caraotas.</string>
                                             <constraint firstAttribute="trailing" secondItem="dq0-Uf-6GK" secondAttribute="trailing" constant="46" id="wOw-BF-Acc"/>
                                             <constraint firstItem="Vcj-Jr-5zM" firstAttribute="leading" secondItem="gYk-5F-6Ze" secondAttribute="leading" id="xbZ-oC-zta"/>
                                         </constraints>
-                                    </view>
-                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Si-GR-imt" userLabel="Background">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>

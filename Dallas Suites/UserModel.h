@@ -29,7 +29,7 @@ typedef enum{
 
 -(void)registerUserWithUser:(UserModel *)user copletitionHandler:(void (^)(BOOL, NSString*, NSError*))block;
 -(void)addPasswordToUser:(UserModel *)user copletitionHandler:(void (^)(NSInteger, NSString*, NSError*))block;
--(void)addPasswordToUser:(UserModel *)user withNewPassword:(NSString*)newPassword copletitionHandler:(void (^)(NSInteger, NSString*, NSError*))block;
+-(void)addPasswordToUser:(UserModel *)user withNewPassword:(NSString*)newPassword withKeyWord:(NSString*)keyword copletitionHandler:(void (^)(NSInteger, NSString*, NSError*))block;
 -(void)performUserLogInWithEmail:(NSString*)email withPassword:(NSString*)password withComplitionHandler:(void (^)(UserModel*, NSError*))block;
 
 -(void)updateUserInfoWithUser:(UserModel *)user copletitionHandler:(void (^)(BOOL, NSString*, NSError*))block;
